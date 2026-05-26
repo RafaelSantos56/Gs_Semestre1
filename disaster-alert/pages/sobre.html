@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Sobre</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">DA</div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+        <span class="logo-status"><span class="dot-online"></span> 3 satellites online</span>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="../index.html"           class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html"             class="nav-item active"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="dashboard.html"         class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html"         class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html"              class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="faq.html"               class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html"           class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html"       class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+    <div class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDS</div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Sobre o Projeto</h1>
+        <p>Como a tecnologia espacial protege vidas na Terra</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn-caos" id="btnCaos">SIMULAR DESASTRE</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="section-header">
+        <h2>Do Espaco a Protecao de Vidas</h2>
+        <p>O DisasterAlert usa dados de satelites para detectar, analisar e alertar sobre desastres naturais em tempo real.</p>
+      </div>
+
+      <div class="pipeline">
+        <div class="pipeline__step active">
+          <div class="pipeline__icon">🛰</div>
+          <div class="pipeline__label">Satelite</div>
+          <div class="pipeline__desc">Captura imagens</div>
+        </div>
+        <div class="pipeline__step active">
+          <div class="pipeline__icon">🤖</div>
+          <div class="pipeline__label">Analise IA</div>
+          <div class="pipeline__desc">Detecta padroes</div>
+        </div>
+        <div class="pipeline__step active">
+          <div class="pipeline__icon">⚡</div>
+          <div class="pipeline__label">Alerta</div>
+          <div class="pipeline__desc">Notificacao imediata</div>
+        </div>
+        <div class="pipeline__step">
+          <div class="pipeline__icon">🚨</div>
+          <div class="pipeline__label">Defesa Civil</div>
+          <div class="pipeline__desc">Mobiliza equipes</div>
+        </div>
+        <div class="pipeline__step">
+          <div class="pipeline__icon">👥</div>
+          <div class="pipeline__label">Populacao</div>
+          <div class="pipeline__desc">Evacuacao segura</div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-header">
+        <h2>Tipos de Desastre Monitorados</h2>
+      </div>
+
+      <div class="disaster-types">
+        <div class="disaster-type">
+          <div class="disaster-type__icon">🌊</div>
+          <div>
+            <div class="disaster-type__title">Enchentes</div>
+            <div class="disaster-type__desc">Sensores SAR detectam variacao do nivel de rios com precisao de metros, mesmo atraves de nuvens e a noite.</div>
+          </div>
+        </div>
+        <div class="disaster-type">
+          <div class="disaster-type__icon">🔥</div>
+          <div>
+            <div class="disaster-type__title">Queimadas</div>
+            <div class="disaster-type__desc">Analise espectral infravermelho identifica focos ativos e calcula a direcao de propagacao em tempo real.</div>
+          </div>
+        </div>
+        <div class="disaster-type">
+          <div class="disaster-type__icon">⛰</div>
+          <div>
+            <div class="disaster-type__title">Deslizamentos</div>
+            <div class="disaster-type__desc">Modelos digitais de elevacao combinados com dados de chuva calculam o risco geologico por encosta.</div>
+          </div>
+        </div>
+        <div class="disaster-type">
+          <div class="disaster-type__icon">🌪</div>
+          <div>
+            <div class="disaster-type__title">Tempestades</div>
+            <div class="disaster-type__desc">Dados meteorologicos orbitais fornecem previsao de ate 6 horas de antecedencia para evacuacao preventiva.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="section-header">
+        <h2>Conexao com os ODS da ONU</h2>
+        <p>O projeto contribui diretamente para os Objetivos de Desenvolvimento Sustentavel da ONU.</p>
+      </div>
+
+      <div class="ods-list">
+        <span class="ods-badge ods-badge--inovacao">ODS 9 — Inovacao</span>
+        <span class="ods-badge ods-badge--cidades">ODS 11 — Cidades Sustentaveis</span>
+        <span class="ods-badge ods-badge--clima">ODS 13 — Acao Climatica</span>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+          <li>Alertas urgentes no feed</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

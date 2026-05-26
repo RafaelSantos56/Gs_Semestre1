@@ -1,0 +1,113 @@
+/* =====================================================
+   DisasterAlert — css/animations.css
+   ===================================================== */
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.8); opacity: 0.3; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { animation: fadeIn 0.35s ease forwards; }
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes flashRed {
+  0%, 100% { background: var(--bg-primary); }
+  50%       { background: #1a0505; }
+}
+
+body.modo-caos { animation: flashRed 0.8s infinite; }
+
+body.modo-caos .btn-caos {
+  animation: pulseBtn 0.4s infinite alternate;
+}
+
+body.modo-caos .stat-card {
+  animation: flashCard 1s infinite;
+}
+
+@keyframes flashCard {
+  0%, 100% { border-color: var(--border-color); }
+  50%       { border-color: var(--color-red); }
+}
+
+body.modo-caos .dot-online {
+  background: var(--color-red);
+  animation: blink 0.4s infinite;
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.stat-card__number.animating {
+  animation: countUp 0.4s ease;
+}
+
+.stat-card {
+  transition:
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-card);
+}
+
+.sidebar {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-caos, .btn-sirene, .filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar__logo-icon {
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
+  transition: box-shadow var(--transition);
+}
+
+.sidebar__logo-icon:hover {
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.5);
+}
+
+@keyframes radarSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.radar-sweep {
+  animation: radarSpin 3s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-4px); }
+  40%       { transform: translateX(4px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.shake { animation: shake 0.5s ease; }
+
+@keyframes pulseBtn {
+  from { opacity: 1; }
+  to   { opacity: 0.7; }
+}

@@ -1,0 +1,198 @@
+/* =====================================================
+   DisasterAlert — css/responsive.css
+   Media queries — SEMPRE por ultimo no main.css
+   ===================================================== */
+
+/* === TABLET — ate 768px === */
+@media (max-width: 768px) {
+
+  .sidebar {
+    transform: translateX(-100%);
+    z-index: 150;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .topbar {
+    padding-left: 60px;
+  }
+
+  .topbar__title p {
+    display: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pipeline {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .pipeline__step {
+    min-width: 110px;
+  }
+
+  .disaster-types {
+    grid-template-columns: 1fr;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .alerts-table {
+    min-width: 600px;
+  }
+}
+
+/* === MOBILE — ate 480px === */
+@media (max-width: 480px) {
+
+  .content {
+    padding: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 14px 16px;
+  }
+
+  .stat-card__number {
+    font-size: 24px;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .topbar {
+    padding: 0 12px 0 56px;
+  }
+
+  .topbar__title h1 {
+    font-size: 14px;
+  }
+
+  .btn-caos {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+
+  .quiz-stats {
+    gap: 8px;
+  }
+
+  .quiz-stat__num {
+    font-size: 18px;
+  }
+
+  .scenario-stats {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .pipeline__step + .pipeline__step::before {
+    content: '↓';
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .disaster-types {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .filters {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .faq-question {
+    font-size: 13px;
+    padding: 14px;
+  }
+
+  .faq-answer {
+    padding: 0 14px 12px;
+    padding-top: 12px;
+  }
+
+  .sim-option {
+    padding: 12px;
+  }
+}
+
+/* === DESKTOP GRANDE — 1300px+ === */
+@media (min-width: 1300px) {
+
+  .content {
+    padding: 28px 32px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-card__number {
+    font-size: 34px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 380px;
+  }
+}
+
+/* === REDUCAO DE MOVIMENTO === */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

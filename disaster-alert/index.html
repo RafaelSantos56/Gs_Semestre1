@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Dashboard</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">DA</div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+        <span class="logo-status"><span class="dot-online"></span> 3 satellites online</span>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="index.html"              class="nav-item active"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="pages/sobre.html"        class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="pages/dashboard.html"    class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="pages/simulacao.html"    class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="pages/quiz.html"         class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="pages/faq.html"          class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="pages/contato.html"      class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="pages/integrantes.html"  class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+    <div class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDSPG</div>
+  </aside>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- MAIN -->
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Dashboard</h1>
+        <p>Monitoramento satelital em tempo real</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn-caos" id="btnCaos">SIMULAR DESASTRE</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- STAT CARDS -->
+      <section class="stats-grid">
+        <div class="stat-card stat-card--red">
+          <span class="stat-card__label">Alertas Criticos</span>
+          <span class="stat-card__number" data-count="7">0</span>
+          <span class="stat-card__sub" style="color:var(--color-red)">▲ 3 hoje</span>
+        </div>
+        <div class="stat-card stat-card--orange">
+          <span class="stat-card__label">Em Monitoramento</span>
+          <span class="stat-card__number" data-count="23">0</span>
+          <span class="stat-card__sub" style="color:var(--color-orange)">● ativos</span>
+        </div>
+        <div class="stat-card stat-card--cyan">
+          <span class="stat-card__label">Regioes Monitoradas</span>
+          <span class="stat-card__number" data-count="142">0</span>
+          <span class="stat-card__sub" style="color:var(--color-cyan)">● via satelite</span>
+        </div>
+        <div class="stat-card stat-card--green">
+          <span class="stat-card__label">Uptime do Sistema</span>
+          <span class="stat-card__number" data-count="98">0</span>
+          <span class="stat-card__sub" style="color:var(--color-green)">✓ estavel</span>
+        </div>
+      </section>
+
+      <!-- MAPA + FEED -->
+      <section class="dashboard-grid">
+        <div class="map-panel">
+          <div class="panel-title">
+            MONITORAMENTO GLOBAL — DADOS AO VIVO
+            <span class="badge badge--live">AO VIVO</span>
+          </div>
+          <div class="map-container" id="mapContainer">
+            <div class="map-grid"></div>
+            <p style="color:var(--text-muted);font-size:12px;z-index:1;position:relative">
+              Mapa carregando pontos de alerta...
+            </p>
+          </div>
+          <div class="map-legend">
+            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-red)"></div> Critico</div>
+            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-orange)"></div> Aviso</div>
+            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-green)"></div> Normal</div>
+            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-cyan)"></div> Monitorando</div>
+          </div>
+        </div>
+
+        <div class="alert-panel">
+          <div class="panel-title">
+            ALERTAS RECENTES
+            <span class="badge badge--live">AO VIVO</span>
+          </div>
+          <div class="alert-feed" id="alertFeed"></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL ALERTA -->
+  <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
+    <div class="modal modal--critico">
+      <div class="modal__header">
+        <div>
+          <span class="badge" id="modal-alerta-badge">CRITICO</span>
+          <h2 class="modal__title" id="modal-alerta-titulo">Alerta</h2>
+        </div>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal-info-grid">
+          <span>Detectado por:</span><strong id="modal-alerta-sat"></strong>
+          <span>Horario:</span><strong id="modal-alerta-hora"></strong>
+          <span>Impacto:</span><strong id="modal-alerta-pop"></strong>
+          <span>Status:</span><strong id="modal-alerta-status"></strong>
+        </div>
+        <div style="margin-top:12px">
+          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px">Nivel de risco:</div>
+          <div class="risk-bar"><div class="risk-bar__fill" id="modal-alerta-risco" style="width:0%"></div></div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-alerta')">Fechar</button>
+        <button class="btn btn--danger">Acionar Defesa Civil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title" style="color:var(--color-red)">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <p style="color:var(--text-secondary);font-size:13px;margin-bottom:12px">Isso vai ativar:</p>
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+          <li>Cards piscando em alerta</li>
+          <li>Alertas urgentes no feed</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" onclick="fecharModal('modal-caos'); window.ativarCaos && window.ativarCaos()">
+          ATIVAR
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORRETO -->
+    <script src="js/modal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</html>
