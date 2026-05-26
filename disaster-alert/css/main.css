@@ -1,7 +1,18 @@
-@import url("./variaveis.css");
-@import url("./reset.css");
-@import url("./layout.css");
-@import url("./components.css");
-@import url("./modal.css");
-@import url("./animacoes.css");
-@import url("./responsive.css");
+@import url("variaveis.css");
+@import url("reset.css");
+@import url("layout.css");
+
+@import url("componentes/cards.css");
+@import url("componentes/badges.css");
+@import url("componentes/map.css");
+@import url("componentes/table.css");
+@import url("componentes/form.css");
+@import url("componentes/faq.css");
+@import url("componentes/team.css");
+@import url("componentes/pipeline.css");
+@import url("componentes/quiz.css");
+@import url("componentes/simulacao.css");
+
+@import url("modal.css");
+@import url("animacoes.css");
+@import url("responsive.css");
