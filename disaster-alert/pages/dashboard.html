@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Central de Alertas</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">DA</div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+        <span class="logo-status"><span class="dot-online"></span> 3 satellites online</span>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="dashboard.html"   class="nav-item active"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="faq.html"         class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html"     class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+    <div class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDS</div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Central de Alertas</h1>
+        <p>Todos os incidentes monitorados por satelite</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn-caos" id="btnCaos">SIMULAR DESASTRE</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="filters">
+        <span class="filter-label">Filtrar:</span>
+        <button class="filter-btn active" data-filter="todos">TODOS</button>
+        <button class="filter-btn" data-filter="critico">CRITICO</button>
+        <button class="filter-btn" data-filter="aviso">AVISO</button>
+        <button class="filter-btn" data-filter="normal">NORMAL</button>
+        <button class="filter-btn" data-filter="resolvido">RESOLVIDO</button>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="alerts-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tipo</th>
+              <th>Localizacao</th>
+              <th>Severidade</th>
+              <th>Satelite</th>
+              <th>Hora</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="alertsTableBody">
+            <tr>
+              <td colspan="7" class="table-loading">Carregando alertas...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- MODAL ALERTA -->
+  <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
+    <div class="modal modal--critico">
+      <div class="modal__header">
+        <div>
+          <span class="badge" id="modal-alerta-badge">CRITICO</span>
+          <h2 class="modal__title" id="modal-alerta-titulo">Alerta</h2>
+        </div>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal-info-grid">
+          <span>Detectado por:</span><strong id="modal-alerta-sat"></strong>
+          <span>Horario:</span>      <strong id="modal-alerta-hora"></strong>
+          <span>Impacto:</span>      <strong id="modal-alerta-pop"></strong>
+          <span>Status:</span>       <strong id="modal-alerta-status"></strong>
+        </div>
+        <div class="risk-bar">
+          <div class="risk-bar__fill" id="modal-alerta-risco"></div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-alerta')">Fechar</button>
+        <button class="btn btn--danger">Acionar Defesa Civil</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+          <li>Alertas urgentes no feed</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/dashboard.js"></script>
+
+</body>
+</html>
