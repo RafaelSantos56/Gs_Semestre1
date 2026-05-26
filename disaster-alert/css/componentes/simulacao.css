@@ -1,0 +1,106 @@
+/* =====================================================
+   DisasterAlert — css/components/simulacao.css
+   Mini jogo de decisao
+   ===================================================== */
+
+.scenario-card {
+  background: rgba(255,68,68,0.06);
+  border: 1px solid var(--color-red);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.scenario-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.scenario-stat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+  text-align: center;
+}
+
+.scenario-stat__num   { font-size: 20px; font-weight: 800; }
+.scenario-stat__label { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+/* === TIMER === */
+.timer-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.timer-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--border-color);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.timer-fill {
+  height: 100%;
+  background: var(--color-red);
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+.timer-val { font-size: 13px; font-weight: 700; color: var(--color-red); min-width: 28px; text-align: right; }
+
+/* === OPCOES === */
+.sim-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all var(--transition);
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-primary);
+  width: 100%;
+}
+
+.sim-option:hover:not(:disabled) {
+  border-color: var(--color-cyan);
+  background: rgba(0,212,255,0.04);
+}
+
+.sim-option:disabled { pointer-events: none; opacity: 0.5; }
+
+.sim-option.selected-correct {
+  border-color: var(--color-green);
+  background: rgba(34,197,94,0.08);
+  opacity: 1 !important;
+}
+
+.sim-option.selected-wrong {
+  border-color: var(--color-red);
+  background: rgba(255,68,68,0.08);
+  opacity: 1 !important;
+}
+
+.sim-option__letra {
+  width: 30px; height: 30px;
+  border-radius: 6px;
+  background: var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+}

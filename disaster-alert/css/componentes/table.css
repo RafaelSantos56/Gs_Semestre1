@@ -1,0 +1,83 @@
+/* =====================================================
+   DisasterAlert — css/components/table.css
+   Tabela de alertas e filtros
+   ===================================================== */
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.alerts-table {
+  width: 100%;
+  font-size: 13px;
+}
+
+.alerts-table thead {
+  background: var(--bg-topbar);
+  position: sticky;
+  top: 0;
+}
+
+.alerts-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.alerts-table td {
+  padding: 11px 16px;
+  border-bottom: 1px solid rgba(31,45,64,0.5);
+  vertical-align: middle;
+}
+
+.alerts-table tbody tr {
+  transition: background var(--transition);
+  cursor: pointer;
+}
+
+.alerts-table tbody tr:hover { background: rgba(0,212,255,0.04); }
+.alerts-table tbody tr:last-child td { border-bottom: none; }
+
+/* === FILTROS === */
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.filter-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.filter-btn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  border-color: var(--color-cyan);
+  color: var(--color-cyan);
+  background: rgba(0,212,255,0.06);
+}
