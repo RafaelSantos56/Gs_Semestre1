@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Integrantes</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">DA</div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+        <span class="logo-status"><span class="dot-online"></span> 3 satelites online</span>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="dashboard.html"   class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="faq.html"         class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html"     class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html" class="nav-item active"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+    <div class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDSPG</div>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="main-wrapper">
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Integrantes</h1>
+        <p>Equipe responsavel pelo DisasterAlert — GS 2026</p>
+      </div>
+      <div class="topbar__actions">
+        <button class="btn-caos" id="btnCaos">SIMULAR DESASTRE</button>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <div class="section-header">
+        <h2>Nossa Equipe</h2>
+        <p>Global Solution 2026 &mdash; 1TDSPG &mdash; FIAP</p>
+      </div>
+
+      <div class="team-grid" id="teamGrid"></div>
+
+    </main>
+  </div>
+
+  <!-- MODAL FOTO -->
+  <div class="modal-overlay" id="modal-foto" role="dialog" aria-modal="true" aria-labelledby="foto-nome">
+    <div class="modal modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title" id="foto-nome">Diego </h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body modal__body--center">
+        <div class="foto-avatar" id="foto-avatar"></div>
+        <p class="foto-rm" id="foto-rm"></p>
+        <span class="badge badge--info">TRIPULANTE</span>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-foto')">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/integrantes.js"></script>
+
+</body>
+</html>
