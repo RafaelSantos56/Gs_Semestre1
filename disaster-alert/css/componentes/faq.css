@@ -1,0 +1,53 @@
+/* =====================================================
+   DisasterAlert — css/components/faq.css
+   Acordeao do FAQ
+   ===================================================== */
+
+.faq-list { display: flex; flex-direction: column; gap: 8px; }
+
+.faq-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+.faq-item.open { border-color: var(--color-cyan); }
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 18px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.faq-question:hover { color: var(--color-cyan); }
+
+.faq-icon {
+  font-size: 20px;
+  color: var(--text-secondary);
+  transition: transform var(--transition-slow), color var(--transition);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-icon { transform: rotate(90deg); color: var(--color-cyan); }
+
+.faq-answer {
+  display: none;
+  padding: 14px 18px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-item.open .faq-answer { display: block; }
