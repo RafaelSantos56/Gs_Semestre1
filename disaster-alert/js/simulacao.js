@@ -57,7 +57,7 @@ const cenarios = [
   },
 ];
 
-let cenarioAtual = 0, timerInterval = null, timerSeg = 15;
+let cenarioAtual = 0, timerInterval = null, timerSeg = 25;
 
 function carregarCenario(idx) {
   const c = cenarios[idx];
@@ -98,7 +98,7 @@ function carregarCenario(idx) {
 }
 
 function iniciarTimer() {
-  timerSeg = 15;
+  timerSeg = 25;
   clearInterval(timerInterval);
   atualizarTimer();
   timerInterval = setInterval(() => {
@@ -111,7 +111,7 @@ function iniciarTimer() {
 function atualizarTimer() {
   const fill = document.getElementById('sim-timer-fill');
   const val  = document.getElementById('sim-timer-val');
-  if (fill) fill.style.width = (timerSeg / 15 * 100) + '%';
+  if (fill) fill.style.width = (timerSeg / 25 * 100) + '%';
   if (val)  val.textContent  = timerSeg + 's';
 }
 
