@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisasterAlert — Dashboard</title>
   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
 
   <!-- SIDEBAR -->
@@ -18,14 +20,16 @@
       </div>
     </div>
     <nav class="sidebar__nav">
-      <a href="index.html"              class="nav-item active"><span class="nav-icon">⬡</span> Dashboard</a>
-      <a href="pages/sobre.html"        class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-      <a href="pages/dashboard.html"    class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-      <a href="pages/simulacao.html"    class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-      <a href="pages/quiz.html"         class="nav-item"><span class="nav-icon">?</span> Quiz</a>
-      <a href="pages/faq.html"          class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-      <a href="pages/contato.html"      class="nav-item"><span class="nav-icon">✉</span> Contato</a>
-      <a href="pages/integrantes.html"  class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+      <a href="index.html" class="nav-item active"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="pages/sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="pages/dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="pages/simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="pages/quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+    </nav>
+    <nav class="sidebar__nav-bottom">
+      <a href="pages/faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="pages/contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="pages/integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
     </nav>
     <div class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDSPG</div>
   </aside>
@@ -82,16 +86,21 @@
             <span class="badge badge--live">AO VIVO</span>
           </div>
           <div class="map-container" id="mapContainer">
-            <div class="map-grid"></div>
-            <p style="color:var(--text-muted);font-size:12px;z-index:1;position:relative">
-              Mapa carregando pontos de alerta...
-            </p>
+            <img src="./assets/img/mapa_brasil.png" alt="Mapa do Brasil" class="map-bg-image">
           </div>
           <div class="map-legend">
-            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-red)"></div> Critico</div>
-            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-orange)"></div> Aviso</div>
-            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-green)"></div> Normal</div>
-            <div class="map-legend__item"><div class="map-legend__dot" style="background:var(--color-cyan)"></div> Monitorando</div>
+            <div class="map-legend__item">
+              <div class="map-legend__dot" style="background:var(--color-red)"></div> Critico
+            </div>
+            <div class="map-legend__item">
+              <div class="map-legend__dot" style="background:var(--color-orange)"></div> Aviso
+            </div>
+            <div class="map-legend__item">
+              <div class="map-legend__dot" style="background:var(--color-green)"></div> Normal
+            </div>
+            <div class="map-legend__item">
+              <div class="map-legend__dot" style="background:var(--color-cyan)"></div> Monitorando
+            </div>
           </div>
         </div>
 
@@ -126,7 +135,9 @@
         </div>
         <div style="margin-top:12px">
           <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px">Nivel de risco:</div>
-          <div class="risk-bar"><div class="risk-bar__fill" id="modal-alerta-risco" style="width:0%"></div></div>
+          <div class="risk-bar">
+            <div class="risk-bar__fill" id="modal-alerta-risco" style="width:0%"></div>
+          </div>
         </div>
       </div>
       <div class="modal__footer">
@@ -163,7 +174,8 @@
   </div>
 
   <!-- CORRETO -->
-    <script src="js/modal.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/dashboard.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+
 </html>
