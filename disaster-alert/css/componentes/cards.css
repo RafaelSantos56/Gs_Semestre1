@@ -20,7 +20,7 @@
   gap: 2px;           
   position: relative;
   overflow: hidden;
-  width: 10vw;
+  width: 11.7vw;
   height: 12vh;
 }
 
@@ -41,6 +41,7 @@
 .stat-card--orange { --card-accent: var(--color-orange); }
 .stat-card--cyan   { --card-accent: var(--color-cyan); }
 .stat-card--green  { --card-accent: var(--color-green); }
+.stat-card--purple  { --card-accent: var(--color-purple); }
 
 .stat-card__number {
   font-size: 24px;

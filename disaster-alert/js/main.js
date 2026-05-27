@@ -48,12 +48,16 @@ document.addEventListener('keydown', (e) => {
 // === CONTADORES ANIMADOS ===
 function animateCounter(el, target, duration = 1400) {
   const startTs = performance.now();
+  const suffix = el.dataset.suffix || ''; 
+
   function step(now) {
     const progress = Math.min((now - startTs) / duration, 1);
     const eased    = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.floor(eased * target);
+    
+    el.textContent = Math.floor(eased * target) + suffix; 
+    
     if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target;
+    else el.textContent = target + suffix;
   }
   requestAnimationFrame(step);
 }
