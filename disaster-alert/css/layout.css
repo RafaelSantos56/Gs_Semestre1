@@ -9,10 +9,13 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #0d121f; /* Fundo integrado do painel igual à referência */
+  padding: 0; /* Zera os paddings externos para a utilitária colar nas bordas */
+  box-sizing: border-box;
 }
 
 .content {
-  padding: 24px;
+  padding: 0 32px 32px 32px; /* Margem interna ajustada para alinhar com o teto */
   flex: 1;
 }
 
@@ -158,39 +161,111 @@
 
 .sidebar-overlay.show { display: block; }
 
+/* Container principal da Topbar */
 .topbar {
-  height: var(--topbar-h);
-  background: var(--bg-topbar);
-  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-bottom: 20px;
+}
+
+/* A barra superior escura ajustada */
+.topbar__utility-bar {
+  display: flex;
+  justify-content: flex-end; /* Empurra tudo para a extrema direita */
+  align-items: center;
+  background-color: transparent; /* Removida a faixa preta, herdando a cor padrão de baixo */
+  width: 100%;
+  height: 45px;
+  padding: 0 32px;
+  box-sizing: border-box;
+  border-bottom: none; /* Linha dividia a área superior eliminada */
+}
+
+/* Alinhamento fino dos elementos (Status, Sino e Usuário) */
+.topbar__utility-right {
   display: flex;
   align-items: center;
+  gap: 20px; /* Espaçamento exato entre os itens */
+}
+
+/* Ícones cinzas da barra superior (sino e perfil) */
+.topbar__icon {
+  color: #9CA3AF;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+}
+.topbar__icon:hover { opacity: 1; }
+
+/* Ajusta o espaçamento do título e do botão principal logo abaixo */
+.topbar__main {
+  display: flex;
   justify-content: space-between;
-  padding: 0 24px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  flex-shrink: 0;
-  gap: 16px;
+  align-items: flex-end; /* Alinha o botão pela base do texto do título */
+  padding: 24px 32px 16px 32px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.topbar__title h1 { font-size: 17px; font-weight: 700; color: var(--text-primary); }
-.topbar__title p  { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
-.topbar__actions  { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+/* Ajuste fino da cor e tamanho do status para ficar igual ao da imagem */
+.topbar__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6B7280; /* Cor cinza sutil para o texto */
+  font-size: 13px;
+}
 
-.btn-caos {
-  background: var(--color-red);
-  color: #fff;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-size: 12px;
+/* Deixa a bolinha verde mais viva e limpa */
+.dot-online {
+  width: 8px;
+  height: 8px;
+  background-color: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Alinhamento e aumento do tamanho do título principal */
+.topbar__title h1 {
+  font-size: 34px; /* Aumentado de 26px para 34px */
   font-weight: 700;
-  letter-spacing: 0.4px;
-  transition: opacity var(--transition), transform 0.1s;
-  white-space: nowrap;
+  color: #ffffff;
+  margin: 0 0 8px 0;
 }
 
-.btn-caos:hover  { opacity: 0.85; }
-.btn-caos:active { transform: scale(0.97); }
+/* Aumento do tamanho do subtítulo */
+.topbar__title p {
+  font-size: 15px; /* Aumentado de 13px para 15px */
+  color: #8A92A6; /* Um cinza levemente mais legível */
+  margin: 0;
+}
+
+/* Container do botão na direita */
+.topbar__actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Customização e aumento do tamanho do botão vermelho */
+.btn-caos {
+  background-color: #ff1a1a;
+  color: white;
+  border: none;
+  padding: 14px 28px; /* Aumentado o espaçamento interno para encorpar o botão */
+  font-weight: bold;
+  font-size: 13px; /* Letras ligeiramente maiores e mais imponentes */
+  border-radius: 6px; /* Bordas um pouco mais arredondadas para combinar */
+  cursor: pointer;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: background var(--transition), transform 0.1s;
+}
+.btn-caos:hover  { background-color: #e60000; }
+.btn-caos:active { transform: scale(0.96); }
 
 .section-header { margin-bottom: 20px; }
 .section-header h2 { font-size: 15px; font-weight: 700; color: var(--text-primary); }
@@ -201,4 +276,3 @@
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
 .divider { height: 1px; background: var(--border-color); margin: 24px 0; }
-

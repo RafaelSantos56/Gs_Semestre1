@@ -10,13 +10,11 @@
 
 <body>
 
-  <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__logo">
       <div class="sidebar__logo-icon">DA</div>
       <div class="sidebar__logo-text">
         <span class="logo-name">Disaster<strong>Alert</strong></span>
-        <span class="logo-status"><span class="dot-online"></span> 3 satellites online</span>
       </div>
     </div>
     <nav class="sidebar__nav">
@@ -34,15 +32,24 @@
     <div class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDSPG</div>
   </aside>
 
-  <!-- OVERLAY MOBILE -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <button class="hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 
-  <!-- MAIN -->
   <div class="main-wrapper">
-    <header class="topbar">
+
+    <div class="topbar__utility-bar">
+      <div class="topbar__utility-right">
+        <div class="topbar__status">
+          <span class="dot-online"></span> 3 satélites online
+        </div>
+        <span class="topbar__icon">🔔</span>
+        <span class="topbar__icon">👤</span>
+      </div>
+    </div>
+
+    <header class="topbar__main">
       <div class="topbar__title">
         <h1>Dashboard</h1>
         <p>Monitoramento satelital em tempo real</p>
@@ -54,7 +61,6 @@
 
     <main class="content">
 
-      <!-- STAT CARDS -->
       <section class="stats-grid">
         <div class="stat-card stat-card--purple">
           <span class="stat-card__label">Bateria dos Satélites</span>
@@ -83,7 +89,6 @@
         </div>
       </section>
 
-      <!-- MAPA + FEED -->
       <section class="dashboard-grid">
         <div class="map-panel">
           <div class="panel-title">
@@ -121,7 +126,6 @@
     </main>
   </div>
 
-  <!-- MODAL ALERTA -->
   <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
     <div class="modal modal--critico">
       <div class="modal__header">
@@ -152,7 +156,6 @@
     </div>
   </div>
 
-  <!-- MODAL MODO CAOS -->
   <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
     <div class="modal modal--critico modal--sm">
       <div class="modal__header">
@@ -178,9 +181,9 @@
     </div>
   </div>
 
-  <!-- CORRETO -->
   <script src="js/modal.js"></script>
   <script src="js/main.js"></script>
   <script src="js/dashboard.js"></script>
 
+</body>
 </html>
