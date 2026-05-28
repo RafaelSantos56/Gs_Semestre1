@@ -12,6 +12,18 @@
   background-color: #0d121f; /* Fundo integrado do painel igual à referência */
   padding: 0; /* Zera os paddings externos para a utilitária colar nas bordas */
   box-sizing: border-box;
+  transition: background-color 0.3s ease; /* Transição suave para quando o caos ativar */
+}
+
+/* Garante que o fundo fixo #0d121f fique transparente se o seu script 
+   adicionar uma classe de caos, permitindo que o piscar vermelho apareça por trás de tudo.
+*/
+body.modo-caos .main-wrapper,
+.main-wrapper.modo-caos,
+body.caos .main-wrapper,
+.main-wrapper.caos,
+body[class*="caos"] .main-wrapper {
+  background-color: transparent !important;
 }
 
 .content {
