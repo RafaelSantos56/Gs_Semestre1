@@ -42,7 +42,7 @@
     <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
-          <span class="dot-online"></span> 3 satélites online
+          <span class="dot-online"></span> 4 satélites online
         </div>
         <span class="topbar__icon">🔔</span>
         <span class="topbar__icon">👤</span>
@@ -60,7 +60,10 @@
     </header>
 
     <main class="content">
-
+  <div class="dashboard-grid">
+    
+    <div class="left-column-wrapper">
+      
       <section class="stats-grid">
         <div class="stat-card stat-card--purple">
           <span class="stat-card__label">Bateria dos Satélites</span>
@@ -89,41 +92,49 @@
         </div>
       </section>
 
-      <section class="dashboard-grid">
-        <div class="map-panel">
-          <div class="panel-title">
-            MONITORAMENTO GLOBAL — DADOS AO VIVO
-            <span class="badge badge--live">AO VIVO</span>
+      <div class="map-panel">
+        <div class="panel-title">
+          MONITORAMENTO GLOBAL — DADOS AO VIVO
+          <span class="badge badge--live">AO VIVO</span>
+        </div>
+        <div class="map-container" id="mapContainer">
+          <img src="./assets/img/mapa_brasil.png" alt="Mapa do Brasil" class="map-bg-image">
+        </div>
+        <div class="map-legend">
+          <div class="map-legend__item">
+            <div class="map-legend__dot" style="background:var(--color-red)"></div> Critico
           </div>
-          <div class="map-container" id="mapContainer">
-            <img src="./assets/img/mapa_brasil.png" alt="Mapa do Brasil" class="map-bg-image">
+          <div class="map-legend__item">
+            <div class="map-legend__dot" style="background:var(--color-orange)"></div> Aviso
           </div>
-          <div class="map-legend">
-            <div class="map-legend__item">
-              <div class="map-legend__dot" style="background:var(--color-red)"></div> Critico
-            </div>
-            <div class="map-legend__item">
-              <div class="map-legend__dot" style="background:var(--color-orange)"></div> Aviso
-            </div>
-            <div class="map-legend__item">
-              <div class="map-legend__dot" style="background:var(--color-green)"></div> Normal
-            </div>
-            <div class="map-legend__item">
-              <div class="map-legend__dot" style="background:var(--color-cyan)"></div> Monitorando
-            </div>
+          <div class="map-legend__item">
+            <div class="map-legend__dot" style="background:var(--color-green)"></div> Normal
+          </div>
+          <div class="map-legend__item">
+            <div class="map-legend__dot" style="background:var(--color-cyan)"></div> Monitorando
           </div>
         </div>
+      </div>
 
-        <div class="alert-panel">
-          <div class="panel-title">
-            ALERTAS RECENTES
-            <span class="badge badge--live">AO VIVO</span>
-          </div>
-          <div class="alert-feed" id="alertFeed"></div>
+    </div> <div class="right-column-wrapper">
+      
+      <div class="video-panel">
+        <div class="panel-title">SCANNER DE SATÉLITE</div>
+        <div class="video-container">
+          <video src="./assets/img/satelite.mp4" autoplay loop muted playsinline></video>
         </div>
-      </section>
+      </div>
 
-    </main>
+      <div class="alert-panel">
+        <div class="panel-title">
+          ALERTAS RECENTES
+          <span class="badge badge--live">AO VIVO</span>
+        </div>
+        <div class="alert-feed" id="alertFeed">
+          </div>
+      </div>
+
+    </div> </div> </main>
   </div>
 
   <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
@@ -186,4 +197,5 @@
   <script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
