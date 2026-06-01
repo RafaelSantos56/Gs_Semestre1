@@ -289,3 +289,19 @@ body::before {
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 
 .divider { height: 1px; background: var(--border-color); margin: 24px 0; }
+
+.page-simulacao .topbar {
+    padding-top: 30px;
+}
+
+.page-simulacao .topbar__title {
+    margin-left: 20px;
+}
+
+.page-simulacao .topbar__title h1 {
+    margin-bottom: 10px;
+}
+
+.page-simulacao .topbar__title p {
+    margin-top: 5px;
+}
