@@ -104,3 +104,7 @@
   font-size: 13px;
   flex-shrink: 0;
 }
+
+.page-simulacao .content {
+    padding-top: 40px;
+}
