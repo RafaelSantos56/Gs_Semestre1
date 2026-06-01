@@ -5,31 +5,31 @@ const perguntas = [
     p: 'Qual satelite brasileiro e amplamente usado para monitoramento ambiental e deteccao de desastres?',
     ops: ['Hubble Space Telescope', 'CBERS-4A', 'GPS-III', 'Starlink'],
     certo: 1,
-    fb: 'CORRETO! O CBERS-4A e fruto da parceria Brasil-China e possui sensores que detectam variacoes no solo, agua e vegetacao em tempo real.'
+    fb: 'CORRETO! O CBERS-4A é fruto da parceria Brasil-China e possui sensores que detectam variações no solo, água e vegetacao em tempo real.'
   },
   {
     p: 'Qual o primeiro passo correto ao receber um alerta critico de enchente pelo DisasterAlert?',
-    ops: ['Ignorar e aguardar confirmacao por TV', 'Confirmar o alerta e acionar a Defesa Civil', 'Postar nas redes sociais', 'Desligar o sistema'],
-    certo: 1,
-    fb: 'CORRETO! Confirmar rapidamente e acionar a Defesa Civil e essencial — cada minuto conta numa enchente severa.'
+    ops: ['Confirmar o alerta e acionar a Defesa Civil', 'Ignorar e aguardar confirmacao por TV', 'Postar nas redes sociais', 'Desligar o sistema'],
+    certo: 0,
+    fb: 'CORRETO! Confirmar rapidamente e acionar a Defesa Civil é essencial — cada minuto conta numa enchente severa.'
   },
   {
     p: 'Qual tecnologia de satelite consegue enxergar atraves de nuvens densas e funcionar 24h por dia?',
-    ops: ['Camera RGB comum', 'Radar SAR (Synthetic Aperture Radar)', 'Sistema GPS convencional', 'Camera infravermelho simples'],
-    certo: 1,
+    ops: ['Camera RGB comum', 'Sistema GPS convencional', 'Camera infravermelho simples', 'Radar SAR (Synthetic Aperture Radar)'],
+    certo: 3, 
     fb: 'CORRETO! O Radar SAR usa micro-ondas que atravessam nuvens e funcionam dia e noite — perfeito para enchentes em dias nublados.'
   },
   {
     p: 'O que significa o ODS 13, vinculado ao projeto DisasterAlert?',
-    ops: ['Vida na agua', 'Acao contra a mudanca global do clima', 'Saude e bem-estar', 'Energia limpa e acessivel'],
-    certo: 1,
-    fb: 'CORRETO! O ODS 13 trata de acao climatica urgente. O DisasterAlert usa tecnologia espacial para mitigar impactos de desastres climaticos.'
+    ops: ['Vida na agua', 'Saude e bem-estar', 'Acao contra a mudanca global do clima', 'Energia limpa e acessivel'],
+    certo: 2, 
+    fb: 'CORRETO! O ODS 13 trata de uma ação climática urgente. O DisasterAlert usa tecnologia espacial para mitigar impactos de desastres climáticos.'
   },
   {
     p: 'Em quanto tempo satelites modernos detectam e transmitem dados de um foco de queimada?',
     ops: ['72 horas apos o inicio', 'Apenas 1 atualizacao por dia', 'Menos de 15 minutos', 'Somente durante o dia, a cada 8 horas'],
     certo: 2,
-    fb: 'CORRETO! Satelites como o GOES-16 atualizam imagens a cada 10-15 minutos, permitindo resposta quase em tempo real.'
+    fb: 'CORRETO! Satélites como o GOES-16 atualizam imagens a cada 10-15 minutos, permitindo resposta quase em tempo real.'
   },
 ];
 
@@ -94,10 +94,22 @@ function responder(escolha) {
   if (acertou) certas++; else erradas++;
   atualizarPlacar();
 
-  if (fb) { fb.textContent = q.fb; fb.className = `quiz-feedback show ${acertou ? 'correto' : 'errado'}`; }
-  if (btn) { btn.style.display = 'block'; btn.textContent = atual < perguntas.length - 1 ? 'PROXIMA QUESTAO →' : 'VER RESULTADO'; }
+  if (fb) {
+    // Se o usuário errar, trocamos a palavra "CORRETO!" por "INCORRETO!" no início da frase
+    let textoFeedback = q.fb;
+    if (!acertou) {
+      textoFeedback = textoFeedback.replace('CORRETO!', 'INCORRETO!');
+    }
+    
+    fb.textContent = textoFeedback; 
+    fb.className = `quiz-feedback show ${acertou ? 'correto' : 'errado'}`; 
+  }
+  
+  if (btn) { 
+    btn.style.display = 'block'; 
+    btn.textContent = atual < perguntas.length - 1 ? 'PROXIMA QUESTAO →' : 'VER RESULTADO'; 
+  }
 }
-
 function proxima() {
   atual++;
   if (atual >= perguntas.length) mostrarResultado();
