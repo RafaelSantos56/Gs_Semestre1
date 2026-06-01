@@ -9,6 +9,7 @@
   margin: 20px 0;
   overflow-x: auto;
   padding-bottom: 4px;
+  gap: 30px;
 }
 
 .pipeline__step {
@@ -31,7 +32,7 @@
 .pipeline__step + .pipeline__step::before {
   content: '→';
   position: absolute;
-  left: -14px;
+  left: -24px;
   top: 50%;
   transform: translateY(-50%);
   color: var(--text-muted);
