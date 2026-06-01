@@ -94,45 +94,40 @@
   justify-content: space-between;
 }
 /* =====================================================
-   EFEITO CRISTAL ULTRA TRANSPARENTE (VISIBILIDADE MÁXIMA DO FUNDO)
+   EFEITO VIDRO FUMÊ (EQUILÍBRIO ENTRE FUNDO E LEITURA)
    ===================================================== */
 
 /* Cards superiores de estatísticas (Bateria, Alertas Críticos, etc) */
 .stat-card {
-    /* Fundo quase 100% invisível (apenas 5% de opacidade para não sumir o contraste do texto) */
-    background-color: rgba(10, 16, 30, 0.05) !important;
+    /* Fundo escuro com 40% de opacidade */
+    background-color: rgba(10, 16, 30, 0.40) !important;
     
-    /* Reduzido o desfoque para as estrelas do fundo ficarem nítidas */
-    backdrop-filter: blur(2px) !important;
-    -webkit-backdrop-filter: blur(2px) !important;
+    /* Desfoque equilibrado para dar efeito de vidro e destacar as letras */
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
     
-    /* Uma bordinha branca muito sutil para o card não sumir completamente */
+    /* Borda sutil para delimitar o card */
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    
-    /* Sombra interna sutil para dar profundidade ao texto por cima do espaço */
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Painel do Mapa e Painel de Alertas Recentes */
 .map-panel, 
 .alert-panel {
-    /* Fundo quase 100% invisível (apenas 5% de opacidade) */
-    background-color: rgba(10, 16, 30, 0.05) !important;
+    /* Mesma opacidade de 40% para manter o padrão */
+    background-color: rgba(10, 16, 30, 0.40) !important;
     
-    backdrop-filter: blur(2px) !important;
-    -webkit-backdrop-filter: blur(2px) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
     
     border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
 }
 
-/* Se quiser que o Menu Lateral também fique ultra invisível */
+/* Menu Lateral (Sidebar) com uma opacidade ligeiramente maior para dar peso */
 .sidebar {
-    background: rgba(10, 16, 30, 0.15) !important; /* Só 15% para manter a divisão do menu */
-    backdrop-filter: blur(2px) !important;
-    -webkit-backdrop-filter: blur(2px) !important;
-}
-.map-container {
-    background: transparent !important;
+    background: rgba(10, 16, 30, 0.55) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
 }
 

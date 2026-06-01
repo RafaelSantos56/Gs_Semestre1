@@ -13,12 +13,12 @@ body {
   background-color: #05082e; /* fallback caso a imagem não carregue */
 }
 
-/* Overlay escuro sobre a imagem para manter legibilidade */
+/* CORRIGIDO: Overlay mais escuro (de 0.62 para 0.82) para dar mais contraste */
 body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: rgba(5, 10, 30, 0.62);
+  background: rgba(5, 10, 30, 0.82);
   z-index: 0;
   pointer-events: none;
 }
