@@ -3,31 +3,41 @@
    Sidebar fixa, topbar, wrapper e estrutura geral
    ===================================================== */
 
+/* === FUNDO GLOBAL COM IMAGEM === */
+body {
+  background-image: url('../assets/img/fundo_site.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #05082e; /* fallback caso a imagem não carregue */
+}
+
+/* Overlay escuro sobre a imagem para manter legibilidade */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 30, 0.62);
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* === WRAPPER PRINCIPAL === */
 .main-wrapper {
   margin-left: var(--sidebar-w);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #0d121f; /* Fundo integrado do painel igual à referência */
-  padding: 0; /* Zera os paddings externos para a utilitária colar nas bordas */
+  background-color: transparent; /* Era #0d121f — agora deixa o fundo aparecer */
+  padding: 0;
   box-sizing: border-box;
-  transition: background-color 0.3s ease; /* Transição suave para quando o caos ativar */
-}
-
-/* Garante que o fundo fixo #0d121f fique transparente se o seu script 
-   adicionar uma classe de caos, permitindo que o piscar vermelho apareça por trás de tudo.
-*/
-body.modo-caos .main-wrapper,
-.main-wrapper.modo-caos,
-body.caos .main-wrapper,
-.main-wrapper.caos,
-body[class*="caos"] .main-wrapper {
-  background-color: transparent !important;
+  position: relative;
+  z-index: 1;
 }
 
 .content {
-  padding: 0 32px 32px 32px; /* Margem interna ajustada para alinhar com o teto */
+  padding: 0 32px 32px 32px;
   flex: 1;
 }
 
@@ -182,27 +192,25 @@ body[class*="caos"] .main-wrapper {
   margin-bottom: 20px;
 }
 
-/* A barra superior escura ajustada */
+/* A barra superior */
 .topbar__utility-bar {
   display: flex;
-  justify-content: flex-end; /* Empurra tudo para a extrema direita */
+  justify-content: flex-end;
   align-items: center;
-  background-color: transparent; /* Removida a faixa preta, herdando a cor padrão de baixo */
+  background-color: transparent;
   width: 100%;
   height: 45px;
   padding: 0 32px;
   box-sizing: border-box;
-  border-bottom: none; /* Linha dividia a área superior eliminada */
+  border-bottom: none;
 }
 
-/* Alinhamento fino dos elementos (Status, Sino e Usuário) */
 .topbar__utility-right {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espaçamento exato entre os itens */
+  gap: 20px;
 }
 
-/* Ícones cinzas da barra superior (sino e perfil) */
 .topbar__icon {
   color: #9CA3AF;
   font-size: 14px;
@@ -213,26 +221,23 @@ body[class*="caos"] .main-wrapper {
 }
 .topbar__icon:hover { opacity: 1; }
 
-/* Ajusta o espaçamento do título e do botão principal logo abaixo */
 .topbar__main {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Alinha o botão pela base do texto do título */
+  align-items: flex-end;
   padding: 24px 32px 16px 32px;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Ajuste fino da cor e tamanho do status para ficar igual ao da imagem */
 .topbar__status {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #6B7280; /* Cor cinza sutil para o texto */
+  color: #6B7280;
   font-size: 13px;
 }
 
-/* Deixa a bolinha verde mais viva e limpa */
 .dot-online {
   width: 8px;
   height: 8px;
@@ -241,36 +246,32 @@ body[class*="caos"] .main-wrapper {
   display: inline-block;
 }
 
-/* Alinhamento e aumento do tamanho do título principal */
 .topbar__title h1 {
-  font-size: 34px; /* Aumentado de 26px para 34px */
+  font-size: 34px;
   font-weight: 700;
   color: #ffffff;
   margin: 0 0 8px 0;
 }
 
-/* Aumento do tamanho do subtítulo */
 .topbar__title p {
-  font-size: 15px; /* Aumentado de 13px para 15px */
-  color: #8A92A6; /* Um cinza levemente mais legível */
+  font-size: 15px;
+  color: #8A92A6;
   margin: 0;
 }
 
-/* Container do botão na direita */
 .topbar__actions {
   display: flex;
   align-items: center;
 }
 
-/* Customização e aumento do tamanho do botão vermelho */
 .btn-caos {
   background-color: #ff1a1a;
   color: white;
   border: none;
-  padding: 14px 28px; /* Aumentado o espaçamento interno para encorpar o botão */
+  padding: 14px 28px;
   font-weight: bold;
-  font-size: 13px; /* Letras ligeiramente maiores e mais imponentes */
-  border-radius: 6px; /* Bordas um pouco mais arredondadas para combinar */
+  font-size: 13px;
+  border-radius: 6px;
   cursor: pointer;
   letter-spacing: 0.8px;
   text-transform: uppercase;
