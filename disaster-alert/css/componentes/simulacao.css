@@ -108,3 +108,38 @@
 .page-simulacao .content {
     padding-top: 40px;
 }
+
+.sim-resultado-box {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 700px;
+
+    z-index: 9999;
+
+    background: var(--bg-card);
+    border: 2px solid var(--color-cyan);
+    border-radius: 12px;
+
+    padding: 25px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+    animation: aparecerResultado 0.4s ease;
+}
+
+@keyframes aparecerResultado {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
