@@ -305,3 +305,25 @@ body::before {
 .page-simulacao .topbar__title p {
     margin-top: 5px;
 }
+
+.topbar {
+    padding-top: 40px;
+}
+
+.topbar__title {
+    margin-left: 20px;
+}
+
+.topbar__title h1 {
+    margin-bottom: 10px;
+}
+
+.topbar__title p {
+    margin-top: 5px;
+}
+
+/* Conteúdo principal mais afastado do topo */
+
+.content {
+    padding-top: 30px;
+}
