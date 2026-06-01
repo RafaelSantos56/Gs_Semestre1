@@ -1,8 +1,9 @@
 /* =====================================================
    DisasterAlert — css/components/cards.css
-   Stat cards, dashboard grid, alert panel
+   Stat cards, dashboard grid, alert panel (Futuristic Glow)
    ===================================================== */
 
+/* === GRID DE COMPONENTES SUPERIORES === */
 .stats-grid {
   display: flex;
   flex-direction: row;
@@ -10,20 +11,35 @@
   margin-bottom: 24px;
 }
 
+/* === ESTRUTURA BASE DOS CARDS (GLASSMORPHISM & FLUTUAÇÃO) === */
+.stat-card, 
+.map-panel, 
+.alert-panel {
+  /* Fundo de vidro fumê equilibrado e desfoque para leitura */
+  background-color: rgba(10, 16, 30, 0.40);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* Configurações de transição suave para o efeito flutuante */
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s ease, 
+              border-color 0.4s ease;
+  position: relative;
+}
+
+/* Configuração de dimensões exclusiva dos blocos pequenos de estatísticas */
 .stat-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 10px 16px; 
   display: flex;
   flex-direction: column;
   gap: 2px;           
-  position: relative;
   overflow: hidden;
   width: 11.7vw;
   height: 12vh;
 }
 
+/* Linha decorativa superior original do projeto */
 .stat-card::before {
   content: '';
   position: absolute;
@@ -33,16 +49,75 @@
   opacity: 0;
   transition: opacity var(--transition);
 }
+.stat-card:hover::before { 
+  opacity: 1; 
+}
 
-.stat-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
-.stat-card:hover::before { opacity: 1; }
-
+/* --- VARIÁVEIS DE COR ORIGINAIS --- */
 .stat-card--red    { --card-accent: var(--color-red); }
 .stat-card--orange { --card-accent: var(--color-orange); }
 .stat-card--cyan   { --card-accent: var(--color-cyan); }
 .stat-card--green  { --card-accent: var(--color-green); }
-.stat-card--purple  { --card-accent: var(--color-purple); }
+.stat-card--purple { --card-accent: var(--color-purple); }
 
+/* --- CUSTOMIZAÇÃO FUTURISTA COM GLOW INDIVIDUAL --- */
+
+/* 1. Card Roxo (Bateria) */
+.stat-card--purple {
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.05);
+}
+.stat-card--purple:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(168, 85, 247, 0.25);
+}
+
+/* 2. Card Vermelho (Alertas Críticos) */
+.stat-card--red {
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(239, 68, 68, 0.05);
+}
+.stat-card--red:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+}
+
+/* 3. Card Laranja (Em Monitoramento) */
+.stat-card--orange {
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(249, 115, 22, 0.05);
+}
+.stat-card--orange:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(249, 115, 22, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(249, 115, 22, 0.25);
+}
+
+/* 4. Card Ciano (Regiões Monitoradas) */
+.stat-card--cyan {
+  border: 1px solid rgba(6, 182, 212, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(6, 182, 212, 0.05);
+}
+.stat-card--cyan:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+/* 5. Card Verde (Uptime) */
+.stat-card--green {
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(16, 185, 129, 0.05);
+}
+.stat-card--green:hover {
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.25);
+}
+
+/* === TEXTOS INTERNOS DOS CARDS === */
 .stat-card__number {
   font-size: 24px;
   font-weight: 800;
@@ -65,21 +140,30 @@
   gap: 4px;
 }
 
-/* === DASHBOARD GRID === */
+/* === ESTRUTURA DO DASHBOARD GRID (CONTEÚDO INFERIOR) === */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 340px;
   gap: 20px;
 }
 
+/* PAINÉIS GRANDES (Mapa e Alertas Recentes) */
+.map-panel, 
 .alert-panel {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  border: 1px solid rgba(6, 182, 212, 0.15); /* Brilho ciano sutil */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(6, 182, 212, 0.03);
+}
+
+.map-panel:hover, 
+.alert-panel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.35);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(6, 182, 212, 0.12);
 }
 
 .panel-title {
@@ -93,41 +177,3 @@
   align-items: center;
   justify-content: space-between;
 }
-/* =====================================================
-   EFEITO VIDRO FUMÊ (EQUILÍBRIO ENTRE FUNDO E LEITURA)
-   ===================================================== */
-
-/* Cards superiores de estatísticas (Bateria, Alertas Críticos, etc) */
-.stat-card {
-    /* Fundo escuro com 40% de opacidade */
-    background-color: rgba(10, 16, 30, 0.40) !important;
-    
-    /* Desfoque equilibrado para dar efeito de vidro e destacar as letras */
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    
-    /* Borda sutil para delimitar o card */
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
-}
-
-/* Painel do Mapa e Painel de Alertas Recentes */
-.map-panel, 
-.alert-panel {
-    /* Mesma opacidade de 40% para manter o padrão */
-    background-color: rgba(10, 16, 30, 0.40) !important;
-    
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4) !important;
-}
-
-/* Menu Lateral (Sidebar) com uma opacidade ligeiramente maior para dar peso */
-.sidebar {
-    background: rgba(10, 16, 30, 0.55) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-}
-
