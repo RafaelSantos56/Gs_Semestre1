@@ -76,16 +76,15 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 const mapaPontos = [
-  { top:'58%', left:'35%', sev:'critico', label:'Sao Paulo'    },
-  { top:'52%', left:'37%', sev:'critico', label:'Petropolis'   },
-  { top:'38%', left:'28%', sev:'aviso',   label:'Mato Grosso'  },
-  { top:'22%', left:'42%', sev:'aviso',   label:'Fortaleza'    },
-  { top:'30%', left:'36%', sev:'aviso',   label:'Nordeste'     },
-  { top:'42%', left:'28%', sev:'normal',  label:'Para'         },
-  { top:'65%', left:'32%', sev:'critico', label:'Porto Alegre' },
-  { top:'60%', left:'33%', sev:'aviso',   label:'Blumenau'     },
+  { top:'69%', left:'58%', sev:'critico', label:'Sao Paulo'    },
+  { top:'67%', left:'64%', sev:'critico', label:'Petropolis'   },
+  { top:'52%', left:'41%', sev:'aviso',   label:'Mato Grosso'  },
+  { top:'24%', left:'69%', sev:'aviso',   label:'Fortaleza'    },
+  { top:'34%', left:'65%', sev:'aviso',   label:'Nordeste'     },
+  { top:'22%', left:'50%', sev:'normal',  label:'Para'         },
+  { top:'85%', left:'56%', sev:'critico', label:'Porto Alegre' },
+  { top:'77%', left:'59%', sev:'aviso',   label:'Blumenau'     },
 ];
-
 function renderMapa() {
   const mapa = document.getElementById('mapContainer');
   if (!mapa) return;
