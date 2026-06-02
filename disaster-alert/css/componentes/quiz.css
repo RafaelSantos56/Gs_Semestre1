@@ -118,8 +118,8 @@
   padding: 12px;
   border-radius: 8px;
   border: 1.5px solid var(--color-red);
-  background: transparent;
-  color: var(--color-red);
+  background: var(--color-red);
+  color: #fff;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -132,7 +132,10 @@
   gap: 8px;
 }
 
-.btn-sirene:hover { background: rgba(255,68,68,0.08); }
+.btn-sirene:hover { 
+  background: rgba(255,68,68,0.08); 
+  opacity: 0.9;
+}
 
 .btn-sirene.ativa {
   background: var(--color-red);
