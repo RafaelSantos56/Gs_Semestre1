@@ -66,25 +66,21 @@ body::before {
 }
 
 .sidebar__logo-icon {
-  width: 36px; height: 36px;
-  background: var(--color-cyan);
+  width: 50px; height: 50px;
+  background: #1e0a3c;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  font-size: 13px;
-  color: var(--bg-primary);
   flex-shrink: 0;
-  letter-spacing: -0.5px;
 }
 
-.logo-name {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-primary);
-  line-height: 1.2;
+.sidebar__logo-icon img {
+  width: 40px;
+  height: 40px;
+  margin-left: 6px;
+  display:flex;
+  align-items: center;
 }
 
 .logo-name strong { color: var(--color-cyan); }
