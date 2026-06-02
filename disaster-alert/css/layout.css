@@ -13,7 +13,7 @@ body {
   background-color: #05082e; /* fallback caso a imagem não carregue */
 }
 
-/* CORRIGIDO: Overlay mais escuro (de 0.62 para 0.82) para dar mais contraste */
+/* Overlay mais escuro para dar mais contraste */
 body::before {
   content: '';
   position: fixed;
@@ -29,7 +29,7 @@ body::before {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: transparent; /* Era #0d121f — agora deixa o fundo aparecer */
+  background-color: transparent;
   padding: 0;
   box-sizing: border-box;
   position: relative;
@@ -79,25 +79,68 @@ body::before {
   width: 40px;
   height: 40px;
   margin-left: 6px;
-  display:flex;
+  display: flex;
   align-items: center;
 }
 
 .logo-name strong { color: var(--color-cyan); }
 
-.logo-status {
+/* STATUS DOS SATÉLITES E ÍCONES (IGUAL AO DASHBOARD) */
+.sidebar__logo .logo-status {
+  position: fixed;
+  top: 14px; 
+  right: 32px; 
+  font-size: 13px;
+  color: #6B7280;
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 10px;
-  color: var(--text-muted);
-  margin-top: 2px;
+  gap: 20px; 
+  z-index: 150;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.sidebar__logo .logo-status {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Ícone do Sininho Dourado */
+.sidebar__logo .logo-status::after {
+  content: '🔔';
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  order: 2;
+  filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.3));
+}
+
+/* Ícone do Usuário */
+.sidebar__logo {
+  position: relative;
+}
+.sidebar__logo .logo-status::before {
+  content: '👤';
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  order: 3;
+  opacity: 0.6;
+}
+
+/* Fallback do status nativo do Dashboard */
+.topbar__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #6B7280;
+  font-size: 13px;
 }
 
 .dot-online {
   display: inline-block;
-  width: 7px; height: 7px;
-  background: var(--color-green);
+  width: 8px; height: 8px;
+  background-color: #10B981;
   border-radius: 50%;
   animation: blink 1.5s infinite;
   flex-shrink: 0;
@@ -226,20 +269,9 @@ body::before {
   box-sizing: border-box;
 }
 
-.topbar__status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #6B7280;
-  font-size: 13px;
-}
-
-.dot-online {
-  width: 8px;
-  height: 8px;
-  background-color: #10B981;
-  border-radius: 50%;
-  display: inline-block;
+/* Recuo lateral unificado */
+.topbar__title {
+  margin-left: 52px; 
 }
 
 .topbar__title h1 {
@@ -286,40 +318,17 @@ body::before {
 
 .divider { height: 1px; background: var(--border-color); margin: 24px 0; }
 
-.page-simulacao .topbar {
-    padding-top: 30px;
-}
-
-.page-simulacao .topbar__title {
-    margin-left: 20px;
-}
-
-.page-simulacao .topbar__title h1 {
-    margin-bottom: 10px;
-}
-
-.page-simulacao .topbar__title p {
-    margin-top: 5px;
-}
-
+/* === CONFIGURAÇÕES E COMPENSAÇÃO DE LOGO E TOPO === */
 .topbar {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
-.topbar__title {
-    margin-left: 20px;
+/* Mantém o comportamento de margem do topo idêntico e preserva 
+   o espaço para a logo aparecer perfeitamente em todas as páginas */
+.topbar:not(:has(.topbar__utility-bar)) {
+  margin-top: 45px;
 }
-
-.topbar__title h1 {
-    margin-bottom: 10px;
-}
-
-.topbar__title p {
-    margin-top: 5px;
-}
-
-/* Conteúdo principal mais afastado do topo */
 
 .content {
-    padding-top: 30px;
+  padding-top: 30px;
 }
