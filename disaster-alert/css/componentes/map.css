@@ -13,7 +13,7 @@
   gap: 10px;
   
   /* CONFIGURAÇÃO DE VIDRO: Mesma opacidade de 40% e desfoque dos cards superiores */
-  background-color: rgba(10, 16, 30, 0.40);
+  background-color: transparent;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   
