@@ -63,6 +63,7 @@ body::before {
   padding: 18px 16px;
   border-bottom: 1px solid var(--border-color);
   flex-shrink: 0;
+  position: relative;
 }
 
 .sidebar__logo-icon {
@@ -85,24 +86,20 @@ body::before {
 
 .logo-name strong { color: var(--color-cyan); }
 
-/* STATUS DOS SATÉLITES E ÍCONES (IGUAL AO DASHBOARD) */
+
+/* === STATUS DOS SATÉLITES E ÍCONES (CORRIGIDO) === */
 .sidebar__logo .logo-status {
   position: fixed;
-  top: 14px; 
+  top: 20px; 
   right: 32px; 
   font-size: 13px;
   color: #6B7280;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 20px; 
+  gap: 16px; 
   z-index: 150;
   margin: 0;
   white-space: nowrap;
-}
-
-.sidebar__logo .logo-status {
-  display: inline-flex;
-  align-items: center;
 }
 
 /* Ícone do Sininho Dourado */
@@ -113,12 +110,10 @@ body::before {
   align-items: center;
   order: 2;
   filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.3));
+  cursor: pointer;
 }
 
 /* Ícone do Usuário */
-.sidebar__logo {
-  position: relative;
-}
 .sidebar__logo .logo-status::before {
   content: '👤';
   font-size: 14px;
@@ -126,7 +121,9 @@ body::before {
   align-items: center;
   order: 3;
   opacity: 0.6;
+  cursor: pointer;
 }
+
 
 /* Fallback do status nativo do Dashboard */
 .topbar__status {

@@ -191,3 +191,40 @@ window.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < 3; i++) setTimeout(alertaAleatorio, i * 300);
   setInterval(alertaAleatorio, 5000);
 });
+
+function ativarCaos() {
+  caosAtivo = true;
+  
+  // 1. Faz a tela começar a piscar (adiciona a classe que você já tem)
+  document.body.classList.add('modo-caos');
+  
+  // 2. Modifica o texto do botão para dar um aviso
+  if (btnCaos) {
+    btnCaos.disabled = true; // Desabilita para evitar múltiplos cliques
+    btnCaos.textContent = 'SISTEMA EM ALERTA...';
+  }
+  
+  // 3. Liga a sirene matemática do próprio navegador
+  iniciarSirene();
+  
+  // Enche o feed com os alertas urgentes (mantive sua lógica original)
+  alertasUrgentes.forEach((a, i) => {
+    setTimeout(() => adicionarAlertaNoFeed(a), i * 600);
+  });
+
+  // 4. SEGURA POR 5 SEGUNDOS (5000ms) E REDIRECIONA
+  setTimeout(() => {
+    pararSirene(); // Desliga o som da sirene
+    
+    // Identifica se você já está dentro da pasta 'pages' ou na raiz
+    const emPages = window.location.pathname.includes('/pages/');
+    
+    if (emPages) {
+      // Se já estiver em outra página dentro de 'pages/', vai direto
+      window.location.href = 'simulacao.html';
+    } else {
+      // Se estiver na index.html (raiz), entra na pasta pages
+      window.location.href = 'pages/simulacao.html';
+    }
+  }, 5000);
+}
