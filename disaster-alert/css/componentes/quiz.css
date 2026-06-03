@@ -23,21 +23,22 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
   margin-bottom: 20px;
+  
 }
 
 .quiz-stat {
-  background: var(--bg-card);
+  background: rgba(30, 41, 59, 0.4); /* Cards estatísticos transparentes */
   border: 1px solid var(--border-color);
   border-radius: 6px;
   padding: 12px;
   text-align: center;
 }
 
-.quiz-stat__num   { font-size: 22px; font-weight: 800; color: var(--text-primary); }
+.quiz-stat__num   { font-size: 22px; font-weight: 800; color: #ffffff; }
 .quiz-stat__label { font-size: 10px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
 
 .quiz-qnum     { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
-.quiz-question { font-size: 15px; font-weight: 600; color: var(--text-primary); line-height: 1.5; margin-bottom: 18px; }
+.quiz-question { font-size: 15px; font-weight: 600; color: #ffffff; line-height: 1.5; margin-bottom: 18px; }
 
 .quiz-options {
   display: flex;
@@ -51,12 +52,12 @@
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
-  background: var(--bg-card);
+  background: rgba(30, 41, 59, 0.35);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   text-align: left;
   font-size: 13px;
-  color: var(--text-primary);
+  color: #ffffff;
   cursor: pointer;
   transition: all var(--transition);
   width: 100%;
@@ -65,23 +66,23 @@
 .quiz-option:hover:not(:disabled) {
   border-color: var(--color-cyan);
   color: var(--color-cyan);
-  background: rgba(0,212,255,0.04);
+  background: rgba(0, 212, 255, 0.08);
 }
 
 .quiz-option:disabled { pointer-events: none; opacity: 0.6; }
 
 .quiz-option.correto {
   border-color: var(--color-green);
-  background: rgba(34,197,94,0.08);
+  background: rgba(34, 197, 94, 0.12);
   color: var(--color-green);
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .quiz-option.errado {
   border-color: var(--color-red);
-  background: rgba(255,68,68,0.08);
+  background: rgba(255, 68, 68, 0.12);
   color: var(--color-red);
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .quiz-option__letra {
