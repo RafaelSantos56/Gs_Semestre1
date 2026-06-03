@@ -79,12 +79,12 @@ body.modo-caos .dot-online {
 }
 
 .sidebar__logo-icon {
-  box-shadow: 0 0 16px rgba(0, 212, 255, 0.3);
+  box-shadow: none;
   transition: box-shadow var(--transition);
 }
 
 .sidebar__logo-icon:hover {
-  box-shadow: 0 0 24px rgba(0, 212, 255, 0.5);
+  box-shadow: none;
 }
 
 @keyframes radarSpin {
