@@ -37,7 +37,7 @@ body::before {
 }
 
 .content {
-  padding: 0 32px 32px 32px;
+  padding: 0 16px 32px 16px;
   flex: 1;
 }
 
@@ -47,15 +47,15 @@ body::before {
   top: 0; left: 0;
   width: var(--sidebar-w);
   height: 100vh;
-  background: var(--bg-sidebar);
-  border-right: 1px solid var(--border-color);
+  background: linear-gradient(180deg, #0a0620 0%, #0d0a2e 40%, #080520 100%);
+  border-right: 1px solid rgba(139, 92, 246, 0.25);
+  box-shadow: 4px 0 30px rgba(139, 92, 246, 0.12);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   z-index: 100;
   transition: transform var(--transition-slow);
 }
-
 .sidebar__logo {
   display: flex;
   align-items: center;
