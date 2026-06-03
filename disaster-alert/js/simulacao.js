@@ -80,11 +80,27 @@ function carregarCenario(idx) {
   const elOps = document.getElementById('sim-opcoes');
   if (elOps) {
     elOps.innerHTML = '';
-    c.opcoes.forEach((op, i) => {
+
+    // 1. Criamos um novo array mapeando o objeto original E guardando seu índice real
+    const opcoesEmbaralhadas = c.opcoes.map((op, i) => ({ ...op, indiceOriginal: i }));
+
+    // 2. Algoritmo Fisher-Yates para embaralhar as opções de forma aleatória
+    for (let i = opcoesEmbaralhadas.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [opcoesEmbaralhadas[i], opcoesEmbaralhadas[j]] = [opcoesEmbaralhadas[j], opcoesEmbaralhadas[i]];
+    }
+
+    // 3. Renderizamos as opções embaralhadas na tela
+    opcoesEmbaralhadas.forEach((op, i) => {
       const btn = document.createElement('button');
       btn.className = 'sim-option';
+      
+      // Mantém a letra correta (A, B, C) baseada na posição visual atual
       btn.innerHTML = `<span class="sim-option__letra">${String.fromCharCode(65 + i)}</span>${op.txt}`;
-      btn.addEventListener('click', () => escolherOpcao(i));
+      
+      // Passamos o 'indiceOriginal' para a função escolherOpcao saber o feedback correto
+      btn.addEventListener('click', () => escolherOpcao(op.indiceOriginal, btn));
+      
       elOps.appendChild(btn);
     });
   }
@@ -115,23 +131,47 @@ function atualizarTimer() {
   if (val)  val.textContent  = timerSeg + 's';
 }
 
-function escolherOpcao(idx) {
+function escolherOpcao(idx, botaoClicado = null) {
   clearInterval(timerInterval);
   const c    = cenarios[cenarioAtual];
   const opts = document.querySelectorAll('.sim-option');
 
-  opts.forEach((o, i) => {
-    o.disabled = true;
-    if (c.opcoes[i]?.certa) o.classList.add('selected-correct');
-    else if (i === idx && !c.opcoes[i]?.certa) o.classList.add('selected-wrong');
-  });
+  // Desabilita todos os botões após a escolha
+  opts.forEach((o) => { o.disabled = true; });
+
+  if (idx !== -1) {
+    const acertouClique = c.opcoes[idx]?.certa;
+    if (acertouClique && botaoClicado) {
+      botaoClicado.classList.add('selected-correct');
+    } else if (!acertouClique && botaoClicado) {
+      botaoClicado.classList.add('selected-wrong');
+      
+      // Destaca a alternativa que era a correta
+      opts.forEach((o) => {
+        if (o.textContent.includes(c.opcoes.find(op => op.certa).txt)) {
+          o.classList.add('selected-correct');
+        }
+      });
+    }
+  }
 
   const acertou = idx >= 0 && c.opcoes[idx]?.certa;
+  
+  // --- CORREÇÃO DO ÍNDICE DO FEEDBACK DO ERRO ---
+  // Como o array 'errado' tem 2 itens (índices 0 e 1), se o idx original for 2, 
+  // nós pegamos o segundo feedback (índice 1) para não quebrar.
+  let textoErro = '';
+  if (idx !== -1 && !acertou) {
+    // Se o índice original for maior que 0, tenta mapear para as opções de erro disponíveis
+    const erroIdx = idx === 2 ? 1 : 0; 
+    textoErro = c.feedback.errado[erroIdx] || c.feedback.errado[0];
+  }
+
   const fb = acertou
     ? c.feedback.certo
     : { titulo: idx === -1 ? 'TEMPO ESGOTADO!' : 'DECISAO INCORRETA',
         vidas:  idx === -1 ? '0 vidas salvas'  : '—',
-        msg:    idx === -1 ? 'A inacao tambem e uma decisao em situacoes reais.' : (c.feedback.errado[idx] || '') };
+        msg:    idx === -1 ? 'A inacao tambem e uma decisao em situacoes reais.' : textoErro };
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
   set('res-titulo', fb.titulo);
@@ -141,11 +181,14 @@ function escolherOpcao(idx) {
   const elTit = document.getElementById('res-titulo');
   if (elTit) elTit.style.color = acertou ? 'var(--color-green)' : 'var(--color-red)';
 
+  // --- GARANTE O AVANÇO DO CENÁRIO ---
   const btnProx = document.getElementById('sim-btn-prox');
   if (btnProx) {
-    const ultimo = cenarioAtual >= cenarios.length - 1;
-    btnProx.textContent    = ultimo ? 'REINICIAR' : 'PROXIMO CENARIO →';
-    btnProx.dataset.action = ultimo ? 'reiniciar' : 'proximo';
+    const ultimoCenario = cenarioAtual >= cenarios.length - 1;
+    
+    // Força o comportamento de avançar independentemente do tipo de erro
+    btnProx.textContent    = ultimoCenario ? 'REINICIAR SIMULACAO' : 'PROXIMO CENARIO →';
+    btnProx.dataset.action = ultimoCenario ? 'reiniciar' : 'proximo';
   }
 
   const elRes  = document.getElementById('sim-resultado');
