@@ -1,5 +1,5 @@
-// DisasterAlert — js/chat.js
 
+// Chatbot simples para responder perguntas frequentes sobre o projeto
 (function () {
 
   // ── Base de respostas por palavras-chave ─────────────────────────────────
