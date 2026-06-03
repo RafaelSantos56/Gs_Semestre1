@@ -1,1 +1,151 @@
-# Gs_Semestre1
+# DisasterAlert 🛰️
+
+> Plataforma de monitoramento de desastres naturais via dados satelitais em tempo real.
+
+---
+
+## 📋 Descrição
+
+O **DisasterAlert** é uma solução web desenvolvida para a **Global Solution 2026/1 — FIAP**, com o tema *O Espaço é a Nova Fronteira*. A plataforma utiliza dados de satélites reais (GOES-16, CBERS-4A e AQUA/MODIS) para detectar, analisar e alertar sobre desastres naturais como enchentes, queimadas, deslizamentos e tempestades em tempo real, conectando a tecnologia espacial à proteção de vidas na Terra.
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+- **HTML5** — estrutura semântica
+- **CSS3** — estilização modular, responsividade com media queries, animações
+- **JavaScript** (ES6+) — interatividade, Web Audio API, manipulação do DOM
+- **Git / GitHub** — versionamento e colaboração
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+disaster-alert/
+├── index.html
+├── assets/
+│   └── img/
+│       ├── disasteralert-icon.svg
+│       ├── disasteralert-logo.jpg
+│       ├── mapa_brasil.png
+│       ├── satelite.mp4
+│       ├── avatar.png
+│       ├── icons/
+│       │   ├── satelite.png
+│       │   ├── ia.png
+│       │   ├── alerta.png
+│       │   ├── defesa.png
+│       │   ├── populacao.png
+│       │   ├── enchente.png
+│       │   ├── queimada.png
+│       │   ├── deslizamento.png
+│       │   └── tempestade.png
+│       ├── diego.jpg
+│       ├── igor.jpg
+│       ├── miguel.jpg
+│       └── rafael.jpg
+├── css/
+│   ├── main.css
+│   ├── variaveis.css
+│   ├── reset.css
+│   ├── layout.css
+│   ├── modal.css
+│   ├── animacoes.css
+│   ├── responsive.css
+│   └── componentes/
+│       ├── cards.css
+│       ├── badges.css
+│       ├── map.css
+│       ├── table.css
+│       ├── form.css
+│       ├── faq.css
+│       ├── team.css
+│       ├── pipeline.css
+│       ├── quiz.css
+│       └── simulacao.css
+├── js/
+│   ├── main.js
+│   ├── modal.js
+│   ├── dashboard.js
+│   ├── simulacao.js
+│   ├── quiz.js
+│   ├── faq.js
+│   ├── formulario.js
+│   ├── integrantes.js
+│   └── avatar.js
+└── pages/
+    ├── sobre.html
+    ├── dashboard.html
+    ├── simulacao.html
+    ├── quiz.html
+    ├── faq.html
+    ├── contato.html
+    └── integrantes.html
+```
+
+---
+
+## 🌐 Páginas
+
+| Página | Descrição |
+|---|---|
+| `index.html` | Dashboard principal com mapa, feed de alertas e scanner de satélite |
+| `pages/sobre.html` | Descrição do projeto, pipeline de funcionamento e tipos de desastre monitorados |
+| `pages/dashboard.html` | Central de alertas com tabela filtrável e modal de detalhes |
+| `pages/simulacao.html` | Simulação interativa de cenários de desastre |
+| `pages/quiz.html` | Quiz educativo sobre desastres naturais e satélites |
+| `pages/faq.html` | Perguntas frequentes sobre a plataforma |
+| `pages/contato.html` | Formulário de contato com validação |
+| `pages/integrantes.html` | Equipe do projeto com links para GitHub e LinkedIn |
+
+---
+
+## ✨ Funcionalidades
+
+- **Dashboard em tempo real** com feed de alertas atualizado automaticamente
+- **Mapa do Brasil** interativo com pontos de ocorrência por severidade
+- **Scanner de satélite** com vídeo animado de varredura
+- **Modo Caos** — simulação de emergência com sirene via Web Audio API
+- **Tabela de alertas** com filtros por severidade e status
+- **Simulação de desastres** com cenários e análise de risco
+- **Quiz** educativo sobre satélites e desastres naturais
+- **Avatar assistente** com curiosidades sobre os satélites GOES-16, CBERS-4A e AQUA/MODIS
+- **Layout totalmente responsivo** — mobile, tablet e desktop
+
+---
+
+## 🛰️ Satélites Utilizados
+
+| Satélite | Origem | Uso no projeto |
+|---|---|---|
+| GOES-16 | NASA/NOAA | Monitoramento de tempestades e enchentes |
+| CBERS-4A | INPE/China | Detecção de queimadas e deslizamentos |
+| AQUA/MODIS | NASA | Análise de focos de calor e queimadas |
+
+---
+
+## 🔗 Repositório
+
+[https://github.com/RafaelSantos56/Gs_Semestre1](https://github.com/RafaelSantos56/Gs_Semestre1)
+
+---
+
+## 👥 Autores
+
+| Nome | RM | Turma | GitHub | LinkedIn |
+|---|---|---|---|---|
+| Diego Gomes Gonçalves de Lima | 570335 | 1TDSPG | [dgxls](https://github.com/dgxls) | [LinkedIn](https://linkedin.com/in/diego-gomes-65339b408) |
+| Igor Rodrigues de Santana | 570651 | 1TDSPG | [igorodriguesd](https://github.com/igorodriguesd) | [LinkedIn](https://linkedin.com/in/igor-rodrigues-135aa72b2) |
+| Miguel Silva | 570219 | 1TDSPG | [miguelsilva71](https://github.com/miguelsilva71) | [LinkedIn](https://linkedin.com/in/miguel-silva-0a20073a9) |
+| Rafael Santos Mendonça Costa | 572368 | 1TDSPG | [RafaelSantos56](https://github.com/RafaelSantos56) | [LinkedIn](https://linkedin.com/in/rafael-santos-b09bba237) |
+
+---
+
+## 📞 Contato
+
+Dúvidas ou sugestões sobre o projeto podem ser enviadas pelo formulário na página [Contato](disaster-alert/pages/contato.html) ou diretamente pelo GitHub de qualquer integrante acima.
+
+---
+
+> Global Solution 2026/1 — FIAP — 1TDSPG
