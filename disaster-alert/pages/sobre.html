@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisasterAlert — Sobre</title>
   <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/componentes/chat.css">
 </head>
 
 <body>
@@ -150,37 +151,92 @@
     </main>
   </div>
 
-  <div class="floating-avatar">
+  <!-- AVATAR FLUTUANTE — clique abre o chat -->
+  <div class="floating-avatar" role="button" aria-label="Abrir assistente" tabindex="0">
+    <span class="chat-avatar-tooltip">Fale com o assistente</span>
     <img src="../assets/img/avatar.png" alt="Assistente DisasterAlert" class="avatar-robot-fixed">
   </div>
 
-  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-    <div class="modal modal--critico modal--sm">
+  <!-- MODAL CHAT IA -->
+  <div class="modal-overlay" id="modal-chat" role="dialog" aria-modal="true" aria-labelledby="chat-modal-title">
+    <div class="modal modal--info">
 
-      <!-- MODAL MODO CAOS -->
-      <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-        <div class="modal modal--critico modal--sm">
-          <div class="modal__header">
-            <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
-            <button class="modal__close" aria-label="Fechar">&times;</button>
+      <div class="modal__header">
+        <img src="../assets/img/avatar.png" alt="Assistente" class="chat-header-avatar">
+        <div class="chat-header-info">
+          <h2 id="chat-modal-title">Assistente DisasterAlert</h2>
+          <div class="chat-header-status">
+            <span class="chat-status-dot"></span>
+            <span>Online</span>
           </div>
-          <div class="modal__body">
-            <ul class="modal-caos__lista">
-              <li>Sirene sonora automatica</li>
-              <li>Animacao de fundo vermelho</li>
-              <li>Alertas urgentes no feed</li>
-            </ul>
-            <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+        </div>
+        <button class="modal__close" aria-label="Fechar chat">&times;</button>
+      </div>
+
+      <!-- Sugestões rápidas -->
+      <div class="chat-suggestions" id="chat-suggestions">
+        <button class="chat-suggestion">Como funciona o sistema?</button>
+        <button class="chat-suggestion">Quais desastres são monitorados?</button>
+        <button class="chat-suggestion">O que são os ODS?</button>
+        <button class="chat-suggestion">Quem fez o projeto?</button>
+      </div>
+
+      <!-- Mensagens -->
+      <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg chat-msg--bot">
+          <div class="chat-msg__avatar">
+            <img src="../assets/img/avatar.png" alt="Bot">
           </div>
-          <div class="modal__footer">
-            <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
-            <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+          <div>
+            <div class="chat-msg__bubble">Olá! Sou o assistente do DisasterAlert 🛰️ Como posso te ajudar hoje?</div>
           </div>
         </div>
       </div>
 
-      <script src="../js/modal.js"></script>
-      <script src="../js/main.js"></script>
+      <!-- Input -->
+      <div class="chat-input-area">
+        <textarea
+          id="chat-input"
+          class="chat-input"
+          placeholder="Digite sua mensagem…"
+          rows="1"
+          aria-label="Mensagem"
+        ></textarea>
+        <button id="chat-send" class="chat-send-btn" aria-label="Enviar">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+          <li>Alertas urgentes no feed</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/chat.js"></script>
 
 </body>
 
