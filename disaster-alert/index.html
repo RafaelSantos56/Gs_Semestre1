@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisasterAlert — Dashboard</title>
+  <link rel="icon" href="./assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -12,13 +13,13 @@
 
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="./assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+      <div class="sidebar__logo-icon">
+        <img src="./assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
       <a href="index.html" class="nav-item active"><span class="nav-icon">⬡</span> Dashboard</a>
       <a href="pages/sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
@@ -31,6 +32,7 @@
       <a href="./pages/contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
       <a href="./pages/integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
     </nav>
+    <footer class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDSPG</footer>
   </aside>
 
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
@@ -61,85 +63,98 @@
     </header>
 
     <main class="content">
-  <div class="dashboard-grid">
-    
-    <div class="left-column-wrapper">
-      
-      <section class="stats-grid">
-        <div class="stat-card stat-card--purple">
-          <span class="stat-card__label">Bateria dos Satélites</span>
-          <span class="stat-card__number" data-count="92" data-suffix="%">0</span>
-          <span class="stat-card__sub" style="color:var(--color-green-2)">⚡ solar estável</span>
-        </div>
-        <div class="stat-card stat-card--red">
-          <span class="stat-card__label">Alertas Criticos</span>
-          <span class="stat-card__number" data-count="7">0</span>
-          <span class="stat-card__sub" style="color:var(--color-red)">▲ 3 hoje</span>
-        </div>
-        <div class="stat-card stat-card--orange">
-          <span class="stat-card__label">Em Monitoramento</span>
-          <span class="stat-card__number" data-count="23">0</span>
-          <span class="stat-card__sub" style="color:var(--color-orange)">● ativos</span>
-        </div>
-        <div class="stat-card stat-card--cyan">
-          <span class="stat-card__label">Regioes Monitoradas</span>
-          <span class="stat-card__number" data-count="142">0</span>
-          <span class="stat-card__sub" style="color:var(--color-cyan)">● via satelite</span>
-        </div>
-        <div class="stat-card stat-card--green">
-          <span class="stat-card__label">Uptime do Sistema</span>
-          <span class="stat-card__number" data-count="98">0</span>
-          <span class="stat-card__sub" style="color:var(--color-green)">✓ estavel</span>
-        </div>
-      </section>
+      <div class="dashboard-grid">
 
-      <div class="map-panel">
-        <div class="panel-title">
-          MONITORAMENTO GLOBAL — DADOS AO VIVO
-          <span class="badge badge--live">AO VIVO</span>
+        <div class="left-column-wrapper">
+
+          <section class="stats-grid">
+            <div class="stat-card stat-card--purple">
+              <span class="stat-card__label">Bateria dos Satélites</span>
+              <span class="stat-card__number" data-count="92" data-suffix="%">0</span>
+              <span class="stat-card__sub stat-card__sub--green2">⚡ solar estável</span>
+            </div>
+            <div class="stat-card stat-card--red">
+              <span class="stat-card__label">Alertas Criticos</span>
+              <span class="stat-card__number" data-count="7">0</span>
+              <span class="stat-card__sub stat-card__sub--red">▲ 3 hoje</span>
+            </div>
+            <div class="stat-card stat-card--orange">
+              <span class="stat-card__label">Em Monitoramento</span>
+              <span class="stat-card__number" data-count="23">0</span>
+              <span class="stat-card__sub stat-card__sub--orange">● ativos</span>
+            </div>
+            <div class="stat-card stat-card--cyan">
+              <span class="stat-card__label">Regioes Monitoradas</span>
+              <span class="stat-card__number" data-count="142">0</span>
+              <span class="stat-card__sub stat-card__sub--cyan">● via satelite</span>
+            </div>
+            <div class="stat-card stat-card--green">
+              <span class="stat-card__label">Uptime do Sistema</span>
+              <span class="stat-card__number" data-count="98">0</span>
+              <span class="stat-card__sub stat-card__sub--green">✓ estavel</span>
+            </div>
+          </section>
+
+          <div class="map-panel">
+            <div class="panel-title">
+              MONITORAMENTO GLOBAL — DADOS AO VIVO
+              <span class="badge badge--live">AO VIVO</span>
+            </div>
+            <div class="map-container" id="mapContainer">
+              <img src="./assets/img/mapa_brasil.png" alt="Mapa do Brasil" class="map-bg-image">
+            </div>
+            <div class="map-legend">
+              <div class="map-legend__item">
+                <div class="map-legend__dot map-legend__dot--red"></div> Critico
+              </div>
+              <div class="map-legend__item">
+                <div class="map-legend__dot map-legend__dot--orange"></div> Aviso
+              </div>
+              <div class="map-legend__item">
+                <div class="map-legend__dot map-legend__dot--green"></div> Normal
+              </div>
+              <div class="map-legend__item">
+                <div class="map-legend__dot map-legend__dot--cyan"></div> Monitorando
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="map-container" id="mapContainer">
-          <img src="./assets/img/mapa_brasil.png" alt="Mapa do Brasil" class="map-bg-image">
+
+        <div class="right-column-wrapper">
+
+          <div class="video-panel">
+            <div class="panel-title">SCANNER DE SATÉLITE</div>
+            <div class="video-container">
+              <video src="./assets/video/satelite.mp4" autoplay loop muted playsinline></video>
+            </div>
+          </div>
+
+          <div class="alert-panel">
+            <div class="panel-title">
+              ALERTAS RECENTES
+              <span class="badge badge--live">AO VIVO</span>
+            </div>
+            <div class="alert-feed" id="alertFeed"></div>
+          </div>
+
         </div>
-        <div class="map-legend">
-          <div class="map-legend__item">
-            <div class="map-legend__dot" style="background:var(--color-red)"></div> Critico
-          </div>
-          <div class="map-legend__item">
-            <div class="map-legend__dot" style="background:var(--color-orange)"></div> Aviso
-          </div>
-          <div class="map-legend__item">
-            <div class="map-legend__dot" style="background:var(--color-green)"></div> Normal
-          </div>
-          <div class="map-legend__item">
-            <div class="map-legend__dot" style="background:var(--color-cyan)"></div> Monitorando
-          </div>
-        </div>
+
       </div>
+    </main>
 
-    </div> <div class="right-column-wrapper">
-      
-      <div class="video-panel">
-        <div class="panel-title">SCANNER DE SATÉLITE</div>
-        <div class="video-container">
-          <video src="./assets/video/satelite.mp4" autoplay loop muted playsinline></video>
-        </div>
-      </div>
+    <footer class="site-footer">
+      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+      <p>
+        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+        &bull;
+        <a href="./pages/contato.html">Contato</a>
+      </p>
+    </footer>
 
-      <div class="alert-panel">
-        <div class="panel-title">
-          ALERTAS RECENTES
-          <span class="badge badge--live">AO VIVO</span>
-        </div>
-        <div class="alert-feed" id="alertFeed">
-          </div>
-      </div>
-
-    </div> </div> 
-  </main>
-  <footer class="sidebar__footer">GS 2026 &bull; FIAP &bull; 1TDSPG</footer>
   </div>
 
+  <!-- MODAL ALERTA -->
   <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
     <div class="modal modal--critico">
       <div class="modal__header">
@@ -156,10 +171,10 @@
           <span>Impacto:</span><strong id="modal-alerta-pop"></strong>
           <span>Status:</span><strong id="modal-alerta-status"></strong>
         </div>
-        <div style="margin-top:12px">
-          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px">Nivel de risco:</div>
+        <div class="risk-bar-wrapper">
+          <div class="risk-bar-label">Nivel de risco:</div>
           <div class="risk-bar">
-            <div class="risk-bar__fill" id="modal-alerta-risco" style="width:0%"></div>
+            <div class="risk-bar__fill" id="modal-alerta-risco"></div>
           </div>
         </div>
       </div>
@@ -170,14 +185,15 @@
     </div>
   </div>
 
+  <!-- MODAL MODO CAOS -->
   <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
     <div class="modal modal--critico modal--sm">
       <div class="modal__header">
-        <h2 class="modal__title" style="color:var(--color-red)">⚠ Ativar Modo Caos?</h2>
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
         <button class="modal__close" aria-label="Fechar">&times;</button>
       </div>
       <div class="modal__body">
-        <p style="color:var(--text-secondary);font-size:13px;margin-bottom:12px">Isso vai ativar:</p>
+        <p class="modal-caos__intro">Isso vai ativar:</p>
         <ul class="modal-caos__lista">
           <li>Sirene sonora automatica</li>
           <li>Animacao de fundo vermelho</li>
