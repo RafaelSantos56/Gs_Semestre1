@@ -7,6 +7,9 @@
   <title>DisasterAlert — Dashboard</title>
   <link rel="icon" href="./assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/main.css">
+  <script src="js/modal.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
 </head>
 
 <body>
@@ -154,7 +157,6 @@
 
   </div>
 
-  <!-- MODAL ALERTA -->
   <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
     <div class="modal modal--critico">
       <div class="modal__header">
@@ -179,13 +181,12 @@
         </div>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-alerta')">Fechar</button>
+        <button class="btn btn--secondary" id="btn-fechar-alerta">Fechar</button>
         <button class="btn btn--danger">Acionar Defesa Civil</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL MODO CAOS -->
   <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
     <div class="modal modal--critico modal--sm">
       <div class="modal__header">
@@ -203,18 +204,11 @@
         <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
-        <button class="btn btn--danger" onclick="fecharModal('modal-caos'); window.ativarCaos && window.ativarCaos()">
-          ATIVAR
-        </button>
+        <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
+        <button class="btn btn--danger" id="btn-confirmar-caos">ATIVAR</button>
       </div>
     </div>
   </div>
 
-  <script src="js/modal.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/dashboard.js"></script>
-
 </body>
-
 </html>

@@ -46,3 +46,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.abrirModal  = abrirModal;
 window.fecharModal = fecharModal;
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+  const btnFecharAlerta = document.getElementById("btn-fechar-alerta");
+  const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
+  const btnConfirmarCaos = document.getElementById("btn-confirmar-caos");
+
+  // Evento para fechar o Modal de Alerta
+  if (btnFecharAlerta) {
+    btnFecharAlerta.addEventListener("click", () => {
+      fecharModal("modal-alerta");
+    });
+  }
+
+  // Evento para cancelar o Modo Caos
+  if (btnCancelarCaos) {
+    btnCancelarCaos.addEventListener("click", () => {
+      fecharModal("modal-caos");
+    });
+  }
+
+  // Evento para confirmar e ativar o Modo Caos
+  if (btnConfirmarCaos) {
+    btnConfirmarCaos.addEventListener("click", () => {
+      fecharModal("modal-caos");
+      
+      // Verifica se a função ativarCaos existe globalmente no sistema antes de chamar
+      if (window.ativarCaos) {
+        window.ativarCaos();
+      }
+    });
+  }
+});
