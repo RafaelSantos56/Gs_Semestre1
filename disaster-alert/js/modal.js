@@ -79,3 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
+
+  if (btnCancelarCaos) {
+    btnCancelarCaos.addEventListener("click", () => {
+      fecharModal("modal-caos");
+    });
+  }
+});

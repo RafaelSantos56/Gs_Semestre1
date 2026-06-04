@@ -7,19 +7,22 @@
   <title>DisasterAlert — Sobre</title>
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/componentes/chat.css">
+    <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/chat.js" defer></script>
 </head>
 
 <body>
 
   <aside class="sidebar" id="sidebar">
-   <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
       <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
       <a href="sobre.html" class="nav-item active"><span class="nav-icon">🛰</span> Sobre</a>
@@ -61,8 +64,7 @@
 
       <div class="section-header">
         <h2>Do Espaco a Protecao de Vidas</h2>
-        <p>O DisasterAlert usa dados de satelites para detectar, analisar e alertar sobre desastres naturais em tempo
-          real.</p>
+        <p>O DisasterAlert usa dados de satelites para detectar, analisar e alertar sobre desastres naturais em tempo real.</p>
       </div>
 
       <div class="pipeline">
@@ -104,39 +106,34 @@
           <div class="disaster-type__icon">🌊</div>
           <div>
             <div class="disaster-type__title">Enchentes</div>
-            <div class="disaster-type__desc">Sensores SAR detectam variacao do nivel de rios com precisao de metros,
-              mesmo atraves de nuvens e a noite.</div>
+            <div class="disaster-type__desc">Sensores SAR detectam variacao do nivel de rios com precisao de metros, mesmo atraves de nuvens e a noite.</div>
           </div>
         </div>
         <div class="disaster-type">
           <div class="disaster-type__icon">🔥</div>
           <div>
             <div class="disaster-type__title">Queimadas</div>
-            <div class="disaster-type__desc">Analise espectral infravermelho identifica focos ativos e calcula a direcao
-              de propagacao em tempo real.</div>
+            <div class="disaster-type__desc">Analise espectral infravermelho identifica focos ativos e calcula a direcao de propagacao em tempo real.</div>
           </div>
         </div>
         <div class="disaster-type">
           <div class="disaster-type__icon">⛰</div>
           <div>
             <div class="disaster-type__title">Deslizamentos</div>
-            <div class="disaster-type__desc">Modelos digitais de elevacao combinados com dados de chuva calculam o risco
-              geologico por encosta.</div>
+            <div class="disaster-type__desc">Modelos digitais de elevacao combinados com dados de chuva calculam o risco geologico por encosta.</div>
           </div>
         </div>
         <div class="disaster-type">
           <div class="disaster-type__icon">🌪</div>
           <div>
             <div class="disaster-type__title">Tempestades</div>
-            <div class="disaster-type__desc">Dados meteorologicos orbitais fornecem previsao de ate 6 horas de
-              antecedencia para evacuacao preventiva.</div>
+            <div class="disaster-type__desc">Dados meteorologicos orbitais fornecem previsao de ate 6 horas de antecedencia para evacuacao preventiva.</div>
           </div>
         </div>
       </div>
 
       <div class="divider"></div>
       
-
       <div class="section-header">
         <h2>Conexao com os ODS da ONU</h2>
         <p>O projeto contribui diretamente para os Objetivos de Desenvolvimento Sustentavel da ONU.</p>
@@ -147,7 +144,7 @@
         <span class="ods-badge ods-badge--cidades">ODS 11 — Cidades Sustentaveis</span>
         <span class="ods-badge ods-badge--clima">ODS 13 — Acao Climatica</span>
       </div>
-</main>
+    </main>
 
     <footer class="site-footer">
       <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
@@ -158,16 +155,13 @@
       </p>
     </footer>
 
-
   </div>
 
-  <!-- AVATAR FLUTUANTE -->
   <div class="floating-avatar" role="button" aria-label="Abrir assistente" tabindex="0">
     <span class="chat-avatar-tooltip">Fale com o assistente</span>
     <img src="../assets/img/avatar.png" alt="Assistente DisasterAlert" class="avatar-robot-fixed">
   </div>
 
-  <!-- MODAL CHAT IA -->
   <div class="modal-overlay" id="modal-chat" role="dialog" aria-modal="true" aria-labelledby="chat-modal-title">
     <div class="modal modal--info">
 
@@ -183,7 +177,6 @@
         <button class="modal__close" aria-label="Fechar chat">&times;</button>
       </div>
 
-      <!-- Sugestões rápidas -->
       <div class="chat-suggestions" id="chat-suggestions">
         <button class="chat-suggestion">Como funciona o sistema?</button>
         <button class="chat-suggestion">Quais desastres são monitorados?</button>
@@ -191,7 +184,6 @@
         <button class="chat-suggestion">Quem fez o projeto?</button>
       </div>
 
-      <!-- Mensagens -->
       <div class="chat-messages" id="chat-messages">
         <div class="chat-msg chat-msg--bot">
           <div class="chat-msg__avatar">
@@ -203,7 +195,6 @@
         </div>
       </div>
 
-      <!-- Input -->
       <div class="chat-input-area">
         <textarea
           id="chat-input"
@@ -222,7 +213,6 @@
     </div>
   </div>
 
-  <!-- MODAL MODO CAOS -->
   <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
     <div class="modal modal--critico modal--sm">
       <div class="modal__header">
@@ -238,17 +228,10 @@
         <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
         <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
       </div>
     </div>
   </div>
-  
-
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/chat.js"></script>
-
 </body>
-
 </html>
