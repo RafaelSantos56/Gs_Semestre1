@@ -43,6 +43,59 @@
         <span></span><span></span><span></span>
     </button>
 
+    <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
+        <div class="modal modal--critico">
+            <div class="modal__header">
+                <div>
+                    <span class="badge" id="modal-alerta-badge">CRITICO</span>
+                    <h2 class="modal__title" id="modal-alerta-titulo">Alerta</h2>
+                </div>
+                <button class="modal__close" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal__body">
+                <div class="modal-info-grid">
+                    <span>Detectado por:</span><strong id="modal-alerta-sat"></strong>
+                    <span>Horario:</span><strong id="modal-alerta-hora"></strong>
+                    <span>Impacto:</span><strong id="modal-alerta-pop"></strong>
+                    <span>Status:</span><strong id="modal-alerta-status"></strong>
+                </div>
+                <div class="risk-bar-wrapper">
+                    <div class="risk-bar-label">Nivel de risco:</div>
+                    <div class="risk-bar">
+                        <div class="risk-bar__fill" id="modal-alerta-risco"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--secondary" id="btn-fechar-alerta">Fechar</button>
+                <button class="btn btn--danger">Acionar Defesa Civil</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+        <div class="modal modal--critico modal--sm">
+            <div class="modal__header">
+                <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+                <button class="modal__close" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal__body">
+                <p class="modal-caos__intro">Isso vai ativar:</p>
+                <ul class="modal-caos__lista">
+                    <li>Sirene sonora automatica</li>
+                    <li>Animacao de fundo vermelho</li>
+                    <li>Cards piscando em alerta</li>
+                    <li>Alertas urgentes no feed</li>
+                </ul>
+                <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
+                <button class="btn btn--danger" id="btn-confirmar-caos">ATIVAR</button>
+            </div>
+        </div>
+    </div>
+
     <div class="main-wrapper">
 
         <div class="topbar__utility-bar">
@@ -145,7 +198,6 @@
 
             </div>
         </main>
-
         <footer class="site-footer">
             <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
             <p>
@@ -154,61 +206,6 @@
                 <a href="./pages/contato.html">Contato</a>
             </p>
         </footer>
-
-    </div>
-
-    <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
-        <div class="modal modal--critico">
-            <div class="modal__header">
-                <div>
-                    <span class="badge" id="modal-alerta-badge">CRITICO</span>
-                    <h2 class="modal__title" id="modal-alerta-titulo">Alerta</h2>
-                </div>
-                <button class="modal__close" aria-label="Fechar">&times;</button>
-            </div>
-            <div class="modal__body">
-                <div class="modal-info-grid">
-                    <span>Detectado por:</span><strong id="modal-alerta-sat"></strong>
-                    <span>Horario:</span><strong id="modal-alerta-hora"></strong>
-                    <span>Impacto:</span><strong id="modal-alerta-pop"></strong>
-                    <span>Status:</span><strong id="modal-alerta-status"></strong>
-                </div>
-                <div class="risk-bar-wrapper">
-                    <div class="risk-bar-label">Nivel de risco:</div>
-                    <div class="risk-bar">
-                        <div class="risk-bar__fill" id="modal-alerta-risco"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal__footer">
-                <button class="btn btn--secondary" id="btn-fechar-alerta">Fechar</button>
-                <button class="btn btn--danger">Acionar Defesa Civil</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-        <div class="modal modal--critico modal--sm">
-            <div class="modal__header">
-                <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
-                <button class="modal__close" aria-label="Fechar">&times;</button>
-            </div>
-            <div class="modal__body">
-                <p class="modal-caos__intro">Isso vai ativar:</p>
-                <ul class="modal-caos__lista">
-                    <li>Sirene sonora automatica</li>
-                    <li>Animacao de fundo vermelho</li>
-                    <li>Cards piscando em alerta</li>
-                    <li>Alertas urgentes no feed</li>
-                </ul>
-                <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
-            </div>
-            <div class="modal__footer">
-                <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
-                <button class="btn btn--danger" id="btn-confirmar-caos">ATIVAR</button>
-            </div>
-        </div>
-    </div>
-
+    </div> 
 </body>
 </html>
