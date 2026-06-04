@@ -35,6 +35,11 @@ body::before {
   position: relative;
   z-index: 1;
 }
+.dashboard-grid,
+.left-column-wrapper,
+.right-column-wrapper {
+  min-width: 0;
+}
 
 .content {
   padding: 0 16px 32px 16px;

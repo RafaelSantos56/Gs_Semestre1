@@ -1,195 +1,246 @@
 /* =====================================================
    DisasterAlert — css/responsive.css
-   Media queries — SEMPRE por ultimo no main.css
+   TODOS os @media centralizados — sempre último no main.css
+   Breakpoints: 480px | 768px | 992px | 1300px
    ===================================================== */
 
-/* === TABLET — ate 768px === */
+/* =====================================================
+   TABLET — até 768px
+   ===================================================== */
 @media (max-width: 768px) {
 
+  /* --- Layout / Sidebar --- */
   .sidebar {
     transform: translateX(-100%);
     z-index: 150;
+    transition: transform 0.3s ease;
   }
-
-  .sidebar.open {
-    transform: translateX(0);
+  /* --- Sidebar mobile sólida --- */
+  .sidebar {
+    background: linear-gradient(180deg, #0a0620 0%, #0d0a2e 40%, #080520 100%) !important;
+    box-shadow: 4px 0 30px rgba(0,0,0,0.8);
+    z-index: 300;
   }
-
-  .main-wrapper {
-    margin-left: 0;
-  }
-
+  .sidebar.open { transform: translateX(0); }
+  .main-wrapper { margin-left: 0; }
+  .hamburger { display: flex; }
+  .topbar { padding-left: 60px; padding-top: 20px; }
+  .topbar__title { margin-left: 0; }
+  .topbar__title p { display: none; }
+  .topbar__title h1 { font-size: 22px; }
+  .topbar__utility-bar { padding: 0 16px; }
   .hamburger {
-    display: flex;
+    z-index: 400;
   }
 
-  .topbar {
-    padding-left: 60px;
-  }
+  /* --- Grids --- */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .dashboard-grid { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
 
-  .topbar__title p {
-    display: none;
-  }
+  /* --- Cards --- */
+  .stat-card { width: auto; height: auto; min-height: 80px; }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* --- Pipeline --- */
+  .pipeline { overflow-x: auto; padding-bottom: 8px; gap: 20px; }
+  .pipeline__step { min-width: 110px; }
 
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
+  /* --- Sobre --- */
+  .disaster-types { grid-template-columns: 1fr; }
 
-  .grid-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* --- Satélites --- */
+  .sat-apres-card { gap: 14px; }
+  .sat-apres-img { width: 120px; }
 
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /* --- Tabela --- */
+  .table-wrapper { overflow-x: auto; }
+  .alerts-table { min-width: 600px; }
 
-  .pipeline {
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
+  /* --- Filtros --- */
+  .filters { flex-wrap: wrap; gap: 6px; }
 
-  .pipeline__step {
-    min-width: 110px;
-  }
+  /* --- Modal --- */
+  .modal { max-width: 95vw; }
+  .modal--lg, .modal--xl { max-width: 95vw; }
 
-  .disaster-types {
-    grid-template-columns: 1fr;
-  }
+  /* --- Avatar --- */
+  .floating-avatar { bottom: 20px; right: 20px; }
+  .avatar-robot-fixed { width: 100px; height: 100px; }
+  .chat-avatar-tooltip { display: none; }
 
-  .table-wrapper {
-    overflow-x: auto;
-  }
+  /* --- Quiz --- */
+  .quiz-stats { gap: 12px; }
 
-  .alerts-table {
-    min-width: 600px;
-  }
+  /* --- Simulação --- */
+  .scenario-stats { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* === MOBILE — ate 480px === */
+/* =====================================================
+   MOBILE — até 480px
+   ===================================================== */
 @media (max-width: 480px) {
 
-  .content {
-    padding: 16px;
-  }
+  /* --- Layout --- */
+  .content { padding: 12px 12px 24px; }
+  .topbar { padding: 12px 12px 0 52px; }
+  .topbar__title h1 { font-size: 16px; }
+  .topbar__utility-bar { display: none; }
 
-  .stats-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
+  /* --- Grids --- */
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr; }
 
-  .stat-card {
-    padding: 14px 16px;
-  }
+  /* --- Stat cards --- */
+  .stat-card { padding: 12px 14px; min-height: 70px; }
+  .stat-card__number { font-size: 22px; }
+  .stat-card__label { font-size: 10px; }
 
-  .stat-card__number {
-    font-size: 24px;
-  }
+  /* --- Section headers --- */
+  .section-header h2 { font-size: 14px; }
+  .section-header p  { font-size: 11px; }
 
-  .grid-2 {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-3 {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-4 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .topbar {
-    padding: 0 12px 0 56px;
-  }
-
-  .topbar__title h1 {
-    font-size: 14px;
-  }
-
-  .btn-caos {
-    font-size: 10px;
-    padding: 6px 10px;
-  }
-
-  .quiz-stats {
-    gap: 8px;
-  }
-
-  .quiz-stat__num {
-    font-size: 18px;
-  }
-
-  .scenario-stats {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
+  /* --- Pipeline mobile: vira coluna --- */
   .pipeline {
     flex-direction: column;
+    overflow-x: unset;
     gap: 8px;
   }
-
+  .pipeline__step { min-width: unset; width: 100%; }
   .pipeline__step + .pipeline__step::before {
     content: '↓';
     top: -14px;
     left: 50%;
     transform: translateX(-50%);
+    right: unset;
   }
 
-  .disaster-types {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
+  /* --- Sobre --- */
+  .disaster-types { grid-template-columns: 1fr; gap: 10px; }
+  .disaster-type { padding: 12px; gap: 10px; }
+  .disaster-type__icon { width: 36px; height: 36px; font-size: 18px; }
 
-  .filters {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 4px;
-  }
+  /* --- ODS --- */
+  .ods-list { flex-direction: column; }
+  .ods-badge { text-align: center; }
 
-  .faq-question {
-    font-size: 13px;
-    padding: 14px;
-  }
+  /* --- Satélites --- */
+  .sat-apres-card { flex-direction: column; }
+  .sat-apres-img  { width: 100%; height: 140px; }
+  .sat-apres-info { padding: 14px; }
+  .sat-apres-info h3 { font-size: 15px; }
 
-  .faq-answer {
-    padding: 0 14px 12px;
-    padding-top: 12px;
-  }
+  /* --- Tabela --- */
+  .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .alerts-table { min-width: 560px; }
+  .filter-label { display: none; }
+  .filters { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; gap: 6px; }
+  .filter-btn { flex-shrink: 0; }
 
-  .sim-option {
-    padding: 12px;
+  /* --- Botões --- */
+  .btn-caos { font-size: 10px; padding: 6px 10px; }
+  .btn { padding: 8px 16px; font-size: 12px; }
+
+  /* --- Modal --- */
+  .modal-overlay { align-items: flex-end; padding: 0; }
+  .modal {
+    border-radius: 16px 16px 0 0;
+    max-height: 90vh;
+    max-width: 100%;
+    transform: translateY(100%);
   }
+  .modal-overlay.is-open .modal { transform: translateY(0); }
+  .modal__header,
+  .modal__body,
+  .modal__footer { padding-left: 16px; padding-right: 16px; }
+  .modal__title  { font-size: 14px; }
+  .modal__footer { flex-direction: column-reverse; gap: 8px; }
+  .modal__footer .btn { width: 100%; }
+  .modal--mapa   { height: 85vh; border-radius: 16px 16px 0 0; }
+  .modal--foto   { max-width: 100%; border-radius: 16px 16px 0 0; }
+
+  /* --- Chat modal --- */
+  #modal-chat .modal {
+    height: 85vh;
+    max-width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+  .chat-suggestions { gap: 4px; }
+  .chat-suggestion  { font-size: 10px; padding: 3px 8px; }
+
+  /* --- Avatar --- */
+  .floating-avatar { bottom: 16px; right: 16px; }
+  .avatar-robot-fixed { width: 72px; height: 72px; }
+
+  /* --- Quiz --- */
+  .quiz-stats     { gap: 8px; }
+  .quiz-stat__num { font-size: 18px; }
+  .quiz-option    { padding: 10px 12px; font-size: 12px; }
+
+  /* --- Simulação --- */
+  .scenario-stats { grid-template-columns: 1fr; gap: 8px; }
+  .sim-option { padding: 10px 12px; font-size: 12px; }
+  .scenario-title { font-size: 13px; }
+  .scenario-desc  { font-size: 12px; }
+
+  /* --- Equipe --- */
+  .team-grid { grid-template-columns: 1fr; }
+
+  /* --- FAQ --- */
+  .faq-question { font-size: 13px; padding: 14px; }
+  .faq-answer   { padding: 12px 14px; font-size: 12px; }
+
+  /* --- Formulário --- */
+  .form-group { margin-bottom: 14px; }
 }
 
-/* === DESKTOP GRANDE — 1300px+ === */
+/* =====================================================
+   DESKTOP MÉDIO — 992px até 1299px
+   ===================================================== */
+@media (min-width: 992px) and (max-width: 1299px) {
+
+  .content { padding: 20px 24px 32px; }
+  .stats-grid { grid-template-columns: repeat(3, 1fr); }
+  .dashboard-grid { grid-template-columns: 1fr 320px; }
+  .stat-card__number { font-size: 28px; }
+}
+
+/* =====================================================
+   DESKTOP GRANDE — 1300px+
+   ===================================================== */
 @media (min-width: 1300px) {
 
-  .content {
-    padding: 28px 32px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .stat-card__number {
-    font-size: 34px;
-  }
-
-  .dashboard-grid {
-    grid-template-columns: 1fr 380px;
-  }
+  .content { padding: 28px 36px 40px; }
+  .stats-grid { grid-template-columns: repeat(5, 1fr); }
+  .stat-card__number { font-size: 34px; }
+  .dashboard-grid { grid-template-columns: 1fr 380px; }
+  .grid-3 { gap: 20px; }
+  .grid-4 { gap: 20px; }
+  .topbar__title h1 { font-size: 38px; }
+  .sidebar { width: 260px; }
+  .main-wrapper { margin-left: 260px; }
 }
 
-/* === REDUCAO DE MOVIMENTO === */
+/* =====================================================
+   SEM SCROLL HORIZONTAL em qualquer tela
+   ===================================================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* { box-sizing: border-box; }
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   REDUÇÃO DE MOVIMENTO (acessibilidade)
+   ===================================================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
