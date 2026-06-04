@@ -7,7 +7,10 @@ function abrirModal(id) {
   overlay.classList.add('is-open');
   document.body.style.overflow = 'hidden';
   const modal = overlay.querySelector('.modal');
-  if (modal) { modal.setAttribute('tabindex', '-1'); modal.focus(); }
+  if (modal) { 
+    modal.setAttribute('tabindex', '-1'); 
+    modal.focus(); 
+  }
 }
 
 function fecharModal(id) {
@@ -19,14 +22,14 @@ function fecharModal(id) {
   }
 }
 
-// fechar ao clicar no overlay
+// Fechar ao clicar no overlay (fora do modal)
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal-overlay')) {
     fecharModal(e.target.id);
   }
 });
 
-// fechar com ESC
+// Fechar com a tecla ESC
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
   document.querySelectorAll('.modal-overlay.is-open').forEach(o => {
@@ -34,21 +37,21 @@ document.addEventListener('keydown', (e) => {
   });
 });
 
-// ligar botoes X automaticamente
+// Expõe as funções globalmente para outros scripts usarem
+window.abrirModal  = abrirModal;
+window.fecharModal = fecharModal;
+
+// Inicialização dos eventos do DOM
 document.addEventListener('DOMContentLoaded', () => {
+  
+  // 1. Ligar os botões de fechar (X) automaticamente
   document.querySelectorAll('.modal__close').forEach(btn => {
     btn.addEventListener('click', () => {
       const overlay = btn.closest('.modal-overlay');
       if (overlay) fecharModal(overlay.id);
     });
   });
-});
 
-window.abrirModal  = abrirModal;
-window.fecharModal = fecharModal;
-
-document.addEventListener("DOMContentLoaded", () => {
-  
   const btnFecharAlerta = document.getElementById("btn-fechar-alerta");
   const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
   const btnConfirmarCaos = document.getElementById("btn-confirmar-caos");
@@ -76,16 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (window.ativarCaos) {
         window.ativarCaos();
       }
-    });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
-
-  if (btnCancelarCaos) {
-    btnCancelarCaos.addEventListener("click", () => {
-      fecharModal("modal-caos");
     });
   }
 });
