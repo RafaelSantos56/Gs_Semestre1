@@ -6,19 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisasterAlert — Central de Alertas</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
 </head>
 
 <body>
 
   <aside class="sidebar" id="sidebar">
-   <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
       <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
       <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
@@ -40,7 +43,7 @@
 
   <div class="main-wrapper">
 
-        <div class="topbar__utility-bar">
+    <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
           <span class="dot-online"></span> 4 satélites online
@@ -87,7 +90,7 @@
           </tbody>
         </table>
       </div>
-<div class="divider"></div>
+      <div class="divider"></div>
 
       <div class="section-header">
         <h2>Satélites em Operação</h2>
@@ -144,6 +147,7 @@
         </div>
       </div>
     </main>
+    
     <footer class="site-footer">
       <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
       <p>
@@ -155,7 +159,6 @@
 
   </div>
 
-  <!-- MODAL ALERTA -->
   <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
     <div class="modal modal--critico">
       <div class="modal__header">
@@ -177,13 +180,12 @@
         </div>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-alerta')">Fechar</button>
+        <button class="btn btn--secondary" id="btn-fechar-alerta">Fechar</button>
         <button class="btn btn--danger">Acionar Defesa Civil</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL MODO CAOS -->
   <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
     <div class="modal modal--critico modal--sm">
       <div class="modal__header">
@@ -199,16 +201,10 @@
         <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
         <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
       </div>
     </div>
   </div>
-
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/dashboard.js"></script>
-
 </body>
-
 </html>
