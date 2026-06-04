@@ -2,137 +2,138 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DisasterAlert — Simulacao</title>
-  <link rel="stylesheet" href="../css/main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisasterAlert — Simulacao</title>
+    <link rel="stylesheet" href="../css/main.css">
     <script src="../js/modal.js" defer></script>
-  <script src="../js/main.js" defer></script>
-  <script src="../js/simulacao.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/simulacao.js" defer></script>
 </head>
 
 <body class="page-simulacao">
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar__logo">
-      <div class="sidebar__logo-icon">
-        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-      </div>
-      <div class="sidebar__logo-text">
-        <span class="logo-name">Disaster<strong>Alert</strong></span>
-      </div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__logo">
+            <div class="sidebar__logo-icon">
+                <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+            </div>
+            <div class="sidebar__logo-text">
+                <span class="logo-name">Disaster<strong>Alert</strong></span>
+            </div>
+        </div>
+        <nav class="sidebar__nav">
+            <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+            <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+            <a href="simulacao.html" class="nav-item active"><span class="nav-icon">▷</span> Simulacao</a>
+            <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+        </nav>
+        <nav class="sidebar__nav-bottom">
+            <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+            <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+            <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+        </nav>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <div class="main-wrapper">
+
+        <div class="topbar__utility-bar">
+            <div class="topbar__utility-right">
+                <div class="topbar__status">
+                    <span class="dot-online"></span> 4 satélites online
+                </div>
+                <span class="topbar__icon">🔔</span>
+                <span class="topbar__icon">👤</span>
+            </div>
+        </div>
+        <header class="topbar">
+            <div class="topbar__title">
+                <h1>Simulação de Desastre</h1>
+                <p>Tome decisoes criticas e salve vidas</p>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <div class="scenario-card">
+                <span class="badge badge--critico">ALERTA SATELITAL — NIVEL 4</span>
+                <h2 class="scenario-titulo" id="sim-titulo">Carregando cenario...</h2>
+                <p class="scenario-desc" id="sim-desc"></p>
+            </div>
+
+            <div class="scenario-stats">
+                <div class="scenario-stat">
+                    <div class="scenario-stat__num" id="sim-stat-num-0">—</div>
+                    <div class="scenario-stat__label" id="sim-stat-label-0">DADO 1</div>
+                </div>
+                <div class="scenario-stat">
+                    <div class="scenario-stat__num" id="sim-stat-num-1">—</div>
+                    <div class="scenario-stat__label" id="sim-stat-label-1">DADO 2</div>
+                </div>
+                <div class="scenario-stat">
+                    <div class="scenario-stat__num" id="sim-stat-num-2">—</div>
+                    <div class="scenario-stat__label" id="sim-stat-label-2">DADO 3</div>
+                </div>
+            </div>
+
+            <div class="timer-row">
+                <span>Tempo para decidir:</span>
+                <div class="timer-bar">
+                    <div class="timer-fill" id="sim-timer-fill"></div>
+                </div>
+                <span class="timer-val" id="sim-timer-val">15s</span>
+            </div>
+
+            <div id="sim-jogo">
+                <p class="sim-pergunta" id="sim-pergunta">Carregando...</p>
+                <div id="sim-opcoes"></div>
+            </div>
+
+            <div id="sim-resultado" class="sim-resultado-box hidden">
+                <h3 class="sim-resultado__titulo" id="res-titulo">—</h3>
+                <div class="sim-resultado__vidas" id="res-vidas">—</div>
+                <p class="sim-resultado__msg" id="res-msg"></p>
+                <button class="btn btn--primary" id="sim-btn-prox" data-action="proximo">
+                    PROXIMO CENARIO →
+                </button>
+            </div>
+
+        </main>
+        <footer class="site-footer">
+            <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+            <p>
+                <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+                &bull;
+                <a href="./pages/contato.html">Contato</a>
+            </p>
+        </footer>
+
     </div>
-    <nav class="sidebar__nav">
-      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-      <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-      <a href="simulacao.html" class="nav-item active"><span class="nav-icon">▷</span> Simulacao</a>
-      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
-    </nav>
-    <nav class="sidebar__nav-bottom">
-      <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-      <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
-      <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
-    </nav>
-  </aside>
 
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-
-  <div class="main-wrapper">
-
-    <div class="topbar__utility-bar">
-      <div class="topbar__utility-right">
-        <div class="topbar__status">
-          <span class="dot-online"></span> 4 satélites online
+    <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+        <div class="modal modal--critico modal--sm">
+            <div class="modal__header">
+                <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+                <button class="modal__close" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal__body">
+                <ul class="modal-caos__lista">
+                    <li>Sirene sonora automatica</li>
+                    <li>Animacao de fundo vermelho</li>
+                </ul>
+                <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
+                <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+            </div>
         </div>
-        <span class="topbar__icon">🔔</span>
-        <span class="topbar__icon">👤</span>
-      </div>
     </div>
-    <header class="topbar">
-      <div class="topbar__title">
-        <h1>Simulação de Desastre</h1>
-        <p>Tome decisoes criticas e salve vidas</p>
-      </div>
-    </header>
+</body>
 
-    <main class="content">
-
-      <div class="scenario-card">
-        <span class="badge badge--critico">ALERTA SATELITAL — NIVEL 4</span>
-        <h2 class="scenario-titulo" id="sim-titulo">Carregando cenario...</h2>
-        <p class="scenario-desc" id="sim-desc"></p>
-      </div>
-
-      <div class="scenario-stats">
-        <div class="scenario-stat">
-          <div class="scenario-stat__num" id="sim-stat-num-0">—</div>
-          <div class="scenario-stat__label" id="sim-stat-label-0">DADO 1</div>
-        </div>
-        <div class="scenario-stat">
-          <div class="scenario-stat__num" id="sim-stat-num-1">—</div>
-          <div class="scenario-stat__label" id="sim-stat-label-1">DADO 2</div>
-        </div>
-        <div class="scenario-stat">
-          <div class="scenario-stat__num" id="sim-stat-num-2">—</div>
-          <div class="scenario-stat__label" id="sim-stat-label-2">DADO 3</div>
-        </div>
-      </div>
-
-      <div class="timer-row">
-        <span>Tempo para decidir:</span>
-        <div class="timer-bar">
-          <div class="timer-fill" id="sim-timer-fill"></div>
-        </div>
-        <span class="timer-val" id="sim-timer-val">15s</span>
-      </div>
-
-      <div id="sim-jogo">
-        <p class="sim-pergunta" id="sim-pergunta">Carregando...</p>
-        <div id="sim-opcoes"></div>
-      </div>
-
-      <div id="sim-resultado" class="sim-resultado-box hidden">
-        <h3 class="sim-resultado__titulo" id="res-titulo">—</h3>
-        <div class="sim-resultado__vidas" id="res-vidas">—</div>
-        <p class="sim-resultado__msg" id="res-msg"></p>
-        <button class="btn btn--primary" id="sim-btn-prox" data-action="proximo">
-          PROXIMO CENARIO →
-        </button>
-      </div>
-
-    </main>
-    <footer class="site-footer">
-      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
-      <p>
-        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
-        &bull;
-        <a href="./pages/contato.html">Contato</a>
-      </p>
-    </footer>
-
-  </div>
-
-  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-    <div class="modal modal--critico modal--sm">
-      <div class="modal__header">
-        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
-        <button class="modal__close" aria-label="Fechar">&times;</button>
-      </div>
-      <div class="modal__body">
-        <ul class="modal-caos__lista">
-          <li>Sirene sonora automatica</li>
-          <li>Animacao de fundo vermelho</li>
-        </ul>
-        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
-      </div>
-      <div class="modal__footer">
-        <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
-        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
-      </div>
-    </div>
-  </div>
-</body> 
 </html>

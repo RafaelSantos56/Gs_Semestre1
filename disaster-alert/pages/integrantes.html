@@ -1,118 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DisasterAlert — Integrantes</title>
-  <link rel="stylesheet" href="../css/main.css">
-  <script src="../js/modal.js" defer></script>
-  <script src="../js/main.js" defer></script>
-  <script src="../js/integrantes.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisasterAlert — Integrantes</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/modal.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/integrantes.js" defer></script>
 </head>
+
 <body>
 
-  <aside class="sidebar" id="sidebar">
-    <div class="sidebar__logo">
-      <div class="sidebar__logo-icon">
-        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-      </div>
-      <div class="sidebar__logo-text">
-        <span class="logo-name">Disaster<strong>Alert</strong></span>
-      </div>
-    </div>
-    <nav class="sidebar__nav">
-      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-      <a href="dashboard.html"   class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
-    </nav>
-    <nav class="sidebar__nav-bottom">
-      <a href="faq.html"         class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-      <a href="contato.html"     class="nav-item"><span class="nav-icon">✉</span> Contato</a>
-      <a href="integrantes.html" class="nav-item active"><span class="nav-icon">◉</span> Integrantes</a>
-    </nav>
-  </aside>
-
-  <div class="sidebar-overlay" id="sidebarOverlay"></div>
-  <button class="hamburger" id="hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-
-  <div class="main-wrapper">
-
-    <div class="topbar__utility-bar">
-      <div class="topbar__utility-right">
-        <div class="topbar__status">
-          <span class="dot-online"></span> 4 satélites online
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar__logo">
+            <div class="sidebar__logo-icon">
+                <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+            </div>
+            <div class="sidebar__logo-text">
+                <span class="logo-name">Disaster<strong>Alert</strong></span>
+            </div>
         </div>
-        <span class="topbar__icon">🔔</span>
-        <span class="topbar__icon">👤</span>
-      </div>
+        <nav class="sidebar__nav">
+            <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+            <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+            <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+            <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+            <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+        </nav>
+        <nav class="sidebar__nav-bottom">
+            <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+            <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+            <a href="integrantes.html" class="nav-item active"><span class="nav-icon">◉</span> Integrantes</a>
+        </nav>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+
+    <div class="main-wrapper">
+
+        <div class="topbar__utility-bar">
+            <div class="topbar__utility-right">
+                <div class="topbar__status">
+                    <span class="dot-online"></span> 4 satélites online
+                </div>
+                <span class="topbar__icon">🔔</span>
+                <span class="topbar__icon">👤</span>
+            </div>
+        </div>
+        <header class="topbar">
+            <div class="topbar__title">
+                <h1>Integrantes</h1>
+                <p>Equipe responsavel pelo DisasterAlert — GS 2026</p>
+            </div>
+        </header>
+
+        <main class="content">
+
+            <div class="section-header">
+                <h2>Nossa Equipe</h2>
+                <p>Global Solution 2026 &mdash; 1TDSPG &mdash; FIAP</p>
+            </div>
+
+            <div class="team-grid" id="teamGrid"></div>
+
+        </main>
+        <footer class="site-footer">
+            <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+            <p>
+                <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+                &bull;
+                <a href="./pages/contato.html">Contato</a>
+            </p>
+        </footer>
+
     </div>
-    <header class="topbar">
-      <div class="topbar__title">
-        <h1>Integrantes</h1>
-        <p>Equipe responsavel pelo DisasterAlert — GS 2026</p>
-      </div>
-    </header>
 
-    <main class="content">
-
-      <div class="section-header">
-        <h2>Nossa Equipe</h2>
-        <p>Global Solution 2026 &mdash; 1TDSPG &mdash; FIAP</p>
-      </div>
-
-      <div class="team-grid" id="teamGrid"></div>
-
-    </main>
-    <footer class="site-footer">
-      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
-      <p>
-        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
-        &bull;
-        <a href="./pages/contato.html">Contato</a>
-      </p>
-    </footer>
-
-  </div>
-
-  <div class="modal-overlay" id="modal-foto" role="dialog" aria-modal="true" aria-labelledby="foto-nome">
-    <div class="modal modal--sm">
-      <div class="modal__header">
-        <h2 class="modal__title" id="foto-nome">Diego </h2>
-        <button class="modal__close" aria-label="Fechar">&times;</button>
-      </div>
-      <div class="modal__body modal__body--center">
-        <div class="foto-avatar" id="foto-avatar"></div>
-        <p class="foto-rm" id="foto-rm"></p>
-        <span class="badge badge--info">TRIPULANTE</span>
-      </div>
-      <div class="modal__footer">
-        <button class="btn btn--secondary" id="btn-fechar-foto">Fechar</button>
-      </div>
+    <div class="modal-overlay" id="modal-foto" role="dialog" aria-modal="true" aria-labelledby="foto-nome">
+        <div class="modal modal--sm">
+            <div class="modal__header">
+                <h2 class="modal__title" id="foto-nome">Diego </h2>
+                <button class="modal__close" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal__body modal__body--center">
+                <div class="foto-avatar" id="foto-avatar"></div>
+                <p class="foto-rm" id="foto-rm"></p>
+                <span class="badge badge--info">TRIPULANTE</span>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--secondary" id="btn-fechar-foto">Fechar</button>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-    <div class="modal modal--critico modal--sm">
-      <div class="modal__header">
-        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
-        <button class="modal__close" aria-label="Fechar">&times;</button>
-      </div>
-      <div class="modal__body">
-        <ul class="modal-caos__lista">
-          <li>Sirene sonora automatica</li>
-          <li>Animacao de fundo vermelho</li>
-        </ul>
-        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
-      </div>
-      <div class="modal__footer">
-        <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
-        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
-      </div>
+    <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+        <div class="modal modal--critico modal--sm">
+            <div class="modal__header">
+                <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+                <button class="modal__close" aria-label="Fechar">&times;</button>
+            </div>
+            <div class="modal__body">
+                <ul class="modal-caos__lista">
+                    <li>Sirene sonora automatica</li>
+                    <li>Animacao de fundo vermelho</li>
+                </ul>
+                <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+            </div>
+            <div class="modal__footer">
+                <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
+                <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+            </div>
+        </div>
     </div>
-  </div>
 </body>
+
 </html>
