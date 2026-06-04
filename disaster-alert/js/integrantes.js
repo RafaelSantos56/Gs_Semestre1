@@ -1,10 +1,5 @@
 // DisasterAlert — js/integrantes.js
 // Renderiza os cards e abre o modal de foto
-//
-// INSTRUCOES:
-// 1. Substitua os dados abaixo pelos reais da equipe
-// 2. Coloque as fotos em ../assets/img/
-// 3. Preencha github e linkedin com os links reais
 
 const integrantes = [
   {
@@ -31,7 +26,7 @@ const integrantes = [
     github:   'https://github.com/miguelsilva71',
     linkedin: 'https://linkedin.com/in/miguel-silva-0a20073a9',
   },
-   {
+  {
     nome:     'Rafael Santos Mendonça Costa',
     rm:       'RM: 572368 | 1TDSPG',
     iniciais: 'RC',
@@ -45,12 +40,13 @@ function renderEquipe() {
   const grid = document.getElementById('teamGrid');
   if (!grid) return;
 
+  // Removido o onclick="verFoto(${i})" da string HTML abaixo
   grid.innerHTML = integrantes.map((p, i) => `
     <article class="team-card">
-      <div class="team-card__avatar" onclick="verFoto(${i})" title="Ver foto ampliada">
+      <div class="team-card__avatar" data-index="${i}" title="Ver foto ampliada" style="cursor: pointer;">
         ${p.foto ? `<img src="${p.foto}" alt="${p.nome}">` : p.iniciais}
       </div>
-      <h3 class="team-card__name">${p.nome}</h3>
+      <h3 class="team-card__name">${p.name || p.nome}</h3>
       <p class="team-card__rm">${p.rm}</p>
       <span class="badge badge--info">TRIPULANTE</span>
       <div class="team-card__links">
@@ -59,6 +55,15 @@ function renderEquipe() {
       </div>
     </article>
   `).join('');
+
+  // Adiciona o ouvinte de clique isolado em cada avatar renderizado
+  const avatares = grid.querySelectorAll('.team-card__avatar');
+  avatares.forEach(avatar => {
+    avatar.addEventListener('click', () => {
+      const idx = avatar.getAttribute('data-index');
+      verFoto(idx);
+    });
+  });
 }
 
 function verFoto(idx) {
@@ -66,6 +71,8 @@ function verFoto(idx) {
   const avatar  = document.getElementById('foto-avatar');
   const nome    = document.getElementById('foto-nome');
   const rm      = document.getElementById('foto-rm');
+
+  if (!avatar || !nome || !rm) return;
 
   nome.textContent = p.nome;
   rm.textContent   = p.rm;
@@ -76,7 +83,10 @@ function verFoto(idx) {
     avatar.textContent = p.iniciais;
   }
 
-  abrirModal('modal-foto');
+  // Chama a função global do arquivo js/modal.js
+  if (window.abrirModal) {
+    window.abrirModal('modal-foto');
+  }
 }
 
 window.verFoto = verFoto;

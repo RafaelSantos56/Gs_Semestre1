@@ -56,23 +56,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnFecharAlerta = document.getElementById("btn-fechar-alerta");
   const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
   const btnConfirmarCaos = document.getElementById("btn-confirmar-caos");
-  const btnFecharResultado = document.getElementById("btn-fechar-resultado"); // Adicionado para o Quiz
+  const btnFecharResultado = document.getElementById("btn-fechar-resultado"); // Quiz
+  const btnFecharFoto = document.getElementById("btn-fechar-foto");           // Integrantes
 
-  // Evento para fechar o Modal de Alerta
+  // Evento para fechar o Modal de Foto (Integrantes)
+  if (btnFecharFoto) {
+    btnFecharFoto.addEventListener("click", () => {
+      fecharModal("modal-foto");
+    });
+  }
+
+  // Evento para fechar o Modal de Alerta (Dashboard)
   if (btnFecharAlerta) {
     btnFecharAlerta.addEventListener("click", () => {
       fecharModal("modal-alerta");
     });
   }
 
-  // Evento para cancelar o Modo Caos
+  // Evento para cancelar o Modo Caos (Todas as páginas)
   if (btnCancelarCaos) {
     btnCancelarCaos.addEventListener("click", () => {
       fecharModal("modal-caos");
     });
   }
 
-  // Evento para fechar o Modal de Resultado do Quiz
+  // Evento para fechar o Modal de Resultado (Quiz)
   if (btnFecharResultado) {
     btnFecharResultado.addEventListener("click", () => {
       fecharModal("modal-resultado");
