@@ -6,19 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DisasterAlert — Quiz</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/quiz.js" defer></script>
 </head>
 
 <body>
 
   <aside class="sidebar" id="sidebar">
     <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
       <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
       <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
@@ -40,7 +43,7 @@
 
   <div class="main-wrapper">
     
-        <div class="topbar__utility-bar">
+    <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
           <span class="dot-online"></span> 4 satélites online
@@ -81,8 +84,8 @@
       <div class="quiz-options" id="quiz-opcoes"></div>
       <div class="quiz-feedback" id="quiz-feedback"></div>
       <button class="btn btn--primary btn--full" id="quiz-btn-prox">PROXIMA QUESTAO →</button>
-
     </main>
+
     <footer class="site-footer">
       <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
       <p>
@@ -92,8 +95,8 @@
       </p>
     </footer>
 
+  </div>
 
-  <!-- MODAL RESULTADO -->
   <div class="modal-overlay" id="modal-resultado" role="dialog" aria-modal="true">
     <div class="modal modal--sucesso">
       <div class="modal__header">
@@ -112,13 +115,12 @@
         </div>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-resultado')">Fechar</button>
+        <button class="btn btn--secondary" id="btn-fechar-resultado">Fechar</button>
         <button class="btn btn--primary" id="btnJogarNovamente">JOGAR NOVAMENTE</button>
       </div>
     </div>
   </div>
 
-  <!-- MODAL MODO CAOS -->
   <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
     <div class="modal modal--critico modal--sm">
       <div class="modal__header">
@@ -133,16 +135,10 @@
         <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
       </div>
       <div class="modal__footer">
-        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
         <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
       </div>
     </div>
   </div>
-
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/quiz.js"></script>
-
 </body>
-
 </html>

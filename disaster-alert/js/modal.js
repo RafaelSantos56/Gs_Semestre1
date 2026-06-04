@@ -52,9 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 2. Mapeamento dos botões específicos (Sem JS Inline)
   const btnFecharAlerta = document.getElementById("btn-fechar-alerta");
   const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
   const btnConfirmarCaos = document.getElementById("btn-confirmar-caos");
+  const btnFecharResultado = document.getElementById("btn-fechar-resultado"); // Adicionado para o Quiz
 
   // Evento para fechar o Modal de Alerta
   if (btnFecharAlerta) {
@@ -67,6 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (btnCancelarCaos) {
     btnCancelarCaos.addEventListener("click", () => {
       fecharModal("modal-caos");
+    });
+  }
+
+  // Evento para fechar o Modal de Resultado do Quiz
+  if (btnFecharResultado) {
+    btnFecharResultado.addEventListener("click", () => {
+      fecharModal("modal-resultado");
     });
   }
 
