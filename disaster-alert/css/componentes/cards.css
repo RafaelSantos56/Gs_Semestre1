@@ -40,7 +40,7 @@
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: var(--card-accent, var(--color-cyan));
+  background: var(--card-accent,var(--color-purple));
   opacity: 0;
   transition: opacity var(--transition);
 }
@@ -51,7 +51,7 @@
 /* --- VARIÁVEIS DE COR ORIGINAIS --- */
 .stat-card--red    { --card-accent: var(--color-red); }
 .stat-card--orange { --card-accent: var(--color-orange); }
-.stat-card--cyan   { --card-accent: var(--color-cyan); }
+.stat-card--cyan   { --card-accent:var(--color-purple); }
 .stat-card--green  { --card-accent: var(--color-green); }
 .stat-card--purple { --card-accent: var(--color-purple); }
 

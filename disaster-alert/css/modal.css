@@ -73,7 +73,7 @@
 .modal--critico { border-color: var(--color-red); }
 .modal--aviso   { border-color: var(--color-orange); }
 .modal--sucesso { border-color: var(--color-green); }
-.modal--info    { border-color: var(--color-cyan); }
+.modal--info    { border-color:var(--color-purple); }
 
 /* CABECALHO */
 .modal__header {
@@ -178,7 +178,7 @@
 .btn:hover  { opacity: 0.85; }
 .btn:active { transform: scale(0.97); }
 
-.btn--primary   { background: var(--color-cyan);   color: var(--bg-primary); }
+.btn--primary   { background:var(--color-purple);   color: var(--bg-primary); }
 .btn--danger    { background: var(--color-red);    color: #fff; }
 .btn--warning   { background: var(--color-orange); color: var(--bg-primary); }
 .btn--success   { background: var(--color-green);  color: var(--bg-primary); }
@@ -191,8 +191,8 @@
 }
 
 .btn--ghost:hover {
-  border-color: var(--color-cyan);
-  color: var(--color-cyan);
+  border-color:var(--color-purple);
+  color:var(--color-purple);
 }
 
 .btn--sm   { padding: 6px 14px; font-size: 11px; }
@@ -200,7 +200,7 @@
 
 /* MODAL RESULTADO */
 .modal-resultado__emoji  { font-size: 52px; text-align: center; display: block; margin: 8px 0 4px; }
-.modal-resultado__pontos { font-size: 42px; font-weight: bold; color: var(--color-cyan); text-align: center; display: block; margin: 4px 0; }
+.modal-resultado__pontos { font-size: 42px; font-weight: bold; color:var(--color-purple); text-align: center; display: block; margin: 4px 0; }
 .modal-resultado__label  { font-size: 11px; color: var(--text-secondary); text-align: center; letter-spacing: 2px; text-transform: uppercase; display: block; }
 .modal-resultado__msg    { font-size: 13px; color: var(--text-secondary); text-align: center; line-height: 1.6; margin: 12px 0 0; }
 
@@ -240,7 +240,7 @@
   border-radius: 6px;
   padding: 6px 12px;
   font-size: 12px;
-  color: var(--color-cyan);
+  color:var(--color-purple);
   cursor: pointer;
   z-index: 10;
   font-family: inherit;
@@ -248,14 +248,14 @@
 }
 
 .map-expand-btn:hover {
-  border-color: var(--color-cyan);
+  border-color:var(--color-purple);
   background: rgba(0,212,255,0.08);
 }
 
 /* CURSORES CLICAVEIS */
 .team-card__avatar { cursor: pointer; }
 .team-card__avatar img { transition: border-color 0.2s, transform 0.2s; }
-.team-card__avatar:hover img { border-color: var(--color-cyan); transform: scale(1.05); }
+.team-card__avatar:hover img { border-color:var(--color-purple); transform: scale(1.05); }
 
 .alert-row { cursor: pointer; transition: background 0.15s; }
 .alert-row:hover { background: rgba(0,212,255,0.05); }

@@ -164,15 +164,15 @@ body::before {
 }
 
 .nav-item:hover {
-  color: var(--color-cyan);
+  color:var(--color-purple);
   background: rgba(0,212,255,0.06);
   border-left-color: rgba(0,212,255,0.4);
 }
 
 .nav-item.active {
-  color: var(--color-cyan);
+  color:var(--color-purple);
   background: rgba(0,212,255,0.1);
-  border-left-color: var(--color-cyan);
+  border-left-color:var(--color-purple);
   font-weight: 600;
 }
 
@@ -363,7 +363,7 @@ body::before {
 }
 
 .site-footer a:hover {
-  color: var(--color-cyan);
+  color:var(--color-purple);
 }
 
 /* FOOTER DA SIDEBAR */

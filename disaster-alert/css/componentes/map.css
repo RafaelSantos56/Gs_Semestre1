@@ -77,7 +77,7 @@
 .map-dot--critico { background: var(--color-red);    color: var(--color-red); }
 .map-dot--aviso   { background: var(--color-orange); color: var(--color-orange); }
 .map-dot--normal  { background: var(--color-green);  color: var(--color-green); }
-.map-dot--info    { background: var(--color-cyan);   color: var(--color-cyan); }
+.map-dot--info    { background:var(--color-purple);   color:var(--color-purple); }
 
 /* LEGENDA DO MAPA */
 .map-legend {

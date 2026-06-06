@@ -16,7 +16,7 @@
 }
 
 .team-card:hover {
-  border-color: var(--color-cyan);
+  border-color:var(--color-purple);
   transform: translateY(-3px);
 }
 
@@ -34,11 +34,11 @@
   justify-content: center;
   font-size: 26px;
   font-weight: 800;
-  color: var(--color-cyan);
+  color:var(--color-purple);
 }
 
 .team-card__avatar:hover {
-  border-color: var(--color-cyan);
+  border-color:var(--color-purple);
   transform: scale(1.06);
 }
 
@@ -67,5 +67,5 @@
   transition: all var(--transition);
 }
 
-.team-card__link:hover     { border-color: var(--color-cyan); color: var(--color-cyan); background: rgba(0,212,255,0.06); }
+.team-card__link:hover     { border-color:var(--color-purple); color:var(--color-purple); background: rgba(0,212,255,0.06); }
 .team-card__link--li:hover { border-color: #0077b5; color: #0077b5; }
