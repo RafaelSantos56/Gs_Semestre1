@@ -22,7 +22,7 @@
 }
 
 .pipeline__step.active {
-  border-color: var(--color-cyan);
+  border-color:var(--color-purple);
   background: rgba(0,212,255,0.06);
 }
 

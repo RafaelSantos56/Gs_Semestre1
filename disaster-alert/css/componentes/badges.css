@@ -19,7 +19,7 @@
 .badge--critico { background: rgba(255,68,68,0.15);  color: var(--color-red); }
 .badge--aviso   { background: rgba(245,158,11,0.15); color: var(--color-orange); }
 .badge--normal  { background: rgba(34,197,94,0.15);  color: var(--color-green); }
-.badge--info    { background: rgba(0,212,255,0.15);  color: var(--color-cyan); }
+.badge--info    { background: rgba(0,212,255,0.15);  color:var(--color-purple); }
 .badge--purple  { background: rgba(139,92,246,0.15); color: var(--color-purple); }
 .badge--live    { background: var(--color-red); color: #fff; animation: blink 1.5s infinite; }
 
@@ -63,7 +63,7 @@
 }
 
 .alert-item--normal {
-  border-left-color: var(--color-cyan);
+  border-left-color:var(--color-purple);
   background: rgba(139, 92, 246, 0.22);
   box-shadow: inset 0 0 20px rgba(139, 92, 246, 0.12), 0 2px 12px rgba(139, 92, 246, 0.28);
 }

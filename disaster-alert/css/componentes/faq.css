@@ -9,7 +9,7 @@
   transition: border-color var(--transition);
 }
 
-.faq-item.open { border-color: var(--color-cyan); }
+.faq-item.open { border-color:var(--color-purple); }
 
 .faq-question {
   width: 100%;
@@ -26,7 +26,7 @@
   transition: color var(--transition);
 }
 
-.faq-question:hover { color: var(--color-cyan); }
+.faq-question:hover { color:var(--color-purple); }
 
 .faq-icon {
   font-size: 20px;
@@ -35,7 +35,7 @@
   flex-shrink: 0;
 }
 
-.faq-item.open .faq-icon { transform: rotate(90deg); color: var(--color-cyan); }
+.faq-item.open .faq-icon { transform: rotate(90deg); color:var(--color-purple); }
 
 .faq-answer {
   display: none;
