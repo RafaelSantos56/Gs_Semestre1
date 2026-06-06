@@ -132,29 +132,6 @@ body::before {
   white-space: nowrap;
 }
 
-/* Ícone do Sininho Dourado */
-.sidebar__logo .logo-status::after {
-  content: '🔔';
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  order: 2;
-  filter: drop-shadow(0 0 2px rgba(234, 179, 8, 0.3));
-  cursor: pointer;
-}
-
-/* Ícone do Usuário */
-.sidebar__logo .logo-status::before {
-  content: '👤';
-  font-size: 14px;
-  display: inline-flex;
-  align-items: center;
-  order: 3;
-  opacity: 0.6;
-  cursor: pointer;
-}
-
-
 /* Fallback do status nativo do Dashboard */
 .topbar__status {
   display: flex;
@@ -298,7 +275,7 @@ body::before {
 
 /* Recuo lateral unificado */
 .topbar__title {
-  margin-left: 52px; 
+  margin-left: 32px; 
 }
 
 .topbar__title h1 {
