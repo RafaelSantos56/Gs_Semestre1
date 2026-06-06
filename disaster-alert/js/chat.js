@@ -1,8 +1,6 @@
-
-// Chatbot simples para responder perguntas frequentes sobre o projeto
+// Chatbot DisasterAlert
 (function () {
 
-  // ── Base de respostas por palavras-chave ─────────────────────────────────
   const RESPOSTAS = [
     {
       keys: ['enchente', 'inundacao', 'inundação', 'rio', 'alagamento'],
@@ -44,6 +42,10 @@
       keys: ['emergencia', 'emergência', 'socorro', 'ajuda', 'perigo'],
       resp: 'Em caso de emergência: acesse o painel de Alertas, siga as instruções da Defesa Civil e ligue 199 (Defesa Civil) ou 193 (Bombeiros).'
     },
+    {
+      keys: ['tchau', 'adeus', 'ate logo', 'até logo', 'obrigado', 'obrigada', 'valeu', 'falou', 'flw'],
+      resp: 'Até logo! Se precisar de mais informações sobre o DisasterAlert, estarei aqui. Fique seguro! 🛰️'
+    },
   ];
 
   const FALLBACK = [
@@ -61,7 +63,6 @@
     return FALLBACK[fallbackIdx++ % FALLBACK.length];
   }
 
-  // ── DOM ──────────────────────────────────────────────────────────────────
   let messagesEl, suggestionsEl, inputEl, sendBtn, typingEl;
 
   function init() {
@@ -87,45 +88,39 @@
     });
 
     const avatar = document.querySelector('.floating-avatar');
-   if (avatar) {
-  avatar.addEventListener('click', () => {
-    avatar.classList.add('decolando');
-    setTimeout(() => {
-      window.abrirModal('modal-chat');
-      avatar.classList.remove('decolando');
-      setTimeout(() => inputEl.focus(), 350);
-    }, 1200);
-  });
-  avatar.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); avatar.click(); }
-  });
-}
+    if (avatar) {
+      avatar.addEventListener('click', () => {
+        avatar.classList.add('decolando');
+        setTimeout(() => {
+          window.abrirModal('modal-chat');
+          avatar.classList.remove('decolando');
+          setTimeout(() => inputEl.focus(), 350);
+        }, 1200);
+      });
+      avatar.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); avatar.click(); }
+      });
+    }
   }
 
-  // ── Envio ────────────────────────────────────────────────────────────────
   function handleSend() {
     const text = inputEl.value.trim();
     if (!text) return;
-
     inputEl.value = '';
     hideSuggestions();
     appendMessage('user', text);
     showTyping();
-
     setTimeout(() => {
       hideTyping();
       appendMessage('bot', getReply(text));
     }, 600 + Math.random() * 400);
   }
 
-  // ── Render ───────────────────────────────────────────────────────────────
   function appendMessage(role, text) {
     const isBot = role === 'bot';
     const wrap  = document.createElement('div');
     wrap.className = 'chat-msg chat-msg--' + (isBot ? 'bot' : 'user');
-
     const hora = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
-
     if (isBot) {
       wrap.innerHTML =
         '<div class="chat-msg__avatar"><img src="../assets/img/avatar.png" alt="Bot"></div>' +
@@ -136,7 +131,6 @@
         '<div><div class="chat-msg__bubble">' + escapeHtml(text) + '</div>' +
         '<div class="chat-msg__time" style="text-align:right">' + hora + '</div></div>';
     }
-
     messagesEl.appendChild(wrap);
     messagesEl.scrollTop = messagesEl.scrollHeight;
   }
@@ -154,8 +148,8 @@
     return el;
   }
 
-  function showTyping()  { messagesEl.appendChild(typingEl); messagesEl.scrollTop = messagesEl.scrollHeight; }
-  function hideTyping()  { if (typingEl.parentNode) typingEl.parentNode.removeChild(typingEl); }
+  function showTyping()      { messagesEl.appendChild(typingEl); messagesEl.scrollTop = messagesEl.scrollHeight; }
+  function hideTyping()      { if (typingEl.parentNode) typingEl.parentNode.removeChild(typingEl); }
   function hideSuggestions() { if (suggestionsEl) suggestionsEl.style.display = 'none'; }
 
   function escapeHtml(s) {
@@ -163,11 +157,19 @@
             .replace(/"/g,'&quot;').replace(/\n/g,'<br>');
   }
 
-  // ── Boot ─────────────────────────────────────────────────────────────────
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
   }
+  function resetChat() {
+    if (!messagesEl) return;
+    messagesEl.innerHTML = '';
+    fallbackIdx = 0;
+    if (suggestionsEl) suggestionsEl.style.display = '';
+    appendMessage('bot', 'Olá! Sou o assistente do DisasterAlert 🛰️\nComo posso te ajudar hoje?');
+  }
+
+  window.resetChat = resetChat;
 
 })();

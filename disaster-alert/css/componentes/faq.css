@@ -1,8 +1,4 @@
-/* =====================================================
-   DisasterAlert — css/components/faq.css
-   Acordeao do FAQ
-   ===================================================== */
-
+/* FAQ */
 .faq-list { display: flex; flex-direction: column; gap: 8px; }
 
 .faq-item {

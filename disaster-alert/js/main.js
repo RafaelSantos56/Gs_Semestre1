@@ -1,4 +1,3 @@
-// DisasterAlert — js/main.js
 // Carregado em TODAS as paginas
 
 // === MENU HAMBURGUER ===

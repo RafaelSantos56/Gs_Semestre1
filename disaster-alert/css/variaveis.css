@@ -1,29 +1,21 @@
-/* =====================================================
-   DisasterAlert — css/variables.css
-   Tokens de design: cores, tamanhos, fontes
-   ===================================================== */
+/* Tokens de design: cores, tamanhos, fontes */
 
 :root {
   /* === CORES DE FUNDO === */
   --bg-primary:   #111827;
   --bg-card:      #1a2332;
-  --bg-sidebar:   --bg-sidebar: #110a2a;;
+  --bg-sidebar:   #110a2a;
   --bg-topbar:    #1e2d3d;
   --bg-input:     #0d1521;
-  --bg-code:      #0d1117;
 
   /* === CORES DE DESTAQUE === */
-  --color-cyan:   #8b5cf6;
-  --color-cyan-2: #0088cc;
+  --color-accent: #a78bfa;
+  --color-purple: #8b5cf6;
   --color-green:  #22c55e;
-  --color-green-2:#00ff88;
   --color-red:    #ff4444;
-  --color-red-2:  #cc2200;
   --color-orange: #f59e0b;
   --color-yellow: #fbbf24;
   --color-blue:   #3b82f6;
-  --color-purple: #8b5cf6;
-  --color-pink:   #ec4899;
 
   /* === CORES DE TEXTO === */
   --text-primary:   #e5e7eb;
@@ -35,21 +27,21 @@
   --border-hover: #2a3f5f;
 
   /* === LAYOUT === */
-  --sidebar-w:    240px;
-  --topbar-h:     60px;
-  --border-radius:8px;
-  --radius-sm:    4px;
-  --radius-lg:    12px;
+  --sidebar-w:     240px;
+  --topbar-h:      60px;
+  --border-radius: 8px;
+  --radius-sm:     4px;
+  --radius-lg:     12px;
 
   /* === SOMBRAS === */
-  --shadow-card: 0 4px 20px rgba(0,0,0,0.4);
-  --shadow-modal:0 20px 60px rgba(0,0,0,0.7);
+  --shadow-card:  0 4px 20px rgba(0,0,0,0.4);
+  --shadow-modal: 0 20px 60px rgba(0,0,0,0.7);
 
   /* === TIPOGRAFIA === */
   --font-main: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'Courier New', Courier, monospace;
 
   /* === TRANSICOES === */
-  --transition: 0.2s ease;
+  --transition:      0.2s ease;
   --transition-slow: 0.3s ease;
 }

@@ -1,5 +1,3 @@
-// DisasterAlert — js/simulacao.js
-
 const cenarios = [
   {
     titulo:  'ENCHENTE SEVERA — SAO PAULO, SP',

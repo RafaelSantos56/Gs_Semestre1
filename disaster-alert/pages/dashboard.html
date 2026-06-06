@@ -2,208 +2,211 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DisasterAlert — Central de Alertas</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/modal.js" defer></script>
-    <script src="../js/main.js" defer></script>
-    <script src="../js/dashboard.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Central de Alertas</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
 
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar__logo">
-            <div class="sidebar__logo-icon">
-                <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-            </div>
-            <div class="sidebar__logo-text">
-                <span class="logo-name">Disaster<strong>Alert</strong></span>
-            </div>
-        </div>
-        <nav class="sidebar__nav">
-            <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-            <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-            <a href="dashboard.html" class="nav-item active"><span class="nav-icon">◈</span> Alertas</a>
-            <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-            <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
-        </nav>
-        <nav class="sidebar__nav-bottom">
-            <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-            <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
-            <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
-        </nav>
-    </aside>
+  <aside class="sidebar" id="sidebar">
+   <div class="sidebar__logo">
+  <div class="sidebar__logo-icon">
+    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+  </div>
+  <div class="sidebar__logo-text">
+    <span class="logo-name">Disaster<strong>Alert</strong></span>
+  </div>
+</div>
+    <nav class="sidebar__nav">
+      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="dashboard.html" class="nav-item active"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+    </nav>
+    <nav class="sidebar__nav-bottom">
+      <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+  </aside>
 
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 
-    <div class="main-wrapper">
+  <div class="main-wrapper">
 
         <div class="topbar__utility-bar">
-            <div class="topbar__utility-right">
-                <div class="topbar__status">
-                    <span class="dot-online"></span> 4 satélites online
-                </div>
-                <span class="topbar__icon">🔔</span>
-                <span class="topbar__icon">👤</span>
-            </div>
+      <div class="topbar__utility-right">
+        <div class="topbar__status">
+          <span class="dot-online"></span> 3 satélites online
         </div>
-        <header class="topbar">
-            <div class="topbar__title">
-                <h1>Central de Alertas</h1>
-                <p>Todos os incidentes monitorados por satelite</p>
-            </div>
-        </header>
+      </div>
+    </div>
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Central de Alertas</h1>
+        <p>Todos os incidentes monitorados por satelite</p>
+      </div>
+    </header>
 
-        <main class="content">
+    <main class="content">
 
-            <div class="filters">
-                <span class="filter-label">Filtrar:</span>
-                <button class="filter-btn active" data-filter="todos">TODOS</button>
-                <button class="filter-btn" data-filter="critico">CRITICO</button>
-                <button class="filter-btn" data-filter="aviso">AVISO</button>
-                <button class="filter-btn" data-filter="normal">NORMAL</button>
-                <button class="filter-btn" data-filter="resolvido">RESOLVIDO</button>
-            </div>
+      <div class="filters">
+        <span class="filter-label">Filtrar:</span>
+        <button class="filter-btn active" data-filter="todos">TODOS</button>
+        <button class="filter-btn" data-filter="critico">CRITICO</button>
+        <button class="filter-btn" data-filter="aviso">AVISO</button>
+        <button class="filter-btn" data-filter="normal">NORMAL</button>
+        <button class="filter-btn" data-filter="resolvido">RESOLVIDO</button>
+      </div>
 
-            <div class="table-wrapper">
-                <table class="alerts-table">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tipo</th>
-                            <th>Localizacao</th>
-                            <th>Severidade</th>
-                            <th>Satelite</th>
-                            <th>Hora</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody id="alertsTableBody">
-                        <tr>
-                            <td colspan="7" class="table-loading">Carregando alertas...</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="divider"></div>
+      <div class="table-wrapper">
+        <table class="alerts-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Tipo</th>
+              <th>Localizacao</th>
+              <th>Severidade</th>
+              <th>Satelite</th>
+              <th>Hora</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="alertsTableBody">
+            <tr>
+              <td colspan="7" class="table-loading">Carregando alertas...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<div class="divider"></div>
 
-            <div class="section-header">
-                <h2>Satélites em Operação</h2>
-                <p>Fontes dos dados exibidos nesta central de alertas.</p>
-            </div>
+      <div class="section-header">
+        <h2>Satélites em Operação</h2>
+        <p>Fontes dos dados exibidos nesta central de alertas.</p>
+      </div>
 
-            <div class="sat-apresentacao">
-                <div class="sat-apres-card">
-                    <div class="sat-apres-img">
-                        <img src="../assets/img/cbers4a.jpg" alt="CBERS-4A">
-                    </div>
-                    <div class="sat-apres-info">
-                        <span class="sat-apres-badge">🇧🇷 INPE / CNSA</span>
-                        <h3>CBERS-4A</h3>
-                        <p>Satélite brasileiro-chinês lançado em 2019. Monitora solo, água e vegetação com resolução de 2 metros. Principal fonte de dados para enchentes e deslizamentos no Brasil.</p>
-                        <div class="sat-apres-tags">
-                            <span>🌊 Enchentes</span>
-                            <span>⛰ Deslizamentos</span>
-                            <span>628 km de altitude</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sat-apres-card">
-                    <div class="sat-apres-img">
-                        <img src="../assets/img/goes16.jpg" alt="GOES-16">
-                    </div>
-                    <div class="sat-apres-info">
-                        <span class="sat-apres-badge">🇺🇸 NOAA</span>
-                        <h3>GOES-16</h3>
-                        <p>Satélite geoestacionário americano a 35.786 km de altitude. Cobre toda a América do Sul com imagens a cada 10 minutos, ideal para acompanhar tempestades em tempo real.</p>
-                        <div class="sat-apres-tags">
-                            <span>🌪 Tempestades</span>
-                            <span>⚡ Raios</span>
-                            <span>Atualização a cada 10 min</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sat-apres-card">
-                    <div class="sat-apres-img">
-                        <img src="../assets/img/aqua.jpg" alt="AQUA/MODIS">
-                    </div>
-                    <div class="sat-apres-info">
-                        <span class="sat-apres-badge">🇺🇸 NASA</span>
-                        <h3>AQUA / MODIS</h3>
-                        <p>Satélite da NASA lançado em 2002. Sensor MODIS detecta focos de calor em infravermelho com cobertura global diária. Referência mundial para monitoramento de queimadas.</p>
-                        <div class="sat-apres-tags">
-                            <span>🔥 Queimadas</span>
-                            <span>💨 Fumaça</span>
-                            <span>250 m de resolução</span>
-                        </div>
-                    </div>
-                </div>
+      <div class="sat-apresentacao">
+        <div class="sat-apres-card">
+          <div class="sat-apres-img">
+            <img src="../assets/img/cbers4a.jpg" alt="CBERS-4A">
+          </div>
+          <div class="sat-apres-info">
+            <span class="sat-apres-badge">🇧🇷 INPE / CNSA</span>
+            <h3>CBERS-4A</h3>
+            <p>Satélite brasileiro-chinês lançado em 2019. Monitora solo, água e vegetação com resolução de 2 metros. Principal fonte de dados para enchentes e deslizamentos no Brasil.</p>
+            <div class="sat-apres-tags">
+              <span> Enchentes</span>
+              <span> Deslizamentos</span>
+              <span>628 km de altitude</span>
             </div>
-
-                <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
-        <div class="modal modal--critico">
-            <div class="modal__header">
-                <div>
-                    <span class="badge" id="modal-alerta-badge">CRITICO</span>
-                    <h2 class="modal__title" id="modal-alerta-titulo">Alerta</h2>
-                </div>
-                <button class="modal__close" aria-label="Fechar">&times;</button>
-            </div>
-            <div class="modal__body">
-                <div class="modal-info-grid">
-                    <span>Detectado por:</span><strong id="modal-alerta-sat"></strong>
-                    <span>Horario:</span> <strong id="modal-alerta-hora"></strong>
-                    <span>Impacto:</span> <strong id="modal-alerta-pop"></strong>
-                    <span>Status:</span> <strong id="modal-alerta-status"></strong>
-                </div>
-                <div class="risk-bar">
-                    <div class="risk-bar__fill" id="modal-alerta-risco"></div>
-                </div>
-            </div>
-            <div class="modal__footer">
-                <button class="btn btn--secondary" id="btn-fechar-alerta">Fechar</button>
-                <button class="btn btn--danger">Acionar Defesa Civil</button>
-            </div>
+          </div>
         </div>
-    </div>
 
-    <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-        <div class="modal modal--critico modal--sm">
-            <div class="modal__header">
-                <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
-                <button class="modal__close" aria-label="Fechar">&times;</button>
+        <div class="sat-apres-card">
+          <div class="sat-apres-img">
+            <img src="../assets/img/goes16.jpg" alt="GOES-16">
+          </div>
+          <div class="sat-apres-info">
+            <span class="sat-apres-badge">🇺🇸 NOAA</span>
+            <h3>GOES-16</h3>
+            <p>Satélite geoestacionário americano a 35.786 km de altitude. Cobre toda a América do Sul com imagens a cada 10 minutos, ideal para acompanhar tempestades em tempo real.</p>
+            <div class="sat-apres-tags">
+              <span> Tempestades</span>
+              <span> Raios</span>
+              <span>Atualização a cada 10 min</span>
             </div>
-            <div class="modal__body">
-                <ul class="modal-caos__lista">
-                    <li>Sirene sonora automatica</li>
-                    <li>Animacao de fundo vermelho</li>
-                    <li>Alertas urgentes no feed</li>
-                </ul>
-                <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
-            </div>
-            <div class="modal__footer">
-                <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
-                <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
-            </div>
+          </div>
         </div>
+
+        <div class="sat-apres-card">
+          <div class="sat-apres-img">
+            <img src="../assets/img/aqua.jpg" alt="AQUA/MODIS">
+          </div>
+          <div class="sat-apres-info">
+            <span class="sat-apres-badge">🇺🇸 NASA</span>
+            <h3>AQUA / MODIS</h3>
+            <p>Satélite da NASA lançado em 2002. Sensor MODIS detecta focos de calor em infravermelho com cobertura global diária. Referência mundial para monitoramento de queimadas.</p>
+            <div class="sat-apres-tags">
+              <span> Queimadas</span>
+              <span> Fumaça</span>
+              <span>250 m de resolução</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+      <p>
+        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+        &bull;
+        <a href="./pages/contato.html">Contato</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- MODAL ALERTA -->
+  <div class="modal-overlay" id="modal-alerta" role="dialog" aria-modal="true" aria-labelledby="modal-alerta-titulo">
+    <div class="modal modal--critico">
+      <div class="modal__header">
+        <div>
+          <span class="badge" id="modal-alerta-badge">CRITICO</span>
+          <h2 class="modal__title" id="modal-alerta-titulo">Alerta</h2>
+        </div>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <div class="modal-info-grid">
+          <span>Detectado por:</span><strong id="modal-alerta-sat"></strong>
+          <span>Horario:</span> <strong id="modal-alerta-hora"></strong>
+          <span>Impacto:</span> <strong id="modal-alerta-pop"></strong>
+          <span>Status:</span> <strong id="modal-alerta-status"></strong>
+        </div>
+        <div class="risk-bar">
+          <div class="risk-bar__fill" id="modal-alerta-risco"></div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-alerta')">Fechar</button>
+        <button class="btn btn--danger">Acionar Defesa Civil</button>
+      </div>
     </div>
-        </main>
-        <footer class="site-footer">
-            <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
-            <p>
-                <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
-                &bull;
-                <a href="./pages/contato.html">Contato</a>
-            </p>
-        </footer>
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+          <li>Alertas urgentes no feed</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+      </div>
     </div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/dashboard.js"></script>
+
 </body>
 
 </html>

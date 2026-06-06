@@ -1,35 +1,30 @@
-// DisasterAlert — js/modal.js
-// Carregar ANTES de todos os outros scripts
-
 function abrirModal(id) {
   const overlay = document.getElementById(id);
   if (!overlay) return;
   overlay.classList.add('is-open');
   document.body.style.overflow = 'hidden';
   const modal = overlay.querySelector('.modal');
-  if (modal) { 
-    modal.setAttribute('tabindex', '-1'); 
-    modal.focus(); 
-  }
+  if (modal) { modal.setAttribute('tabindex', '-1'); modal.focus(); }
 }
 
 function fecharModal(id) {
   const overlay = document.getElementById(id);
   if (!overlay) return;
   overlay.classList.remove('is-open');
+  if (id === 'modal-chat') resetChat();
   if (!document.querySelector('.modal-overlay.is-open')) {
     document.body.style.overflow = '';
   }
 }
 
-// Fechar ao clicar no overlay (fora do modal)
+// fechar ao clicar no overlay
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal-overlay')) {
     fecharModal(e.target.id);
   }
 });
 
-// Fechar com a tecla ESC
+// fechar com ESC
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
   document.querySelectorAll('.modal-overlay.is-open').forEach(o => {
@@ -37,65 +32,32 @@ document.addEventListener('keydown', (e) => {
   });
 });
 
-// Expõe as funções globalmente para outros scripts usarem
-window.abrirModal  = abrirModal;
-window.fecharModal = fecharModal;
-
-// Inicialização dos eventos do DOM
+// ligar botoes X automaticamente
 document.addEventListener('DOMContentLoaded', () => {
-  
-  // 1. Ligar os botões de fechar (X) automaticamente
   document.querySelectorAll('.modal__close').forEach(btn => {
     btn.addEventListener('click', () => {
       const overlay = btn.closest('.modal-overlay');
       if (overlay) fecharModal(overlay.id);
     });
   });
+});
+/* js dos integrantes */
 
-  // 2. Mapeamento dos botões específicos (Sem JS Inline)
-  const btnFecharAlerta = document.getElementById("btn-fechar-alerta");
-  const btnCancelarCaos = document.getElementById("btn-cancelar-caos");
-  const btnConfirmarCaos = document.getElementById("btn-confirmar-caos");
-  const btnFecharResultado = document.getElementById("btn-fechar-resultado"); // Quiz
-  const btnFecharFoto = document.getElementById("btn-fechar-foto");           // Integrantes
+window.abrirModal  = abrirModal;
+window.fecharModal = fecharModal;
+function verFoto(src, nome, rm) {
+  document.getElementById('foto-img').src   = src;
+  document.getElementById('foto-nome').textContent = nome;
+  document.getElementById('foto-rm').textContent   = rm;
+  abrirModal('modal-foto');
+}
 
-  // Evento para fechar o Modal de Foto (Integrantes)
-  if (btnFecharFoto) {
-    btnFecharFoto.addEventListener("click", () => {
-      fecharModal("modal-foto");
-    });
-  }
-
-  // Evento para fechar o Modal de Alerta (Dashboard)
-  if (btnFecharAlerta) {
-    btnFecharAlerta.addEventListener("click", () => {
-      fecharModal("modal-alerta");
-    });
-  }
-
-  // Evento para cancelar o Modo Caos (Todas as páginas)
-  if (btnCancelarCaos) {
-    btnCancelarCaos.addEventListener("click", () => {
-      fecharModal("modal-caos");
-    });
-  }
-
-  // Evento para fechar o Modal de Resultado (Quiz)
-  if (btnFecharResultado) {
-    btnFecharResultado.addEventListener("click", () => {
-      fecharModal("modal-resultado");
-    });
-  }
-
-  // Evento para confirmar e ativar o Modo Caos
-  if (btnConfirmarCaos) {
-    btnConfirmarCaos.addEventListener("click", () => {
-      fecharModal("modal-caos");
-      
-      // Verifica se a função ativarCaos existe globalmente no sistema antes de chamar
-      if (window.ativarCaos) {
-        window.ativarCaos();
-      }
-    });
-  }
+window.verFoto = verFoto;
+document.querySelectorAll('.team-card__avatar[data-foto]').forEach(el => {
+  el.addEventListener('click', () => {
+    document.getElementById('foto-img').src = el.dataset.foto;
+    document.getElementById('foto-nome').textContent = el.dataset.nome;
+    document.getElementById('foto-rm').textContent = el.dataset.rm;
+    abrirModal('modal-foto');
+  });
 });

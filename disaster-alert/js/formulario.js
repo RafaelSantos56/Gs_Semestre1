@@ -1,4 +1,4 @@
-// DisasterAlert — js/formulario.js
+//formulario.js//
 
 const form = document.getElementById('formContato');
 

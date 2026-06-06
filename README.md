@@ -65,7 +65,6 @@ disaster-alert/
 │   ├── quiz.js
 │   ├── faq.js
 │   ├── formulario.js
-│   ├── integrantes.js
 │   └── chat.js
 └── pages/
     ├── sobre.html

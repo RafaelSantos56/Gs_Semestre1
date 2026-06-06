@@ -1,150 +1,153 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DisasterAlert — Contato</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/modal.js" defer></script>
-    <script src="../js/main.js" defer></script>
-    <script src="../js/formulario.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Contato</title>
+  <link rel="stylesheet" href="../css/main.css">
 </head>
-
 <body>
 
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar__logo">
-            <div class="sidebar__logo-icon">
-                <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-            </div>
-            <div class="sidebar__logo-text">
-                <span class="logo-name">Disaster<strong>Alert</strong></span>
-            </div>
-        </div>
-        <nav class="sidebar__nav">
-            <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-            <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-            <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-            <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-            <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
-        </nav>
-        <nav class="sidebar__nav-bottom">
-            <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-            <a href="contato.html" class="nav-item active"><span class="nav-icon">✉</span> Contato</a>
-            <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
-        </nav>
-    </aside>
+  <aside class="sidebar" id="sidebar">
+   <div class="sidebar__logo">
+  <div class="sidebar__logo-icon">
+    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+  </div>
+  <div class="sidebar__logo-text">
+    <span class="logo-name">Disaster<strong>Alert</strong></span>
+  </div>
+</div>
+    <nav class="sidebar__nav">
+      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="dashboard.html"   class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+    </nav>
+    <nav class="sidebar__nav-bottom">
+      <a href="faq.html"         class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html"     class="nav-item active"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+  </aside>
 
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 
-    <div class="main-wrapper">
+  <div class="main-wrapper">
 
         <div class="topbar__utility-bar">
-            <div class="topbar__utility-right">
-                <div class="topbar__status">
-                    <span class="dot-online"></span> 4 satélites online
-                </div>
-                <span class="topbar__icon">🔔</span>
-                <span class="topbar__icon">👤</span>
-            </div>
+      <div class="topbar__utility-right">
+        <div class="topbar__status">
+          <span class="dot-online"></span> 3 satélites online
         </div>
-        <header class="topbar">
-            <div class="topbar__title">
-                <h1>Contato</h1>
-                <p>Reporte ocorrencias ou entre em contato com a equipe</p>
-            </div>
-        </header>
+      </div>
+    </div>
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Contato</h1>
+        <p>Reporte ocorrencias ou entre em contato com a equipe</p>
+      </div>
+    </header>
 
-        <main class="content">
+    <main class="content">
 
-            <div class="contato-wrapper">
+      <div class="contato-wrapper">
 
-                <div class="section-header">
-                    <h2>Relatar uma Ocorrencia</h2>
-                    <p>Preencha o formulario abaixo para reportar um alerta ou entrar em contato com nossa equipe.</p>
-                </div>
-
-                <div class="contato-aviso">
-                    ⚠ Em situacoes de emergencia real, contate a
-                    <strong>Defesa Civil: 199</strong> ou o <strong>SAMU: 192</strong>
-                </div>
-
-                <form id="formContato" novalidate>
-
-                    <div class="form-group">
-                        <label class="form-label" for="nome">Nome Completo *</label>
-                        <input class="form-control" type="text" id="nome" name="nome" placeholder="Ex: Maria Silva" autocomplete="name">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="email">E-mail *</label>
-                        <input class="form-control" type="email" id="email" name="email" placeholder="Ex: maria@email.com" autocomplete="email">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="tipo">Tipo de Ocorrencia *</label>
-                        <select class="form-control" id="tipo" name="tipo">
-                            <option value="">Selecione o tipo...</option>
-                            <option value="enchente">Enchente</option>
-                            <option value="queimada">Queimada</option>
-                            <option value="deslizamento">Deslizamento</option>
-                            <option value="tempestade">Tempestade</option>
-                            <option value="erro">Relatar alerta incorreto</option>
-                            <option value="outro">Outro / Sugestao</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label" for="mensagem">
-                            Mensagem *
-                            <span class="form-label__contador">
-                                <span id="msg-count">0</span>/20 min
-                            </span>
-                        </label>
-                        <textarea class="form-control" id="mensagem" name="mensagem" rows="5" placeholder="Descreva a ocorrencia com o maximo de detalhes..."></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn--primary btn--full">
-                        ENVIAR RELATO
-                    </button>
-
-                </form>
-
-            </div>
-
-                <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
-        <div class="modal modal--critico modal--sm">
-            <div class="modal__header">
-                <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
-                <button class="modal__close" aria-label="Fechar">&times;</button>
-            </div>
-            <div class="modal__body">
-                <ul class="modal-caos__lista">
-                    <li>Sirene sonora automatica</li>
-                    <li>Animacao de fundo vermelho</li>
-                </ul>
-                <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
-            </div>
-            <div class="modal__footer">
-                <button class="btn btn--secondary" id="btn-cancelar-caos">Cancelar</button>
-                <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
-            </div>
+        <div class="section-header">
+          <h2>Relatar uma Ocorrencia</h2>
+          <p>Preencha o formulario abaixo para reportar um alerta ou entrar em contato com nossa equipe.</p>
         </div>
+
+        <div class="contato-aviso">
+          ⚠ Em situacoes de emergencia real, contate a
+          <strong>Defesa Civil: 199</strong> ou o <strong>SAMU: 192</strong>
+        </div>
+
+        <form id="formContato" novalidate>
+
+          <div class="form-group">
+            <label class="form-label" for="nome">Nome Completo *</label>
+            <input class="form-control" type="text" id="nome" name="nome"
+                   placeholder="Ex: Maria Silva" autocomplete="name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-mail *</label>
+            <input class="form-control" type="email" id="email" name="email"
+                   placeholder="Ex: maria@email.com" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tipo">Tipo de Ocorrencia *</label>
+            <select class="form-control" id="tipo" name="tipo">
+              <option value="">Selecione o tipo...</option>
+              <option value="enchente">Enchente</option>
+              <option value="queimada">Queimada</option>
+              <option value="deslizamento">Deslizamento</option>
+              <option value="tempestade">Tempestade</option>
+              <option value="erro">Relatar alerta incorreto</option>
+              <option value="outro">Outro / Sugestao</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="mensagem">
+              Mensagem *
+              <span class="form-label__contador">
+                <span id="msg-count">0</span>/20 min
+              </span>
+            </label>
+            <textarea class="form-control" id="mensagem" name="mensagem" rows="5"
+                      placeholder="Descreva a ocorrencia com o maximo de detalhes..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            ENVIAR RELATO
+          </button>
+
+        </form>
+
+      </div>
+
+    </main>
+   <footer class="site-footer">
+      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+      <p>
+        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+        &bull;
+        <a href="./pages/contato.html">Contato</a>
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- MODAL MODO CAOS -->
+  <div class="modal-overlay" id="modal-caos" role="dialog" aria-modal="true">
+    <div class="modal modal--critico modal--sm">
+      <div class="modal__header">
+        <h2 class="modal__title modal__title--danger">⚠ Ativar Modo Caos?</h2>
+        <button class="modal__close" aria-label="Fechar">&times;</button>
+      </div>
+      <div class="modal__body">
+        <ul class="modal-caos__lista">
+          <li>Sirene sonora automatica</li>
+          <li>Animacao de fundo vermelho</li>
+        </ul>
+        <p class="modal-caos__aviso">Tem certeza que deseja continuar?</p>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--secondary" onclick="fecharModal('modal-caos')">Cancelar</button>
+        <button class="btn btn--danger" id="btnConfirmarCaos">ATIVAR</button>
+      </div>
     </div>
-        </main>
-        <footer class="site-footer">
-            <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
-            <p>
-                <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
-                &bull;
-                <a href="./pages/contato.html">Contato</a>
-            </p>
-        </footer>
-    </div>
+  </div>
+
+  <script src="../js/modal.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/formulario.js"></script>
+
 </body>
-
 </html>

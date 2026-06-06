@@ -1,5 +1,4 @@
-// DisasterAlert — js/faq.js
-// Acordeao do FAQ
+//  FAQ
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.faq-item').forEach(item => {

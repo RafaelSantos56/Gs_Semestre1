@@ -1,4 +1,4 @@
-// DisasterAlert — js/dashboard.js
+// dashboard
 
 const alertasData = [
   { id:1,  tipo:'ENCHENTE',     local:'Sao Paulo, SP',    sev:'critico', sat:'CBERS-4A',   hora:'14:32', pop:'42.000',  risco:88, status:'ATIVO'     },
