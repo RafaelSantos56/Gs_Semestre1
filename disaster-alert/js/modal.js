@@ -1,6 +1,3 @@
-// DisasterAlert — js/modal.js
-// Carregar ANTES de todos os outros scripts
-
 function abrirModal(id) {
   const overlay = document.getElementById(id);
   if (!overlay) return;
@@ -14,6 +11,7 @@ function fecharModal(id) {
   const overlay = document.getElementById(id);
   if (!overlay) return;
   overlay.classList.remove('is-open');
+  if (id === 'modal-chat') resetChat();
   if (!document.querySelector('.modal-overlay.is-open')) {
     document.body.style.overflow = '';
   }
@@ -43,6 +41,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+/* js dos integrantes */
 
 window.abrirModal  = abrirModal;
 window.fecharModal = fecharModal;
+function verFoto(src, nome, rm) {
+  document.getElementById('foto-img').src   = src;
+  document.getElementById('foto-nome').textContent = nome;
+  document.getElementById('foto-rm').textContent   = rm;
+  abrirModal('modal-foto');
+}
+
+window.verFoto = verFoto;
+document.querySelectorAll('.team-card__avatar[data-foto]').forEach(el => {
+  el.addEventListener('click', () => {
+    document.getElementById('foto-img').src = el.dataset.foto;
+    document.getElementById('foto-nome').textContent = el.dataset.nome;
+    document.getElementById('foto-rm').textContent = el.dataset.rm;
+    abrirModal('modal-foto');
+  });
+});
