@@ -85,6 +85,7 @@ const mapaPontos = [
   { top:'85%', left:'56%', sev:'critico', label:'Porto Alegre' },
   { top:'77%', left:'59%', sev:'aviso',   label:'Blumenau'     },
 ];
+
 function renderMapa() {
   const mapa = document.getElementById('mapContainer');
   if (!mapa) return;
@@ -106,4 +107,11 @@ function renderMapa() {
 document.addEventListener('DOMContentLoaded', () => {
   renderTabela();
   renderMapa();
+
+  document.getElementById('btnCaos')?.addEventListener('click', () => abrirModal('modal-caos'));
+  document.getElementById('btn-cancelar-caos')?.addEventListener('click', () => fecharModal('modal-caos'));
+  document.getElementById('btn-confirmar-caos')?.addEventListener('click', () => {
+    fecharModal('modal-caos');
+    if (typeof ativarCaos === 'function') ativarCaos();
+  });
 });

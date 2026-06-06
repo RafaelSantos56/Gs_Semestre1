@@ -259,32 +259,3 @@
 
 .alert-row { cursor: pointer; transition: background 0.15s; }
 .alert-row:hover { background: rgba(0,212,255,0.05); }
-
-/* RESPONSIVO MOBILE */
-@media (max-width: 768px) {
-  .modal { max-width: 95vw; }
-  .modal--lg, .modal--xl { max-width: 95vw; }
-}
-
-@media (max-width: 480px) {
-  .modal-overlay { align-items: flex-end; padding: 0; }
-
-  .modal {
-    border-radius: 16px 16px 0 0;
-    max-height: 88vh;
-    max-width: 100%;
-    transform: translateY(100%);
-  }
-
-  .modal-overlay.is-open .modal { transform: translateY(0); }
-
-  .modal__header,
-  .modal__body,
-  .modal__footer { padding-left: 16px; padding-right: 16px; }
-
-  .modal__footer { flex-direction: column-reverse; }
-  .modal__footer .btn { width: 100%; }
-
-  .modal--mapa { height: 85vh; border-radius: 16px 16px 0 0; }
-  .modal--foto { max-width: 100%; border-radius: 16px 16px 0 0; }
-}
