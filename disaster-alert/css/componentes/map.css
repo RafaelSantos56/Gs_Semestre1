@@ -1,9 +1,6 @@
-/* =====================================================
-   DisasterAlert — css/components/map.css
-   Mapa interativo, pontos pulsantes, legenda (Glassmorphism)
-   ===================================================== */
+/*Mapa interativo, pontos pulsantes, legenda */
 
-/* PAINEL DO MAPA (Holográfico Flutuante) */
+
 .map-panel {
   border-radius: var(--border-radius);
   padding: 16px;
@@ -116,3 +113,9 @@
   align-items: center;
   justify-content: space-between;
 }
+/* cores abaixo do mapa, para legenda, e para os pontos de alerta no mapa */
+
+.map-legend__item:has(.map-legend__dot--red)    { color: #ef4444; }
+.map-legend__item:has(.map-legend__dot--orange) { color: #f59e0b; }
+.map-legend__item:has(.map-legend__dot--green)  { color: #10b981; }
+.map-legend__item:has(.map-legend__dot--cyan)   { color:#a78bfa; }
