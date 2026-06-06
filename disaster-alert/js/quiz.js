@@ -1,5 +1,3 @@
-// DisasterAlert — js/quiz.js
-
 const perguntas = [
   {
     p: 'Qual satelite brasileiro e amplamente usado para monitoramento ambiental e deteccao de desastres?',
