@@ -56,7 +56,8 @@ if (elMsg && elCount) {
   elMsg.addEventListener('input', () => {
     const len = elMsg.value.length;
     elCount.textContent = len;
-    elCount.style.color = len < 20 ? 'var(--color-red)' : 'var(--color-green)';
+    elCount.classList.toggle('count-error', len < 20);
+    elCount.classList.toggle('count-success', len >= 20);
   });
 }
 
@@ -70,16 +71,26 @@ if (form) {
 function mostrarSucesso() {
   const nome = document.getElementById('nome')?.value || 'usuario';
   form.innerHTML = `
-    <div class="form-success">
-      <div style="font-size:48px;margin-bottom:12px">✅</div>
-      <h3>Relato enviado com sucesso!</h3>
-      <p>Obrigado, <strong>${nome}</strong>! Nossa equipe recebeu seu relato.</p>
-      <p style="margin-top:8px;font-size:12px;color:var(--text-muted)">
-        Em emergencias reais, contate a Defesa Civil: <strong>199</strong>
-      </p>
-      <button onclick="location.reload()" class="btn btn--primary" style="margin-top:20px">
-        Enviar novo relato
-      </button>
-    </div>
-  `;
+  <div class="form-success">
+    <div class="form-success__icon">✅</div>
+
+    <h3>Relato enviado com sucesso!</h3>
+
+    <p>
+      Obrigado, <strong>${nome}</strong>!
+      Nossa equipe recebeu seu relato.
+    </p>
+
+    <p class="form-success__info">
+      Em emergencias reais, contate a Defesa Civil:
+      <strong>199</strong>
+    </p>
+
+    <button
+      onclick="location.reload()"
+      class="btn btn--primary form-success__button">
+      Enviar novo relato
+    </button>
+  </div>
+`;
 }

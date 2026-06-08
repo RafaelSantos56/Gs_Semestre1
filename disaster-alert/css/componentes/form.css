@@ -53,3 +53,26 @@ select.form-control option { background: var(--bg-card); color: var(--text-prima
 .form-success { text-align: center; padding: 40px 20px; }
 .form-success h3 { font-size: 20px; color: var(--color-green); margin-bottom: 8px; }
 .form-success p  { color: var(--text-secondary); }
+
+.count-error {
+  color: var(--color-red);
+}
+
+.count-success {
+  color: var(--color-green);
+}
+
+.form-success__icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.form-success__info {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.form-success__button {
+  margin-top: 20px;
+}
