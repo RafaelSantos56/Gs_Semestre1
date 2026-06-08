@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <title>DisasterAlert — FAQ</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/faq.js" defer></script>
 </head>
+
 <body>
 
   <aside class="sidebar" id="sidebar">
-   <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
-      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-      <a href="dashboard.html"   class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
     </nav>
     <nav class="sidebar__nav-bottom">
-      <a href="faq.html"         class="nav-item active"><span class="nav-icon">☰</span> FAQ</a>
-      <a href="contato.html"     class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="faq.html" class="nav-item active"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
       <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
     </nav>
 
@@ -40,7 +45,7 @@
 
   <div class="main-wrapper">
 
-        <div class="topbar__utility-bar">
+    <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
           <span class="dot-online"></span> 3 satélites online
@@ -69,7 +74,9 @@
             <span class="faq-icon">›</span>
           </button>
           <div class="faq-answer">
-            Satelites como o CBERS-4A usam sensores SAR que emitem micro-ondas capazes de atravessar nuvens e funcionar 24 horas por dia. Esses sensores detectam variacoes no solo, nivel de agua e temperatura com precisao de metros, permitindo identificar enchentes, deslizamentos e queimadas em tempo quase real.
+            Satelites como o CBERS-4A usam sensores SAR que emitem micro-ondas capazes de atravessar nuvens e funcionar
+            24 horas por dia. Esses sensores detectam variacoes no solo, nivel de agua e temperatura com precisao de
+            metros, permitindo identificar enchentes, deslizamentos e queimadas em tempo quase real.
           </div>
         </div>
 
@@ -79,7 +86,8 @@
             <span class="faq-icon">›</span>
           </button>
           <div class="faq-answer">
-            Sim. Satelites geoestatacionarios como o GOES-16 atualizam imagens a cada 10 a 15 minutos. O DisasterAlert processa esses dados automaticamente e emite alertas em segundos apos a deteccao de um evento critico.
+            Sim. Satelites geoestatacionarios como o GOES-16 atualizam imagens a cada 10 a 15 minutos. O DisasterAlert
+            processa esses dados automaticamente e emite alertas em segundos apos a deteccao de um evento critico.
           </div>
         </div>
 
@@ -89,7 +97,8 @@
             <span class="faq-icon">›</span>
           </button>
           <div class="faq-answer">
-            O sistema integra dados do CBERS-4A (Brasil-China), GOES-16 (NOAA), AQUA/MODIS (NASA) e dados do programa Copernicus da ESA. Cada satelite contribui com um tipo especifico de dado para uma cobertura completa.
+            O sistema integra dados do CBERS-4A (Brasil-China), GOES-16 (NOAA), AQUA/MODIS (NASA) e dados do programa
+            Copernicus da ESA. Cada satelite contribui com um tipo especifico de dado para uma cobertura completa.
           </div>
         </div>
 
@@ -99,7 +108,8 @@
             <span class="faq-icon">›</span>
           </button>
           <div class="faq-answer">
-            Sensores oticos de alta resolucao chegam a 1 metro de resolucao espacial. Sensores SAR para enchentes tem precisao de 3 a 10 metros. Para queimadas, o MODIS detecta focos acima de 50 metros quadrados.
+            Sensores oticos de alta resolucao chegam a 1 metro de resolucao espacial. Sensores SAR para enchentes tem
+            precisao de 3 a 10 metros. Para queimadas, o MODIS detecta focos acima de 50 metros quadrados.
           </div>
         </div>
 
@@ -109,7 +119,8 @@
             <span class="faq-icon">›</span>
           </button>
           <div class="faq-answer">
-            Acesse a pagina de Contato e preencha o formulario com o tipo "Relato de erro". Em situacoes de emergencia real, sempre contate a Defesa Civil pelo numero 199.
+            Acesse a pagina de Contato e preencha o formulario com o tipo "Relato de erro". Em situacoes de emergencia
+            real, sempre contate a Defesa Civil pelo numero 199.
           </div>
         </div>
 
@@ -119,7 +130,8 @@
             <span class="faq-icon">›</span>
           </button>
           <div class="faq-answer">
-            O DisasterAlert contribui diretamente para o ODS 13 (Acao Climatica), o ODS 11 (Cidades e Comunidades Sustentaveis) e o ODS 9 (Industria, Inovacao e Infraestrutura).
+            O DisasterAlert contribui diretamente para o ODS 13 (Acao Climatica), o ODS 11 (Cidades e Comunidades
+            Sustentaveis) e o ODS 9 (Industria, Inovacao e Infraestrutura).
           </div>
         </div>
 
@@ -131,7 +143,7 @@
       <p>
         <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
         &bull;
-        <a href="./pages/contato.html">Contato</a>
+        <a href="./contato.html">Contato</a>
       </p>
     </footer>
 
@@ -158,9 +170,6 @@
     </div>
   </div>
 
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/faq.js"></script>
-
 </body>
+
 </html>

@@ -104,7 +104,6 @@
   line-height: 1.6;
   display: none;
   margin-bottom: 14px;
-  border-radius: 4px;
 }
 
 .quiz-feedback.show    { display: block; }

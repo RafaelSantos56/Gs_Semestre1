@@ -99,13 +99,6 @@ function iniciarSirene() {
   }
 }
 
-function pararSirene() {
-  if (audioSirene) {
-    audioSirene.pause();      
-    audioSirene.currentTime = 0; 
-  }
-}
-
 function tocarCiclo() {
   if (!sirenePlaying || !sirenCtx) return;
   const osc  = sirenCtx.createOscillator();

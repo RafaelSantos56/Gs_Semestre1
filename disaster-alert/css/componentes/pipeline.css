@@ -61,7 +61,6 @@
 }
 
 .disaster-type:hover {
-  border-color: var(--border-hover);
   background: rgba(0,212,255,0.06);
   transform:scale(1) translateY(-4px);
   border-color:var(--color-purple);

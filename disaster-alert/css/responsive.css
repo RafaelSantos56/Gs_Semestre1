@@ -14,7 +14,7 @@
   }
   /* --- Sidebar mobile sólida --- */
   .sidebar {
-    background: linear-gradient(180deg, #0a0620 0%, #0d0a2e 40%, #080520 100%) !important;
+    background: linear-gradient(180deg, #0a0620 0%, #0d0a2e 40%, #080520 100%);
     box-shadow: 4px 0 30px rgba(0,0,0,0.8);
     z-index: 300;
   }

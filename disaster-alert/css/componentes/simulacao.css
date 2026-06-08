@@ -150,7 +150,6 @@
   border-radius: 12px;
   padding: 25px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   animation: aparecerResultado 0.4s ease;
   box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.85), 0 10px 30px rgba(0, 0, 0, 0.4);
 }

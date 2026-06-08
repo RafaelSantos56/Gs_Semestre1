@@ -14,7 +14,7 @@
 }
 
 .simulacao-loading-overlay.is-visible {
-  display: flex !important;
+  display: flex;
 }
 
 .simulacao-loading-box {
