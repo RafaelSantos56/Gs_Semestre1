@@ -379,3 +379,45 @@ body::before {
 .sidebar-open {
   overflow: hidden;
 }
+
+.alert-id {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.alert-tipo {
+  font-weight: 600;
+}
+
+.alert-secundario {
+  color: var(--text-secondary);
+}
+
+.alert-status--ativo {
+  color: var(--color-red);
+}
+
+.alert-status--resolvido {
+  color: var(--color-green);
+}
+
+.alert-status--monit {
+  color: var(--color-orange);
+}
+
+#modal-alerta-risco {
+  width: var(--risco-width, 0%);
+}
+
+.risco-alto {
+  background: var(--color-red);
+}
+
+.risco-medio {
+  background: var(--color-orange);
+}
+
+.risco-baixo {
+  background: var(--color-green);
+}
