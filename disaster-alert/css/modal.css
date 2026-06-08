@@ -259,3 +259,7 @@
 
 .alert-row { cursor: pointer; transition: background 0.15s; }
 .alert-row:hover { background: rgba(0,212,255,0.05); }
+
+.modal-open {
+  overflow: hidden;
+}

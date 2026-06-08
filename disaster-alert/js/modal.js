@@ -2,7 +2,7 @@ function abrirModal(id) {
   const overlay = document.getElementById(id);
   if (!overlay) return;
   overlay.classList.add('is-open');
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('modal-open');
   const modal = overlay.querySelector('.modal');
   if (modal) { modal.setAttribute('tabindex', '-1'); modal.focus(); }
 }
@@ -13,7 +13,7 @@ function fecharModal(id) {
   overlay.classList.remove('is-open');
   if (id === 'modal-chat') resetChat();
   if (!document.querySelector('.modal-overlay.is-open')) {
-    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
   }
 }
 
