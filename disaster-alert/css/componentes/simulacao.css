@@ -140,3 +140,35 @@
         transform: translate(-50%, 0);
     }
 }
+
+.hidden {
+  display: none;
+}
+
+.stat-red {
+  color: var(--color-red);
+}
+
+.stat-orange {
+  color: var(--color-orange);
+}
+
+.stat-cyan {
+  color: var(--color-cyan);
+}
+
+.stat-yellow {
+  color: var(--color-yellow);
+}
+
+.resultado-certo {
+  color: var(--color-green);
+}
+
+.resultado-errado {
+  color: var(--color-red);
+}
+
+#sim-timer-fill {
+  width: var(--timer-width, 100%);
+}
