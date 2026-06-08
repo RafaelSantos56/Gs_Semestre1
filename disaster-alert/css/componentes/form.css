@@ -15,12 +15,17 @@
 .form-control {
   width: 100%;
   padding: 10px 14px;
-  background: var(--bg-input);
+  background: rgba(27, 29, 63, 0.411);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   color: var(--text-primary);
   font-size: 13px;
   transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.contato-aviso{
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
 .form-control:focus {
