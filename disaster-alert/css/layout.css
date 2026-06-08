@@ -375,3 +375,7 @@ body::before {
   flex-shrink: 0;
   letter-spacing: 0.5px;
 }
+
+.sidebar-open {
+  overflow: hidden;
+}

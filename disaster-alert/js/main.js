@@ -9,14 +9,14 @@ function abrirSidebar() {
   sidebar.classList.add('open');
   hamburger.classList.add('active');
   sidebarOverlay.classList.add('show');
-  document.body.style.overflow = 'hidden';
+  document.body.classList.add('sidebar-open');
 }
 
 function fecharSidebar() {
   sidebar.classList.remove('open');
   hamburger.classList.remove('active');
   sidebarOverlay.classList.remove('show');
-  document.body.style.overflow = '';
+  document.body.classList.remove('sidebar-open');
 }
 
 if (hamburger) {
