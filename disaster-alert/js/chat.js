@@ -129,7 +129,7 @@
     } else {
       wrap.innerHTML =
         '<div><div class="chat-msg__bubble">' + escapeHtml(text) + '</div>' +
-        '<div class="chat-msg__time" style="text-align:right">' + hora + '</div></div>';
+        '<div class="chat-msg__time chat-msg__time--user">' + hora + '</div></div>';
     }
     messagesEl.appendChild(wrap);
     messagesEl.scrollTop = messagesEl.scrollHeight;
@@ -150,7 +150,7 @@
 
   function showTyping()      { messagesEl.appendChild(typingEl); messagesEl.scrollTop = messagesEl.scrollHeight; }
   function hideTyping()      { if (typingEl.parentNode) typingEl.parentNode.removeChild(typingEl); }
-  function hideSuggestions() { if (suggestionsEl) suggestionsEl.style.display = 'none'; }
+  function hideSuggestions() { if (suggestionsEl) suggestionsEl.classList.add('hidden'); }
 
   function escapeHtml(s) {
     return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
@@ -166,7 +166,7 @@
     if (!messagesEl) return;
     messagesEl.innerHTML = '';
     fallbackIdx = 0;
-    if (suggestionsEl) suggestionsEl.style.display = '';
+    if (suggestionsEl) suggestionsEl.classList.remove('hidden');
     appendMessage('bot', 'Olá! Sou o assistente do DisasterAlert 🛰️\nComo posso te ajudar hoje?');
   }
 

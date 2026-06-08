@@ -23,13 +23,13 @@ function renderTabela(filtro = 'todos') {
 
   tbody.innerHTML = lista.map(a => `
     <tr class="alert-row" data-id="${a.id}" title="Clique para ver detalhes">
-      <td style="color:var(--text-muted);font-family:var(--font-mono);font-size:12px">#${String(a.id).padStart(3,'0')}</td>
-      <td style="font-weight:600">${a.tipo}</td>
+      <td class="alert-id">#${String(a.id).padStart(3,'0')}</td>
+      <td class="alert-tipo">${a.tipo}</td>
       <td>${a.local}</td>
       <td><span class="badge badge--${a.sev}">${a.sev.toUpperCase()}</span></td>
-      <td style="color:var(--text-secondary)">${a.sat}</td>
-      <td style="color:var(--text-secondary)">${a.hora}</td>
-      <td style="color:${a.status==='ATIVO'?'var(--color-red)':a.status==='RESOLVIDO'?'var(--color-green)':'var(--color-orange)'}">${a.status}</td>
+      <td class="alert-secundario">${a.sat}</td>
+      <td class="alert-secundario">${a.hora}</td>
+      <td class="alert-status alert-status--${a.status.toLowerCase().replace('.', '')}">
     </tr>
   `).join('');
 
@@ -51,9 +51,21 @@ function verAlerta(id) {
 
   const barra = document.getElementById('modal-alerta-risco');
   if (barra) {
-    barra.style.width = '0%';
-    setTimeout(() => { barra.style.width = a.risco + '%'; }, 100);
-    barra.style.background = a.risco >= 75 ? 'var(--color-red)' : a.risco >= 50 ? 'var(--color-orange)' : 'var(--color-green)';
+    barra.classList.remove(
+  'risco-baixo',
+  'risco-medio',
+  'risco-alto'
+);
+
+barra.style.setProperty('--risco-width', `${a.risco}%`);
+
+if (a.risco >= 75) {
+  barra.classList.add('risco-alto');
+} else if (a.risco >= 50) {
+  barra.classList.add('risco-medio');
+} else {
+  barra.classList.add('risco-baixo');
+}
   }
 
   const badge = document.getElementById('modal-alerta-badge');
@@ -92,10 +104,9 @@ function renderMapa() {
   mapaPontos.forEach((p, i) => {
     const dot = document.createElement('div');
     dot.className = `map-dot map-dot--${p.sev}`;
-    dot.style.top  = p.top;
-    dot.style.left = p.left;
-    dot.title = p.label;
-    dot.style.animationDelay = (i * 0.3) + 's';
+   dot.style.setProperty('--top', p.top);
+  dot.style.setProperty('--left', p.left);
+  dot.style.setProperty('--delay', `${i * 0.3}s`);
     dot.addEventListener('click', () => {
       const a = alertasData.find(x => x.local.startsWith(p.label.split(' ')[0]));
       if (a) verAlerta(a.id);

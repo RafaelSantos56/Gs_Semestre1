@@ -119,3 +119,9 @@
 .map-legend__item:has(.map-legend__dot--orange) { color: #f59e0b; }
 .map-legend__item:has(.map-legend__dot--green)  { color: #10b981; }
 .map-legend__item:has(.map-legend__dot--cyan)   { color:#a78bfa; }
+
+.map-dot {
+  top: var(--top);
+  left: var(--left);
+  animation-delay: var(--delay);
+}

@@ -71,8 +71,25 @@ function carregarCenario(idx) {
   for (let i = 0; i < 3; i++) {
     set(`sim-stat-num-${i}`,   vals[i]);
     set(`sim-stat-label-${i}`, c.labels[i]);
-    const el = document.getElementById(`sim-stat-num-${i}`);
-    if (el) el.style.color = c.cores[i];
+const el = document.getElementById(`sim-stat-num-${i}`);
+
+if (el) {
+  el.classList.remove(
+    'stat-red',
+    'stat-orange',
+    'stat-cyan',
+    'stat-yellow'
+  );
+
+  const mapaCores = {
+    'var(--color-red)': 'stat-red',
+    'var(--color-orange)': 'stat-orange',
+    'var(--color-cyan)': 'stat-cyan',
+    'var(--color-yellow)': 'stat-yellow'
+  };
+
+  el.classList.add(mapaCores[c.cores[i]]);
+}
   }
 
   const elOps = document.getElementById('sim-opcoes');
@@ -105,9 +122,8 @@ function carregarCenario(idx) {
 
   const elRes  = document.getElementById('sim-resultado');
   const elJogo = document.getElementById('sim-jogo');
-  if (elRes)  elRes.style.display  = 'none';
-  if (elJogo) elJogo.style.display = 'block';
-
+  if (elRes)  elRes.classList.add('hidden');
+if (elJogo) elJogo.classList.remove('hidden');
   iniciarTimer();
 }
 
@@ -125,7 +141,12 @@ function iniciarTimer() {
 function atualizarTimer() {
   const fill = document.getElementById('sim-timer-fill');
   const val  = document.getElementById('sim-timer-val');
-  if (fill) fill.style.width = (timerSeg / 25 * 100) + '%';
+  if (fill) {
+  fill.style.setProperty(
+    '--timer-width',
+    (timerSeg / 25 * 100) + '%'
+  );
+}
   if (val)  val.textContent  = timerSeg + 's';
 }
 
@@ -177,7 +198,18 @@ function escolherOpcao(idx, botaoClicado = null) {
   set('res-msg',    fb.msg);
 
   const elTit = document.getElementById('res-titulo');
-  if (elTit) elTit.style.color = acertou ? 'var(--color-green)' : 'var(--color-red)';
+  if (elTit) {
+  elTit.classList.remove(
+    'resultado-certo',
+    'resultado-errado'
+  );
+
+  elTit.classList.add(
+    acertou
+      ? 'resultado-certo'
+      : 'resultado-errado'
+  );
+}
 
   // --- GARANTE O AVANÇO DO CENÁRIO ---
   const btnProx = document.getElementById('sim-btn-prox');
@@ -191,8 +223,8 @@ function escolherOpcao(idx, botaoClicado = null) {
 
   const elRes  = document.getElementById('sim-resultado');
   const elJogo = document.getElementById('sim-jogo');
-  if (elRes)  elRes.style.display  = 'block';
-  if (elJogo) elJogo.style.display = 'none';
+  if (elRes)  elRes.classList.remove('hidden');
+  if (elJogo) elJogo.classList.add('hidden');
 }
 
 const btnProx = document.getElementById('sim-btn-prox');

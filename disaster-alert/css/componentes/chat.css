@@ -168,3 +168,11 @@
   background:rgba(139,92,246,.08);
 }
 
+.chat-msg__time--user {
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+

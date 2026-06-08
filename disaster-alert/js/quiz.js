@@ -44,7 +44,12 @@ function atualizarPlacar() {
 
 function atualizarProgress() {
   const fill = document.getElementById('quiz-progress-fill');
-  if (fill) fill.style.width = ((atual + 1) / perguntas.length * 100) + '%';
+  if (fill) {
+  fill.style.setProperty(
+    '--quiz-progress',
+    ((atual + 1) / perguntas.length * 100) + '%'
+  );
+}
 }
 
 function carregarQuestao() {
@@ -60,7 +65,7 @@ function carregarQuestao() {
   if (elNum) elNum.textContent = `QUESTAO ${atual + 1} DE ${perguntas.length}`;
   if (elP)   elP.textContent   = q.p;
   if (elFb)  { elFb.className = 'quiz-feedback'; elFb.textContent = ''; }
-  if (elBtn) elBtn.style.display = 'none';
+  if (elBtn) elBtn.classList.add('hidden');
 
   atualizarPlacar();
   atualizarProgress();
@@ -103,10 +108,13 @@ function responder(escolha) {
     fb.className = `quiz-feedback show ${acertou ? 'correto' : 'errado'}`; 
   }
   
-  if (btn) { 
-    btn.style.display = 'block'; 
-    btn.textContent = atual < perguntas.length - 1 ? 'PROXIMA QUESTAO →' : 'VER RESULTADO'; 
-  }
+  if (btn) {
+  btn.classList.remove('hidden');
+
+  btn.textContent = atual < perguntas.length - 1
+    ? 'PROXIMA QUESTAO →'
+    : 'VER RESULTADO';
+}
 }
 function proxima() {
   atual++;
