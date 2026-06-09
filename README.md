@@ -47,7 +47,17 @@ disaster-alert/
 │   │   ├── logo-js.png
 │   │   ├── logo-node_red.png
 │   │   ├── logo-telegram.png
-│   │   └── demais imagens do projeto
+│   │   ├── Mapa_brasil.png
+│   │   ├── miguel.jpg
+│   │   ├── mobile.png
+│   │   ├── quiz.png
+│   │   ├── rafael.jpg
+│   │   ├── simulacao.png
+│   │   ├── sobre.png
+│   │   ├── solucao_1.png
+│   │   ├── solucao_2.png
+│   │   ├── solucao_3.png
+│   │   └── timelinea.png
 │   │
 │   └── video/
 │       ├── inicio_intro.mp4
