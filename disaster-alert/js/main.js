@@ -273,3 +273,39 @@ window.addEventListener('DOMContentLoaded', () => {
     introVideo.onended = finalizar;
   }
 });
+
+function initFocusTrap(modalElement) {
+  const focusableElements = modalElement.querySelectorAll(
+    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]'
+  );
+  
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  modalElement.addEventListener('keydown', function(e) {
+    if (e.key !== 'Tab') return;
+
+    if (e.shiftKey) { // Se Shift + Tab
+      if (document.activeElement === firstElement) {
+        lastElement.focus();
+        e.preventDefault();
+      }
+    } else { // Se apenas Tab
+      if (document.activeElement === lastElement) {
+        firstElement.focus();
+        e.preventDefault();
+      }
+    }
+  });
+}
+
+const customButtons = document.querySelectorAll('.team-card__avatar, .alert-row');
+
+customButtons.forEach(button => {
+  button.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault(); // Evita o scroll da página no caso da barra de espaço
+      button.click();     // Dispara o evento de clique padrão
+    }
+  });
+});

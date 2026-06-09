@@ -417,3 +417,25 @@ body::before {
 .risco-baixo {
   background: var(--color-green);
 }
+
+/* Garante que o indicador de foco seja visível e nítido */
+:focus-visible {
+  outline: 3px solid #3b82f6; 
+  outline-offset: 3px;
+}
+
+/* Esconde o link de skip visualmente, mas o exibe ao receber foco via Tab */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #3b82f6;
+  color: white;
+  padding: 8px 16px;
+  z-index: 100;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
