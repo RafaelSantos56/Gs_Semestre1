@@ -25,55 +25,73 @@ O **DisasterAlert** é uma solução web desenvolvida para a **Global Solution 2
 disaster-alert/
 ├── index.html
 ├── assets/
+│   ├── audio/
+│       ├── audio_alert.mpeg
 │   ├── img/
-│   │   ├── disasteralert-icon.svg
-│   │   ├── disasteralert-logo.jpg
-│   │   ├── mapa_brasil.png
-│   │   ├── avatar.png
-│   │   ├── fundo_site.png
+│   │   ├── aqua.jpg
+│   │   ├── avatar_fundo.png
+│   │   ├── cbers4a.jpg
 │   │   ├── diego.jpg
+│   │   ├── disasteralert-icon.svg
+│   │   ├── fundo_site.png
+│   │   ├── goes16.png
 │   │   ├── igor.jpg
+│   │   ├── mapa_brasil.png
 │   │   ├── miguel.jpg
 │   │   └── rafael.jpg
 │   └── video/
-│       └── satelite.mp4
+│       ├── satelite.mp4
+│       └── video_intro.mp4
 ├── css/
-│   ├── main.css
-│   ├── variaveis.css
-│   ├── reset.css
+│   ├── componentes/
+│   │   ├── animacoes.css
+│   │   ├── badges.css
+│   │   ├── cards.css
+│   │   ├── chat.css
+│   │   ├── faq.css
+│   │   ├── form.css
+│   │   ├── intro.css
+│   │   ├── map.css
+│   │   ├── modal-simulacao.css
+│   │   ├── pipeline.css
+│   │   ├── quiz.css
+│   │   ├── satelites.css
+│   │   ├── simulacao.css
+│   │   ├── solucao.css
+│   │   ├── table.css
+│   │   ├── team.css
+│   │   └── timeline.css
 │   ├── layout.css
+│   ├── main.css
 │   ├── modal.css
-│   ├── animacoes.css
+│   ├── reset.css
 │   ├── responsive.css
-│   └── componentes/
-│       ├── cards.css
-│       ├── badges.css
-│       ├── map.css
-│       ├── table.css
-│       ├── form.css
-│       ├── faq.css
-│       ├── team.css
-│       ├── pipeline.css
-│       ├── quiz.css
-│       ├── simulacao.css
-│       └── chat.css
+│   └── variaveis.css
+│
 ├── js/
-│   ├── main.js
-│   ├── modal.js
+│   ├── chat.js
 │   ├── dashboard.js
-│   ├── simulacao.js
-│   ├── quiz.js
 │   ├── faq.js
 │   ├── formulario.js
-│   └── chat.js
-└── pages/
-    ├── sobre.html
-    ├── dashboard.html
-    ├── simulacao.html
-    ├── quiz.html
-    ├── faq.html
-    ├── contato.html
-    └── integrantes.html
+│   ├── main.js
+│   ├── modal.js
+│   ├── quiz.js
+│   ├── simulacao.js
+│   ├── solucao.js
+│   └── timeline.js
+├── pages/
+│   ├── contato.html
+│   ├── dashboard.html
+│   ├── faq.html
+│   ├── integrantes.html
+│   ├── quiz.html
+│   ├── simulacao.html
+│   ├── sobre.html
+│   ├── solucao.html
+│   ├── timeline.html
+│   └── index.html
+│
+└── README.md
 ```
 
 ---
@@ -120,6 +138,38 @@ disaster-alert/
 ## 📸 Preview
 
 ![DisasterAlert Logo](disaster-alert/assets/img/disasteralert-logo.jpg)
+## 📸 Telas do Sistema
+
+### Página Inicial
+![Página Inicial](disaster-alert/assets/img/index.png)
+
+### Dashboard
+![Dashboard](disaster-alert/assets/img/dashboard.png)
+
+### Simulação
+![Simulação](disaster-alert/assets/img/simulacao.png)
+
+### Quiz
+![Quiz](disaster-alert/assets/img/quiz.png)
+
+### Timeline
+![Timeline](disaster-alert/assets/img/timeline.png)
+
+### Solução
+![Solução](disaster-alert/assets/img/solucao_1.png)
+![Solução](disaster-alert/assets/img/solucao_2.png)
+
+### FAQ
+![FAQ](disaster-alert/assets/img/faq.png)
+
+### Contato
+![Contato](disaster-alert/assets/img/contato.png)
+
+### Integrantes
+![Integrantes](disaster-alert/assets/img/integrantes.png)
+
+### Sobre
+![Sobre](disaster-alert/assets/img/sobre.png)
 
 ---
 
