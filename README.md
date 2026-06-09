@@ -159,6 +159,9 @@ disaster-alert/
 ### Dashboard
 ![Dashboard](disaster-alert/assets/img/dashboard.png)
 
+### Sobre
+![Sobre](disaster-alert/assets/img/sobre.png)
+
 ### Simulação
 ![Simulação](disaster-alert/assets/img/simulacao.png)
 
@@ -181,8 +184,8 @@ disaster-alert/
 ### Integrantes
 ![Integrantes](disaster-alert/assets/img/integrantes.png)
 
-### Sobre
-![Sobre](disaster-alert/assets/img/sobre.png)
+### Mobile
+![Mobile](disaster-alert/assets/img/mobile.png)
 
 ---
 
