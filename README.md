@@ -21,41 +21,38 @@ O **DisasterAlert** é uma solução web desenvolvida para a **Global Solution 2
 
 ## 📁 Estrutura de Pastas
 
-```
+```bash
 disaster-alert/
-├── index.html
+│
 ├── assets/
 │   ├── audio/
-│       ├── audio_alert.mpeg
+│   │
 │   ├── img/
-│   │   ├── aqua.jpg
 │   │   ├── avatar_fundo.png
-│   │   ├── cbers4a.jpg
-│   │   ├── contato.png
 │   │   ├── dashboard.png
-│   │   ├── diego.jpg
-│   │   ├── disasteralert-icon.svg
 │   │   ├── disasteralert-logo.jpg
 │   │   ├── faq.png
-│   │   ├── fundo_site.png
-│   │   ├── goes16.png
-│   │   ├── igor.jpg
 │   │   ├── index.png
-│   │   ├── integrantes.pgn
-│   │   ├── mapa_brasil.png
-│   │   ├── miguel.jpg
+│   │   ├── integrantes.png
 │   │   ├── mobile.png
 │   │   ├── quiz.png
-│   │   ├── rafael.jpg
 │   │   ├── simulacao.png
 │   │   ├── sobre.png
+│   │   ├── timeline.png
 │   │   ├── solucao_1.png
 │   │   ├── solucao_2.png
 │   │   ├── solucao_3.png
-│   │   └── timeline.png
+│   │   ├── logo-css3.svg
+│   │   ├── logo-html.png
+│   │   ├── logo-js.png
+│   │   ├── logo-node_red.png
+│   │   ├── logo-telegram.png
+│   │   └── demais imagens do projeto
+│   │
 │   └── video/
 │       ├── inicio_intro.mp4
 │       └── satelite.mp4
+│
 ├── css/
 │   ├── componentes/
 │   │   ├── animacoes.css
@@ -75,6 +72,7 @@ disaster-alert/
 │   │   ├── table.css
 │   │   ├── team.css
 │   │   └── timeline.css
+│   │
 │   ├── layout.css
 │   ├── main.css
 │   ├── modal.css
@@ -83,27 +81,21 @@ disaster-alert/
 │   └── variaveis.css
 │
 ├── js/
-│   ├── chat.js
 │   ├── alert.js
-│   ├── faq.js
-│   ├── formulario.js
-│   ├── main.js
-│   ├── modal.js
+│   ├── chat.js
+│   ├── mapa.js
 │   ├── quiz.js
 │   ├── simulacao.js
-│   ├── solucao.js
-│   └── timeline.js
+│   └── demais scripts
+│
 ├── pages/
-│   ├── contato.html
-│   ├── alert.html
-│   ├── faq.html
-│   ├── integrantes.html
-│   ├── quiz.html
+│   ├── dashboard.html
 │   ├── simulacao.html
-│   ├── sobre.html
-│   ├── solucao.html
-│   ├── timeline.html
-│   └── index.html
+│   ├── quiz.html
+│   ├── equipe.html
+│   └── demais páginas
+│
+├── index.html
 │
 └── README.md
 ```
