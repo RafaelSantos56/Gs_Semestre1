@@ -21,28 +21,33 @@ O **DisasterAlert** é uma solução web desenvolvida para a **Global Solution 2
 
 ## 📁 Estrutura de Pastas
 
-```
+```bash
 disaster-alert/
-├── index.html
+│
 ├── assets/
 │   ├── audio/
-│       ├── audio_alert.mpeg
+│   │
 │   ├── img/
-│   │   ├── aqua.jpg
 │   │   ├── avatar_fundo.png
-│   │   ├── cbers4a.jpg
-│   │   ├── contato.png
 │   │   ├── dashboard.png
-│   │   ├── diego.jpg
-│   │   ├── disasteralert-icon.svg
 │   │   ├── disasteralert-logo.jpg
 │   │   ├── faq.png
-│   │   ├── fundo_site.png
-│   │   ├── goes16.png
-│   │   ├── igor.jpg
 │   │   ├── index.png
-│   │   ├── integrantes.pgn
-│   │   ├── mapa_brasil.png
+│   │   ├── integrantes.png
+│   │   ├── mobile.png
+│   │   ├── quiz.png
+│   │   ├── simulacao.png
+│   │   ├── sobre.png
+│   │   ├── timeline.png
+│   │   ├── solucao_1.png
+│   │   ├── solucao_2.png
+│   │   ├── solucao_3.png
+│   │   ├── logo-css3.svg
+│   │   ├── logo-html.png
+│   │   ├── logo-js.png
+│   │   ├── logo-node_red.png
+│   │   ├── logo-telegram.png
+│   │   ├── Mapa_brasil.png
 │   │   ├── miguel.jpg
 │   │   ├── mobile.png
 │   │   ├── quiz.png
@@ -52,10 +57,12 @@ disaster-alert/
 │   │   ├── solucao_1.png
 │   │   ├── solucao_2.png
 │   │   ├── solucao_3.png
-│   │   └── timeline.png
+│   │   └── timelinea.png
+│   │
 │   └── video/
 │       ├── inicio_intro.mp4
 │       └── satelite.mp4
+│
 ├── css/
 │   ├── componentes/
 │   │   ├── animacoes.css
@@ -75,6 +82,7 @@ disaster-alert/
 │   │   ├── table.css
 │   │   ├── team.css
 │   │   └── timeline.css
+│   │
 │   ├── layout.css
 │   ├── main.css
 │   ├── modal.css
@@ -83,27 +91,21 @@ disaster-alert/
 │   └── variaveis.css
 │
 ├── js/
-│   ├── chat.js
 │   ├── alert.js
-│   ├── faq.js
-│   ├── formulario.js
-│   ├── main.js
-│   ├── modal.js
+│   ├── chat.js
+│   ├── mapa.js
 │   ├── quiz.js
 │   ├── simulacao.js
-│   ├── solucao.js
-│   └── timeline.js
+│   └── demais scripts
+│
 ├── pages/
-│   ├── contato.html
-│   ├── alert.html
-│   ├── faq.html
-│   ├── integrantes.html
-│   ├── quiz.html
+│   ├── dashboard.html
 │   ├── simulacao.html
-│   ├── sobre.html
-│   ├── solucao.html
-│   ├── timeline.html
-│   └── index.html
+│   ├── quiz.html
+│   ├── equipe.html
+│   └── demais páginas
+│
+├── index.html
 │
 └── README.md
 ```
@@ -132,7 +134,7 @@ disaster-alert/
 - **Dashboard em tempo real** com feed de alertas atualizado automaticamente
 - **Mapa do Brasil** interativo com pontos de ocorrência por severidade
 - **Scanner de satélite** com vídeo animado de varredura
-- **Modo Caos** — simulação de emergência com sirene via Web Audio API
+- **Modo Caos** — simulação de emergência com sirene
 - **Tabela de alertas** com filtros por severidade e status
 - **Simulação de desastres** com cenários, timer e análise de risco
 - **Quiz** educativo sobre satélites e desastres naturais
@@ -245,7 +247,7 @@ O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos 
 
 ## 📞 Contato
 
-Dúvidas ou sugestões sobre o projeto podem ser enviadas pelo formulário na página [Contato](disaster-alert/pages/contato.html) ou diretamente pelo GitHub de qualquer integrante acima.
+Dúvidas ou sugestões sobre o projeto podem ser enviadas pelo formulário na página [Contato](disaster-alert/pages/contato.html) ou diretamente pelo GitHub de qualquer integrante acima, ou pelo email a seguir: rm572368@fiap.com.br
 
 ---
 
