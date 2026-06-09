@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../css/modais.css">
   <script src="../js/modal.js" defer></script>
   <script src="../js/main.js" defer></script>
-  <script src="../js/dashboard.js" defer></script>
+  <script src="../js/alert.js" defer></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
       <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
       <a href="solucao.html" class="nav-item"><span class="nav-icon">◎</span> Solução</a>
       <a href="timeline.html" class="nav-item"><span class="nav-icon">▦</span> Histórico</a>
-      <a href="dashboard.html" class="nav-item active"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="alert.html" class="nav-item active"><span class="nav-icon">◈</span> Alertas</a>
       <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
       <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
     </nav>
@@ -191,7 +191,7 @@
   </div>
 
   <div class="modal-overlay" id="modal-defesa-sucesso" role="dialog" aria-modal="true">
-    <div class="modal modal--success modal--sm">
+    <div class="modal modal--sucesso">
       <div class="modal__header">
         <h2 class="modal__title modal__title--success">✓ Defesa Civil Acionada</h2>
         <button class="modal__close" aria-label="Fechar">&times;</button>
@@ -201,7 +201,7 @@
         <p class="modal__body-subtext">O status do incidente na central de monitoramento foi atualizado para <strong>Concluído</strong>.</p>
       </div>
       <div class="modal__footer modal__footer--center">
-        <button class="btn btn--secondary btn--success-ok" id="btn-sucesso-ok">Ok</button>
+        <button class="btn btn--secondary btn--success-ok" id="btn-sucesso-ok">Continuar</button>
       </div>
     </div>
   </div>
