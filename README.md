@@ -115,6 +115,8 @@ disaster-alert/
 |---|---|
 | `index.html` | Dashboard principal com mapa, feed de alertas e scanner de satélite |
 | `pages/sobre.html` | Descrição do projeto, pipeline de funcionamento e tipos de desastre monitorados |
+| `pages/solucao.html` | Focada em apresentar a tecnologia do projeto, o pipeline de dados (como as informações de satélite chegam até o usuário) e o impacto socioambiental. |
+| `pages/historico.html` | Focada na linha do tempo dos desastres já registrados, relatórios gerados e na evolução das métricas monitoradas pela plataforma. |
 | `pages/dashboard.html` | Central de alertas com tabela filtrável, cards de satélites e modal de detalhes |
 | `pages/simulacao.html` | Simulação interativa de cenários de desastre com timer e análise de risco |
 | `pages/quiz.html` | Quiz educativo sobre desastres naturais e satélites |
@@ -148,6 +150,39 @@ disaster-alert/
 
 ---
 
+## 🎨 Paletas de cores
+
+| Cor                   | Hex       | Uso                                   |
+| --------------------- | --------- | ------------------------------------- |
+| 🟦 Fundo Principal    | `#111827` | Background geral da aplicação         |
+| 🟪 Cards              | `#1a2332` | Containers e cartões de conteúdo      |
+| 🌑 Sidebar            | `#110a2a` | Menu lateral                          |
+| 🔵 Topbar             | `#1e2d3d` | Barra superior                        |
+| ⚫ Inputs              | `#0d1521` | Campos de entrada                     |
+| 🟣 Destaque Principal | `#a78bfa` | Botões, links e elementos interativos |
+| 💜 Roxo Secundário    | `#8b5cf6` | Hover e componentes secundários       |
+| 🟢 Sucesso            | `#22c55e` | Indicadores positivos                 |
+| 🔴 Erro               | `#ff4444` | Alertas e mensagens de erro           |
+| 🟠 Aviso              | `#f59e0b` | Notificações e alertas                |
+| 🟡 Atenção            | `#fbbf24` | Estados intermediários                |
+| 🔵 Informação         | `#3b82f6` | Informações e ações secundárias       |
+| ⚪ Texto Principal     | `#e5e7eb` | Títulos e conteúdo principal          |
+| ⚫ Texto Secundário    | `#9ca3af` | Textos complementares                 |
+| ⚫ Texto Suave         | `#6b7280` | Informações menos relevantes          |
+
+
+## 🌍 Conexão Estratégica com os ODS da ONU 🌟
+
+O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos ambientais e potencializar a produção tecnológica, atendendo diretamente aos critérios globais da **Agenda 2030**:
+
+### 🛠️ ODS 9 — Indústria, Inovação e Infraestrutura
+> **No Projeto:** Integração de processamento de dados satelitais e telemetria avançada no campo. A infraestrutura conecta inteligência artificial ao manejo agronômico de forma acessível, modernizando os processos de ponta a ponta.
+
+### 🏢 ODS 11 — Cidades e Comunidades Sustentáveis
+> **No Projeto:** Otimização da cadeia de suprimentos e inteligência territorial, garantindo que o impacto da produção rural colabore diretamente para o abastecimento consciente, seguro e sustentável de comunidades urbanas integradas.
+
+### 🌱 ODS 13 — Ação Contra a Mudança Global do Clima
+> **No Projeto:** Monitoramento ativo contra o desmatamento e otimização do uso de recursos hídricos e insumos através de imagens de satélite. A plataforma fornece dados preditivos para que produtores combatam o desperdício e reduzam a pegada de carbono operacional.
 ## 📸 Preview
 
 ![DisasterAlert Logo](disaster-alert/assets/img/disasteralert-logo.jpg)
