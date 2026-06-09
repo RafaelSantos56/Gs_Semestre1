@@ -237,7 +237,7 @@ O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos 
 
 ## 📞 Contato
 
-Dúvidas ou sugestões sobre o projeto podem ser enviadas pelo formulário na página [Contato](disaster-alert/pages/contato.html) ou diretamente pelo GitHub de qualquer integrante acima.
+Dúvidas ou sugestões sobre o projeto podem ser enviadas pelo formulário na página [Contato](disaster-alert/pages/contato.html) ou diretamente pelo GitHub de qualquer integrante acima, ou pelo email a seguir: rm572368@fiap.com.br
 
 ---
 
