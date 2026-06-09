@@ -14,13 +14,13 @@ const perguntas = [
   {
     p: 'Qual tecnologia de satelite consegue enxergar atraves de nuvens densas e funcionar 24h por dia?',
     ops: ['Camera RGB comum', 'Sistema GPS convencional', 'Camera infravermelho simples', 'Radar SAR (Synthetic Aperture Radar)'],
-    certo: 3, 
+    certo: 3,
     fb: 'CORRETO! O Radar SAR usa micro-ondas que atravessam nuvens e funcionam dia e noite — perfeito para enchentes em dias nublados.'
   },
   {
     p: 'O que significa o ODS 13, vinculado ao projeto DisasterAlert?',
     ops: ['Vida na agua', 'Saude e bem-estar', 'Acao contra a mudanca global do clima', 'Energia limpa e acessivel'],
-    certo: 2, 
+    certo: 2,
     fb: 'CORRETO! O ODS 13 trata de uma ação climática urgente. O DisasterAlert usa tecnologia espacial para mitigar impactos de desastres climáticos.'
   },
   {
@@ -45,11 +45,11 @@ function atualizarPlacar() {
 function atualizarProgress() {
   const fill = document.getElementById('quiz-progress-fill');
   if (fill) {
-  fill.style.setProperty(
-    '--quiz-progress',
-    ((atual + 1) / perguntas.length * 100) + '%'
-  );
-}
+    fill.style.setProperty(
+      '--quiz-progress',
+      ((atual + 1) / perguntas.length * 100) + '%'
+    );
+  }
 }
 
 function carregarQuestao() {
@@ -57,14 +57,14 @@ function carregarQuestao() {
   if (!q) return;
 
   const elNum = document.getElementById('quiz-qnum');
-  const elP   = document.getElementById('quiz-pergunta');
+  const elP = document.getElementById('quiz-pergunta');
   const elOps = document.getElementById('quiz-opcoes');
-  const elFb  = document.getElementById('quiz-feedback');
+  const elFb = document.getElementById('quiz-feedback');
   const elBtn = document.getElementById('quiz-btn-prox');
 
   if (elNum) elNum.textContent = `QUESTAO ${atual + 1} DE ${perguntas.length}`;
-  if (elP)   elP.textContent   = q.p;
-  if (elFb)  { elFb.className = 'quiz-feedback'; elFb.textContent = ''; }
+  if (elP) elP.textContent = q.p;
+  if (elFb) { elFb.className = 'quiz-feedback'; elFb.textContent = ''; }
   if (elBtn) elBtn.classList.add('hidden');
 
   atualizarPlacar();
@@ -82,10 +82,10 @@ function carregarQuestao() {
 }
 
 function responder(escolha) {
-  const q    = perguntas[atual];
+  const q = perguntas[atual];
   const opts = document.querySelectorAll('.quiz-option');
-  const fb   = document.getElementById('quiz-feedback');
-  const btn  = document.getElementById('quiz-btn-prox');
+  const fb = document.getElementById('quiz-feedback');
+  const btn = document.getElementById('quiz-btn-prox');
 
   opts.forEach((o, i) => {
     o.disabled = true;
@@ -103,18 +103,18 @@ function responder(escolha) {
     if (!acertou) {
       textoFeedback = textoFeedback.replace('CORRETO!', 'INCORRETO!');
     }
-    
-    fb.textContent = textoFeedback; 
-    fb.className = `quiz-feedback show ${acertou ? 'correto' : 'errado'}`; 
-  }
-  
-  if (btn) {
-  btn.classList.remove('hidden');
 
-  btn.textContent = atual < perguntas.length - 1
-    ? 'PROXIMA QUESTAO →'
-    : 'VER RESULTADO';
-}
+    fb.textContent = textoFeedback;
+    fb.className = `quiz-feedback show ${acertou ? 'correto' : 'errado'}`;
+  }
+
+  if (btn) {
+    btn.classList.remove('hidden');
+
+    btn.textContent = atual < perguntas.length - 1
+      ? 'PROXIMA QUESTAO →'
+      : 'VER RESULTADO';
+  }
 }
 function proxima() {
   atual++;
@@ -123,23 +123,24 @@ function proxima() {
 }
 
 function mostrarResultado() {
-  const pct  = Math.round(certas / perguntas.length * 100);
+  const pct = Math.round(certas / perguntas.length * 100);
   const msgs = [
-    [0,   '😟', 'Continue estudando sobre tecnologia espacial e gestao de desastres!'],
-    [40,  '🙂', 'Bom inicio! Explore mais sobre satelites e resposta a desastres.'],
-    [60,  '👍', 'Bom desempenho! Voce entende os fundamentos do monitoramento satelital.'],
-    [80,  '🏆', 'Excelente! Voce tem solido conhecimento sobre tecnologia espacial.'],
+    [0, '😟', 'Continue estudando sobre tecnologia espacial e gestao de desastres!'],
+    [40, '🙂', 'Bom inicio! Explore mais sobre satelites e resposta a desastres.'],
+    [60, '👍', 'Bom desempenho! Voce entende os fundamentos do monitoramento satelital.'],
+    [80, '🏆', 'Excelente! Voce tem solido conhecimento sobre tecnologia espacial.'],
     [100, '🚀', 'Perfeito! Voce domina completamente a tecnologia espacial aplicada a desastres!'],
   ];
   let m = msgs[0];
   msgs.forEach(x => { if (pct >= x[0]) m = x; });
 
   const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set('res-emoji',  m[1]);
+  set('res-emoji', m[1]);
   set('res-pontos', `${certas} / ${perguntas.length}`);
-  set('res-msg',    m[2]);
-  set('res-tempo',  `${Math.round(performance.now() / 1000)}s`);
-
+  set('res-msg', m[2]);
+  set('res-tempo', `${Math.round(performance.now() / 1000)}s`);
+  set('quiz-certas-final', certas);
+  set('quiz-erradas-final', erradas);
   if (window.abrirModal) abrirModal('modal-resultado');
 }
 
