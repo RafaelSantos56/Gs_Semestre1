@@ -51,6 +51,7 @@ disaster-alert/
 │   │   ├── sobre.png
 │   │   ├── solucao_1.png
 │   │   ├── solucao_2.png
+│   │   ├── solucao_3.png
 │   │   └── timeline.png
 │   └── video/
 │       ├── satelite.mp4
@@ -209,6 +210,7 @@ O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos 
 ### Solução
 ![Solução](disaster-alert/assets/img/solucao_1.png)
 ![Solução](disaster-alert/assets/img/solucao_2.png)
+![Solução](disaster-alert/assets/img/solucao_3.png)
 
 ### FAQ
 ![FAQ](disaster-alert/assets/img/faq.png)
