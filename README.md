@@ -51,10 +51,11 @@ disaster-alert/
 │   │   ├── sobre.png
 │   │   ├── solucao_1.png
 │   │   ├── solucao_2.png
+│   │   ├── solucao_3.png
 │   │   └── timeline.png
 │   └── video/
-│       ├── satelite.mp4
-│       └── video_intro.mp4
+│       ├── inicio_intro.mp4
+│       └── satelite.mp4
 ├── css/
 │   ├── componentes/
 │   │   ├── animacoes.css
@@ -83,7 +84,7 @@ disaster-alert/
 │
 ├── js/
 │   ├── chat.js
-│   ├── dashboard.js
+│   ├── alert.js
 │   ├── faq.js
 │   ├── formulario.js
 │   ├── main.js
@@ -94,7 +95,7 @@ disaster-alert/
 │   └── timeline.js
 ├── pages/
 │   ├── contato.html
-│   ├── dashboard.html
+│   ├── alert.html
 │   ├── faq.html
 │   ├── integrantes.html
 │   ├── quiz.html
@@ -117,7 +118,7 @@ disaster-alert/
 | `pages/sobre.html` | Descrição do projeto, pipeline de funcionamento e tipos de desastre monitorados |
 | `pages/solucao.html` | Focada em apresentar a tecnologia do projeto, o pipeline de dados (como as informações de satélite chegam até o usuário) e o impacto socioambiental. |
 | `pages/historico.html` | Focada na linha do tempo dos desastres já registrados, relatórios gerados e na evolução das métricas monitoradas pela plataforma. |
-| `pages/dashboard.html` | Central de alertas com tabela filtrável, cards de satélites e modal de detalhes |
+| `pages/alert.html` | Central de alertas com tabela filtrável, cards de satélites e modal de detalhes |
 | `pages/simulacao.html` | Simulação interativa de cenários de desastre com timer e análise de risco |
 | `pages/quiz.html` | Quiz educativo sobre desastres naturais e satélites |
 | `pages/faq.html` | Perguntas frequentes sobre a plataforma |
@@ -209,6 +210,7 @@ O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos 
 ### Solução
 ![Solução](disaster-alert/assets/img/solucao_1.png)
 ![Solução](disaster-alert/assets/img/solucao_2.png)
+![Solução](disaster-alert/assets/img/solucao_3.png)
 
 ### FAQ
 ![FAQ](disaster-alert/assets/img/faq.png)
