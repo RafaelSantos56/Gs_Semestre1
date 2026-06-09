@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — Histórico de Desastres</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/chat.js" defer></script>
+  <script src="../js/timeline.js" defer></script>
+</head>
+
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="solucao.html" class="nav-item"><span class="nav-icon">◎</span> Solução</a>
+      <a href="timeline.html" class="nav-item active"><span class="nav-icon">▦</span> Histórico</a>
+      <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+    </nav>
+    <nav class="sidebar__nav-bottom">
+      <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="main-wrapper">
+
+    <div class="topbar__utility-bar">
+      <div class="topbar__utility-right">
+        <div class="topbar__status">
+          <span class="dot-online"></span> 3 satélites online
+        </div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>Histórico de Desastres</h1>
+        <p>Linha do tempo de eventos que mudaram a urgência do monitoramento no Brasil</p>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- CONTEXTO -->
+      <div class="section-header">
+        <h2>Por que o histórico importa</h2>
+        <p>Cada evento nesta linha do tempo representa uma janela em que um sistema como o DisasterAlert poderia ter reduzido significativamente o impacto humano. O padrão é claro: desastres recorrentes, resposta tardia, vítimas evitáveis.</p>
+      </div>
+
+      <!-- LEGENDA -->
+      <div class="timeline-legend">
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#3b82f6"></span> Enchente
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#f59e0b"></span> Queimada
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#a78bfa"></span> Deslizamento
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot" style="background:#fbbf24"></span> Seca
+        </div>
+      </div>
+
+      <!-- FILTROS -->
+      <div class="timeline-filters">
+        <span class="timeline-filter-label">Filtrar:</span>
+        <button class="tl-filter-btn active" data-filter="todos">Todos</button>
+        <button class="tl-filter-btn" data-filter="enchente">🌊 Enchente</button>
+        <button class="tl-filter-btn" data-filter="queimada">🔥 Queimada</button>
+        <button class="tl-filter-btn" data-filter="deslizamento">⛰️ Deslizamento</button>
+        <button class="tl-filter-btn" data-filter="seca">☀️ Seca</button>
+      </div>
+
+      <div class="timeline-count" id="timeline-count"></div>
+
+      <!-- TIMELINE -->
+      <div class="timeline-wrap">
+
+        <!-- 2024 -->
+        <div class="tl-item" data-type="enchente">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2024</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Enchentes no Rio Grande do Sul</div>
+                <div class="tl-card__local">📍 Rio Grande do Sul — maior desastre climático da história do estado</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Óbitos</div>
+                  <div class="tl-stat__value">147</div>
+                  <div class="tl-stat__unit">mortes confirmadas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Desabrigados</div>
+                  <div class="tl-stat__value">400k+</div>
+                  <div class="tl-stat__unit">pessoas deslocadas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Municípios</div>
+                  <div class="tl-stat__value">400+</div>
+                  <div class="tl-stat__unit">cidades atingidas</div>
+                </div>
+              </div>
+              <p class="tl-desc">Chuvas sem precedentes transformaram rios gaúchos em agentes de destruição em massa. Cidades inteiras ficaram submersas por dias. A ausência de um sistema de alerta precoce integrado fez com que muitos moradores fossem pegos de surpresa mesmo com previsões meteorológicas disponíveis.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">O <strong>GOES-16</strong> detectaria a formação do sistema de chuvas com até 6h de antecedência. Alertas seriam emitidos automaticamente para prefeituras via Telegram, e a população acessaria rotas de evacuação pelo assistente de IA — potencialmente salvando dezenas de vidas.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2023 -->
+        <div class="tl-item" data-type="deslizamento">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2023</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Deslizamentos em São Sebastião e Ubatuba</div>
+                <div class="tl-card__local">📍 Litoral Norte de São Paulo</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Óbitos</div>
+                  <div class="tl-stat__value">65</div>
+                  <div class="tl-stat__unit">mortes confirmadas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Chuva acumulada</div>
+                  <div class="tl-stat__value">682mm</div>
+                  <div class="tl-stat__unit">em 24 horas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Famílias</div>
+                  <div class="tl-stat__value">2.000+</div>
+                  <div class="tl-stat__unit">desabrigadas</div>
+                </div>
+              </div>
+              <p class="tl-desc">Em fevereiro de 2023, o litoral norte paulista registrou o maior volume de chuvas já documentado no estado em 24 horas. As encostas saturadas desabaram sobre bairros residenciais enquanto moradores dormiam. O evento expôs a inexistência de um sistema local de monitoramento de encostas integrado ao alerta meteorológico.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">O <strong>CBERS-4A</strong> monitora deformação de encostas e saturação do solo. Cruzado com os dados de precipitação do <strong>GOES-16</strong>, o sistema emitiria alerta de alto risco para deslizamento horas antes — acionando evacuação preventiva nas áreas mais vulneráveis.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2022 -->
+        <div class="tl-item" data-type="deslizamento">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2022</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Tragédia de Petrópolis</div>
+                <div class="tl-card__local">📍 Petrópolis, RJ — a pior tragédia da cidade em 90 anos</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Óbitos</div>
+                  <div class="tl-stat__value">233</div>
+                  <div class="tl-stat__unit">mortes confirmadas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Precipitação</div>
+                  <div class="tl-stat__value">258mm</div>
+                  <div class="tl-stat__unit">em 3 horas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Desaparecidos</div>
+                  <div class="tl-stat__value">35+</div>
+                  <div class="tl-stat__unit">ao final das buscas</div>
+                </div>
+              </div>
+              <p class="tl-desc">Em 15 de fevereiro de 2022, uma chuva de intensidade histórica transformou Petrópolis em cenário de guerra. Deslizamentos simultâneos soterram ruas inteiras. O evento foi classificado como catastrófico pela Defesa Civil. Estudos posteriores indicam que a evacuação teria sido possível com até 2 horas de antecedência.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">Combinando dados de saturação do solo do <strong>CBERS-4A</strong> com a previsão de precipitação extrema do <strong>GOES-16</strong>, o DisasterAlert emitiria alerta de nível <strong>CATASTRÓFICO</strong> para as encostas de Petrópolis — abrindo a janela de evacuação necessária para salvar vidas.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2020 -->
+        <div class="tl-item" data-type="queimada">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2020</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Queimadas no Pantanal</div>
+                <div class="tl-card__local">📍 Pantanal — Mato Grosso e Mato Grosso do Sul</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Área destruída</div>
+                  <div class="tl-stat__value">4,4M</div>
+                  <div class="tl-stat__unit">hectares queimados</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Do bioma</div>
+                  <div class="tl-stat__value">28%</div>
+                  <div class="tl-stat__unit">do Pantanal afetado</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Focos ativos</div>
+                  <div class="tl-stat__value">22k+</div>
+                  <div class="tl-stat__unit">detectados no ano</div>
+                </div>
+              </div>
+              <p class="tl-desc">O Pantanal enfrentou em 2020 a maior devastação por queimadas de sua história recente. Combinação de seca severa, altas temperaturas e ação humana resultou em um incêndio de proporções inéditas. A falta de um sistema de monitoramento contínuo permitiu que pequenos focos se transformassem em incêndios incontroláveis.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">O <strong>AQUA/MODIS</strong> detecta anomalias térmicas acima de 300K — identificando focos de calor antes que se expandam. O DisasterAlert emitiria alertas precoces para brigadistas e autoridades, permitindo combate nos estágios iniciais e reduzindo drasticamente a área queimada.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2019 -->
+        <div class="tl-item" data-type="queimada">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2019</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Queimadas na Amazônia — Crise Global</div>
+                <div class="tl-card__local">📍 Amazônia — Pará, Amazonas, Mato Grosso, Rondônia</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Focos de fogo</div>
+                  <div class="tl-stat__value">89k+</div>
+                  <div class="tl-stat__unit">registrados no ano</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Aumento</div>
+                  <div class="tl-stat__value">+84%</div>
+                  <div class="tl-stat__unit">em relação a 2018</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Área</div>
+                  <div class="tl-stat__value">906k</div>
+                  <div class="tl-stat__unit">hectares queimados</div>
+                </div>
+              </div>
+              <p class="tl-desc">As queimadas de 2019 na Amazônia ganharam repercussão mundial após imagens de fumaça escurecerem o céu de São Paulo a milhares de quilômetros. O evento expôs a ineficiência dos sistemas de monitoramento existentes em converter dados orbitais em ações preventivas no campo.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">Com monitoramento contínuo do <strong>AQUA/MODIS</strong> e cruzamento com dados de vento do <strong>GOES-16</strong>, o DisasterAlert identificaria a direção de propagação dos focos e emitiria alertas georeferenciados — permitindo intervenção nos primeiros estágios e não após a catástrofe consolidada.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="tl-item" data-type="seca">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2017</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Seca no Nordeste — Colapso do Semiárido</div>
+                <div class="tl-card__local">📍 Nordeste Brasileiro — 9 estados em situação de emergência</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Municípios</div>
+                  <div class="tl-stat__value">1.200+</div>
+                  <div class="tl-stat__unit">em emergência hídrica</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Reservatórios</div>
+                  <div class="tl-stat__value">&lt;10%</div>
+                  <div class="tl-stat__unit">de capacidade média</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Afetados</div>
+                  <div class="tl-stat__value">10M+</div>
+                  <div class="tl-stat__unit">pessoas impactadas</div>
+                </div>
+              </div>
+              <p class="tl-desc">O Nordeste acumulou anos consecutivos de déficit hídrico severo, culminando em 2017 com o esvaziamento quase total dos principais reservatórios. A seca afetou mais de 10 milhões de pessoas, com impactos diretos na agricultura, abastecimento e saúde pública das populações rurais.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">O <strong>CBERS-4A</strong> monitora variação da cobertura vegetal e espelhos d'água. O DisasterAlert acompanharia o nível de reservatórios em tempo real, emitindo alertas antecipados de colapso hídrico para gestores municipais — permitindo racionamento planejado em vez de colapso abrupto.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2013 -->
+        <div class="tl-item" data-type="enchente">
+          <div class="tl-item__dot"></div>
+          <div class="tl-card">
+            <div class="tl-card__header">
+              <span class="tl-card__year">2013</span>
+              <div class="tl-card__main">
+                <div class="tl-card__title">Enchentes e Deslizamentos na Região Serrana do Rio</div>
+                <div class="tl-card__local">📍 Serrana Fluminense — Nova Friburgo, Teresópolis, Petrópolis</div>
+              </div>
+              <span class="tl-card__toggle">▾ ver detalhes</span>
+            </div>
+            <div class="tl-card__body">
+              <div class="tl-body-grid">
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Óbitos</div>
+                  <div class="tl-stat__value">918</div>
+                  <div class="tl-stat__unit">mortes (série histórica)</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Desabrigados</div>
+                  <div class="tl-stat__value">35k+</div>
+                  <div class="tl-stat__unit">pessoas deslocadas</div>
+                </div>
+                <div class="tl-stat">
+                  <div class="tl-stat__label">Prejuízo</div>
+                  <div class="tl-stat__value">R$4,8bi</div>
+                  <div class="tl-stat__unit">estimativa de danos</div>
+                </div>
+              </div>
+              <p class="tl-desc">A série de desastres que assolou a Região Serrana do Rio de Janeiro entre 2011 e 2013 ficou marcada como o maior desastre natural da história do Brasil em termos de vítimas. As cidades atingidas não possuíam sistemas de alerta precoce locais, e a população não foi avisada com tempo suficiente para evacuação.</p>
+              <div class="tl-resposta">
+                <div class="tl-resposta__label">[ RESPOSTA DISASTERALERT ]</div>
+                <div class="tl-resposta__text">Com 3 satélites integrados, o DisasterAlert detectaria a convergência de precipitação extrema e solo saturado horas antes. O <strong>Modo Caos</strong> seria ativado automaticamente para toda a região, acionando sirenes e comunicação direta com a Defesa Civil — a principal falha identificada nos relatórios pós-desastre.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+      <p>
+        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+        &bull;
+        <a href="./contato.html">Contato</a>
+      </p>
+    </footer>
+  </div>
+
+</body>
+</html>
