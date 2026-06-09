@@ -7,7 +7,7 @@
 }
 
 .team-card {
-  background: var(--bg-card);
+  background: rgba(99, 102, 153, 0.103);
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   padding: 24px 20px;
@@ -62,7 +62,7 @@
   border-radius: 4px;
   font-size: 11px;
   font-weight: 600;
-  border: 1px solid var(--border-color);
+  border: 1px solid #2e4b72;
   color: var(--text-secondary);
   transition: all var(--transition);
 }

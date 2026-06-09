@@ -4,24 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <title>DisasterAlert — Central de Alertas</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/dashboard.js" defer></script>
 </head>
 
 <body>
 
   <aside class="sidebar" id="sidebar">
-   <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
       <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
       <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="solucao.html" class="nav-item active"><span class="nav-icon">◎</span> Solução</a>
+      <a href="timeline.html" class="nav-item"><span class="nav-icon">▦</span> Histórico</a>
       <a href="dashboard.html" class="nav-item active"><span class="nav-icon">◈</span> Alertas</a>
       <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
       <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
@@ -40,7 +46,7 @@
 
   <div class="main-wrapper">
 
-        <div class="topbar__utility-bar">
+    <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
           <span class="dot-online"></span> 3 satélites online
@@ -85,7 +91,7 @@
           </tbody>
         </table>
       </div>
-<div class="divider"></div>
+      <div class="divider"></div>
 
       <div class="section-header">
         <h2>Satélites em Operação</h2>
@@ -100,7 +106,8 @@
           <div class="sat-apres-info">
             <span class="sat-apres-badge">🇧🇷 INPE / CNSA</span>
             <h3>CBERS-4A</h3>
-            <p>Satélite brasileiro-chinês lançado em 2019. Monitora solo, água e vegetação com resolução de 2 metros. Principal fonte de dados para enchentes e deslizamentos no Brasil.</p>
+            <p>Satélite brasileiro-chinês lançado em 2019. Monitora solo, água e vegetação com resolução de 2 metros.
+              Principal fonte de dados para enchentes e deslizamentos no Brasil.</p>
             <div class="sat-apres-tags">
               <span> Enchentes</span>
               <span> Deslizamentos</span>
@@ -116,7 +123,8 @@
           <div class="sat-apres-info">
             <span class="sat-apres-badge">🇺🇸 NOAA</span>
             <h3>GOES-16</h3>
-            <p>Satélite geoestacionário americano a 35.786 km de altitude. Cobre toda a América do Sul com imagens a cada 10 minutos, ideal para acompanhar tempestades em tempo real.</p>
+            <p>Satélite geoestacionário americano a 35.786 km de altitude. Cobre toda a América do Sul com imagens a
+              cada 10 minutos, ideal para acompanhar tempestades em tempo real.</p>
             <div class="sat-apres-tags">
               <span> Tempestades</span>
               <span> Raios</span>
@@ -132,7 +140,8 @@
           <div class="sat-apres-info">
             <span class="sat-apres-badge">🇺🇸 NASA</span>
             <h3>AQUA / MODIS</h3>
-            <p>Satélite da NASA lançado em 2002. Sensor MODIS detecta focos de calor em infravermelho com cobertura global diária. Referência mundial para monitoramento de queimadas.</p>
+            <p>Satélite da NASA lançado em 2002. Sensor MODIS detecta focos de calor em infravermelho com cobertura
+              global diária. Referência mundial para monitoramento de queimadas.</p>
             <div class="sat-apres-tags">
               <span> Queimadas</span>
               <span> Fumaça</span>
@@ -147,7 +156,7 @@
       <p>
         <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
         &bull;
-        <a href="./pages/contato.html">Contato</a>
+        <a href="./contato.html">Contato</a>
       </p>
     </footer>
 
@@ -202,10 +211,6 @@
       </div>
     </div>
   </div>
-
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/dashboard.js"></script>
 
 </body>
 

@@ -1,0 +1,66 @@
+/* === MODAL DE CARREGAMENTO (SIMULAÇÃO) - ISOLADO === */
+
+.simulacao-loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(30, 21, 36, 0.185); 
+  z-index: 99999; 
+  align-items: center;
+  justify-content: center;
+}
+
+.simulacao-loading-overlay.is-visible {
+  display: flex;
+}
+
+.simulacao-loading-box {
+  text-align: center;
+  padding: 40px;
+  background-color: rgba(10, 16, 30, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(238, 63, 10, 0.4);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(6, 182, 212, 0.15);
+  border-radius: 8px;
+  max-width: 450px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.simulacao-loading-box h2 {
+  color: var(--color-red);
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.simulacao-loading-box p {
+  color: var(--text-secondary, #94a3b8);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Animação do Spinner */
+.loading-spinner {
+  width: 55px;
+  height: 55px;
+  border: 4px solid rgba(6, 182, 212, 0.15);
+  border-top-color: var(--color-red);
+  border-radius: 50%;
+  animation: spin-loading 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin-loading {
+  to {
+    transform: rotate(360deg);
+  }
+}

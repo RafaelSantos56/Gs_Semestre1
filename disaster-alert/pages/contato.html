@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <title>DisasterAlert — Contato</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/formulario.js" defer></script>
 </head>
+
 <body>
 
   <aside class="sidebar" id="sidebar">
-   <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
-      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-      <a href="dashboard.html"   class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="solucao.html" class="nav-item active"><span class="nav-icon">◎</span> Solução</a>
+      <a href="timeline.html" class="nav-item"><span class="nav-icon">▦</span> Histórico</a>
+      <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
     </nav>
     <nav class="sidebar__nav-bottom">
-      <a href="faq.html"         class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-      <a href="contato.html"     class="nav-item active"><span class="nav-icon">✉</span> Contato</a>
+      <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html" class="nav-item active"><span class="nav-icon">✉</span> Contato</a>
       <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
     </nav>
   </aside>
@@ -38,7 +46,7 @@
 
   <div class="main-wrapper">
 
-        <div class="topbar__utility-bar">
+    <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
           <span class="dot-online"></span> 3 satélites online
@@ -70,14 +78,14 @@
 
           <div class="form-group">
             <label class="form-label" for="nome">Nome Completo *</label>
-            <input class="form-control" type="text" id="nome" name="nome"
-                   placeholder="Ex: Maria Silva" autocomplete="name">
+            <input class="form-control" type="text" id="nome" name="nome" placeholder="Ex: Maria Silva"
+              autocomplete="name">
           </div>
 
           <div class="form-group">
             <label class="form-label" for="email">E-mail *</label>
-            <input class="form-control" type="email" id="email" name="email"
-                   placeholder="Ex: maria@email.com" autocomplete="email">
+            <input class="form-control" type="email" id="email" name="email" placeholder="Ex: maria@email.com"
+              autocomplete="email">
           </div>
 
           <div class="form-group">
@@ -101,7 +109,7 @@
               </span>
             </label>
             <textarea class="form-control" id="mensagem" name="mensagem" rows="5"
-                      placeholder="Descreva a ocorrencia com o maximo de detalhes..."></textarea>
+              placeholder="Descreva a ocorrencia com o maximo de detalhes..."></textarea>
           </div>
 
           <button type="submit" class="btn btn--primary btn--full">
@@ -113,12 +121,12 @@
       </div>
 
     </main>
-   <footer class="site-footer">
+    <footer class="site-footer">
       <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
       <p>
         <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
         &bull;
-        <a href="./pages/contato.html">Contato</a>
+        <a href="./contato.html">Contato</a>
       </p>
     </footer>
 
@@ -145,9 +153,6 @@
     </div>
   </div>
 
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/formulario.js"></script>
-
 </body>
+
 </html>

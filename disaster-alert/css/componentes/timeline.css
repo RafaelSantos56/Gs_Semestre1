@@ -1,0 +1,285 @@
+/* =====================================================
+   DisasterAlert — css/componentes/timeline.css
+   Página: Linha do Tempo de Desastres
+   ===================================================== */
+
+/* === FILTROS DA TIMELINE === */
+.timeline-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  align-items: center;
+}
+
+.timeline-filter-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 4px;
+}
+
+.tl-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: transparent;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: var(--font-main);
+}
+
+.tl-filter-btn:hover,
+.tl-filter-btn.active {
+  background: rgba(139,92,246,0.12);
+  border-color: var(--color-purple);
+  color: var(--color-purple);
+}
+
+.tl-filter-btn.active[data-filter="enchente"]   { background: rgba(59,130,246,0.12);  border-color:#3b82f6; color:#3b82f6; }
+.tl-filter-btn.active[data-filter="queimada"]   { background: rgba(245,158,11,0.12);  border-color:var(--color-orange); color:var(--color-orange); }
+.tl-filter-btn.active[data-filter="deslizamento"]{ background: rgba(167,139,250,0.12); border-color:#a78bfa; color:#a78bfa; }
+.tl-filter-btn.active[data-filter="seca"]       { background: rgba(251,191,36,0.12);  border-color:#fbbf24; color:#fbbf24; }
+
+/* === TIMELINE CONTAINER === */
+.timeline-wrap {
+  position: relative;
+  padding-left: 48px;
+}
+
+.timeline-wrap::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg,
+    var(--color-purple) 0%,
+    rgba(139,92,246,0.4) 60%,
+    transparent 100%
+  );
+}
+
+/* === ITEM DA TIMELINE === */
+.tl-item {
+  position: relative;
+  margin-bottom: 6px;
+  transition: opacity 0.3s ease;
+}
+
+.tl-item.hidden {
+  display: none;
+}
+
+.tl-item__dot {
+  position: absolute;
+  left: -40px;
+  top: 20px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 0 2px var(--dot-color, var(--color-purple));
+  background: var(--dot-color, var(--color-purple));
+  transition: transform var(--transition), box-shadow var(--transition);
+  z-index: 1;
+}
+
+.tl-item:hover .tl-item__dot {
+  transform: scale(1.4);
+  box-shadow: 0 0 0 3px var(--dot-color, var(--color-purple)), 0 0 12px var(--dot-color, var(--color-purple));
+}
+
+.tl-item[data-type="enchente"]    { --dot-color: #3b82f6; }
+.tl-item[data-type="queimada"]    { --dot-color: var(--color-orange); }
+.tl-item[data-type="deslizamento"]{ --dot-color: #a78bfa; }
+.tl-item[data-type="seca"]        { --dot-color: #fbbf24; }
+
+/* === CARD DO EVENTO === */
+.tl-card {
+  background: rgba(10, 16, 30, 0.50);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.tl-card:hover {
+  border-color: var(--dot-color, var(--color-purple));
+  transform: translateX(4px);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.tl-card__header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 20px;
+}
+
+.tl-card__year {
+  font-size: 13px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--dot-color, var(--color-purple));
+  min-width: 40px;
+}
+
+.tl-card__main {}
+
+.tl-card__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.tl-card__local {
+  font-size: 12px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tl-card__toggle {
+  color: var(--text-muted);
+  font-size: 11px;
+  transition: transform var(--transition);
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+}
+
+.tl-item.open .tl-card__toggle {
+  transform: rotate(180deg);
+}
+
+/* === CORPO EXPANDIDO === */
+.tl-card__body {
+  display: none;
+  border-top: 1px solid var(--border-color);
+  padding: 16px 20px 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.tl-item.open .tl-card__body {
+  display: block;
+}
+
+.tl-body-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.tl-stat {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  padding: 12px 14px;
+  border: 1px solid var(--border-color);
+}
+
+.tl-stat__label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.tl-stat__value {
+  font-size: 18px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--dot-color, var(--color-purple));
+}
+
+.tl-stat__unit {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.tl-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* === RESPOSTA DO SISTEMA === */
+.tl-resposta {
+  background: rgba(139,92,246,0.06);
+  border: 1px solid rgba(139,92,246,0.2);
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+}
+
+.tl-resposta__label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-purple);
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.tl-resposta__text {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tl-resposta__text strong {
+  color: var(--text-primary);
+}
+
+/* === CONTADOR DE EVENTOS === */
+.timeline-count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+}
+
+.timeline-count span {
+  color: var(--color-purple);
+  font-weight: 700;
+}
+
+/* === LEGENDA === */
+.timeline-legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

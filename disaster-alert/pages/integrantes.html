@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <title>DisasterAlert — Integrantes</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
 </head>
+
 <body>
 
   <aside class="sidebar" id="sidebar">
@@ -18,15 +23,17 @@
       </div>
     </div>
     <nav class="sidebar__nav">
-      <a href="../index.html"     class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
-      <a href="sobre.html"       class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
-      <a href="dashboard.html"   class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
-      <a href="simulacao.html"   class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
-      <a href="quiz.html"        class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="solucao.html" class="nav-item active"><span class="nav-icon">◎</span> Solução</a>
+      <a href="timeline.html" class="nav-item"><span class="nav-icon">▦</span> Histórico</a>
+      <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
     </nav>
     <nav class="sidebar__nav-bottom">
-      <a href="faq.html"         class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
-      <a href="contato.html"     class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
       <a href="integrantes.html" class="nav-item active"><span class="nav-icon">◉</span> Integrantes</a>
     </nav>
   </aside>
@@ -62,70 +69,66 @@
       <div class="team-grid">
 
         <article class="team-card">
-          <div class="team-card__avatar"
-               title="Ver foto ampliada"
-               data-foto="../assets/img/diego.jpg"
-               data-nome="Diego Gomes Gonçalves de Lima"
-               data-rm="RM: 570335 | 1TDSPG">
+          <div class="team-card__avatar" title="Ver foto ampliada" data-foto="../assets/img/diego.jpg"
+            data-nome="Diego Gomes Gonçalves de Lima" data-rm="RM: 570335 | 1TDSPG">
             <img src="../assets/img/diego.jpg" alt="Diego Gomes">
           </div>
           <h3 class="team-card__name">Diego Gomes Gonçalves de Lima</h3>
           <p class="team-card__rm">RM: 570335 | 1TDSPG</p>
           <span class="badge badge--info">TRIPULANTE</span>
           <div class="team-card__links">
-            <a href="https://github.com/dgxls" target="_blank" rel="noopener" class="team-card__link">&#128279; GitHub</a>
-            <a href="https://linkedin.com/in/diego-gomes-65339b408" target="_blank" rel="noopener" class="team-card__link team-card__link--li">in LinkedIn</a>
+            <a href="https://github.com/dgxls" target="_blank" rel="noopener" class="team-card__link">&#128279;
+              GitHub</a>
+            <a href="https://linkedin.com/in/diego-gomes-65339b408" target="_blank" rel="noopener"
+              class="team-card__link team-card__link--li">in LinkedIn</a>
           </div>
         </article>
 
         <article class="team-card">
-          <div class="team-card__avatar"
-               title="Ver foto ampliada"
-               data-foto="../assets/img/igor.jpg"
-               data-nome="Igor Rodrigues de Santana"
-               data-rm="RM: 570651 | 1TDSPG">
+          <div class="team-card__avatar" title="Ver foto ampliada" data-foto="../assets/img/igor.jpg"
+            data-nome="Igor Rodrigues de Santana" data-rm="RM: 570651 | 1TDSPG">
             <img src="../assets/img/igor.jpg" alt="Igor Rodrigues">
           </div>
           <h3 class="team-card__name">Igor Rodrigues de Santana</h3>
           <p class="team-card__rm">RM: 570651 | 1TDSPG</p>
           <span class="badge badge--info">TRIPULANTE</span>
           <div class="team-card__links">
-            <a href="https://github.com/igorodriguesd" target="_blank" rel="noopener" class="team-card__link">&#128279; GitHub</a>
-            <a href="https://linkedin.com/in/igor-rodrigues-135aa72b2" target="_blank" rel="noopener" class="team-card__link team-card__link--li">in LinkedIn</a>
+            <a href="https://github.com/igorodriguesd" target="_blank" rel="noopener" class="team-card__link">&#128279;
+              GitHub</a>
+            <a href="https://linkedin.com/in/igor-rodrigues-135aa72b2" target="_blank" rel="noopener"
+              class="team-card__link team-card__link--li">in LinkedIn</a>
           </div>
         </article>
 
         <article class="team-card">
-          <div class="team-card__avatar"
-               title="Ver foto ampliada"
-               data-foto="../assets/img/miguel.jpg"
-               data-nome="Miguel Silva"
-               data-rm="RM: 570219 | 1TDSPG">
+          <div class="team-card__avatar" title="Ver foto ampliada" data-foto="../assets/img/miguel.jpg"
+            data-nome="Miguel Silva" data-rm="RM: 570219 | 1TDSPG">
             <img src="../assets/img/miguel.jpg" alt="Miguel Silva">
           </div>
           <h3 class="team-card__name">Miguel Silva</h3>
           <p class="team-card__rm">RM: 570219 | 1TDSPG</p>
           <span class="badge badge--info">TRIPULANTE</span>
           <div class="team-card__links">
-            <a href="https://github.com/miguelsilva71" target="_blank" rel="noopener" class="team-card__link">&#128279; GitHub</a>
-            <a href="https://linkedin.com/in/miguel-silva-0a20073a9" target="_blank" rel="noopener" class="team-card__link team-card__link--li">in LinkedIn</a>
+            <a href="https://github.com/miguelsilva71" target="_blank" rel="noopener" class="team-card__link">&#128279;
+              GitHub</a>
+            <a href="https://linkedin.com/in/miguel-silva-0a20073a9" target="_blank" rel="noopener"
+              class="team-card__link team-card__link--li">in LinkedIn</a>
           </div>
         </article>
 
         <article class="team-card">
-          <div class="team-card__avatar"
-               title="Ver foto ampliada"
-               data-foto="../assets/img/rafael.jpg"
-               data-nome="Rafael Santos Mendonça Costa"
-               data-rm="RM: 572368 | 1TDSPG">
+          <div class="team-card__avatar" title="Ver foto ampliada" data-foto="../assets/img/rafael.jpg"
+            data-nome="Rafael Santos Mendonça Costa" data-rm="RM: 572368 | 1TDSPG">
             <img src="../assets/img/rafael.jpg" alt="Rafael Santos">
           </div>
           <h3 class="team-card__name">Rafael Santos Mendonça Costa</h3>
           <p class="team-card__rm">RM: 572368 | 1TDSPG</p>
           <span class="badge badge--info">TRIPULANTE</span>
           <div class="team-card__links">
-            <a href="https://github.com/RafaelSantos56" target="_blank" rel="noopener" class="team-card__link">&#128279; GitHub</a>
-            <a href="https://linkedin.com/in/rafael-santos-b09bba237" target="_blank" rel="noopener" class="team-card__link team-card__link--li">in LinkedIn</a>
+            <a href="https://github.com/RafaelSantos56" target="_blank" rel="noopener" class="team-card__link">&#128279;
+              GitHub</a>
+            <a href="https://linkedin.com/in/rafael-santos-b09bba237" target="_blank" rel="noopener"
+              class="team-card__link team-card__link--li">in LinkedIn</a>
           </div>
         </article>
 
@@ -185,8 +188,6 @@
     </div>
   </div>
 
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-
 </body>
+
 </html>

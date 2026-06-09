@@ -44,6 +44,7 @@ body::before {
 .content {
   padding: 0 16px 32px 16px;
   flex: 1;
+  padding-top: 30px;
 }
 
 /* === SIDEBAR === */
@@ -189,6 +190,7 @@ body::before {
   font-size: 11px;
   color: var(--text-muted);
   flex-shrink: 0;
+  letter-spacing: 0.5px;
 }
 
 .hamburger {
@@ -323,9 +325,6 @@ body::before {
 .divider { height: 1px; background: var(--border-color); margin: 24px 0; }
 
 /* === CONFIGURAÇÕES E COMPENSAÇÃO DE LOGO E TOPO === */
-.topbar {
-  padding-top: 40px;
-}
 
 /* Mantém o comportamento de margem do topo idêntico e preserva 
    o espaço para a logo aparecer perfeitamente em todas as páginas */
@@ -333,9 +332,6 @@ body::before {
   margin-top: 45px;
 }
 
-.content {
-  padding-top: 30px;
-}
 /* FOOTER PRINCIPAL */
 .site-footer {
   margin-top: 32px;

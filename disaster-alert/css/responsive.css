@@ -6,6 +6,12 @@
    ===================================================== */
 @media (max-width: 768px) {
 
+  /* --- Intro vídeo --- */
+  #intro-video {
+    object-fit: contain;
+    background: #000;
+  }
+
   /* --- Layout / Sidebar --- */
   .sidebar {
     transform: translateX(-100%);
@@ -14,7 +20,7 @@
   }
   /* --- Sidebar mobile sólida --- */
   .sidebar {
-    background: linear-gradient(180deg, #0a0620 0%, #0d0a2e 40%, #080520 100%) !important;
+    background: linear-gradient(180deg, #0a0620 0%, #0d0a2e 40%, #080520 100%);
     box-shadow: 4px 0 30px rgba(0,0,0,0.8);
     z-index: 300;
   }
@@ -50,6 +56,19 @@
   .sat-apres-card { gap: 14px; }
   .sat-apres-img { width: 120px; }
 
+  /* --- Solução --- */
+  .prob-sol-grid      { grid-template-columns: 1fr; }
+  .prob-sol-arrow     { transform: rotate(90deg); padding: 10px 0; }
+  .impacto-grid       { grid-template-columns: 1fr 1fr; }
+  .solucao-hero__stat { display: none; }
+  .ods-block          { flex-direction: column; gap: 16px; }
+  .ods-pills          { margin-left: 0; }
+
+  /* --- Timeline --- */
+  .timeline-wrap { padding-left: 36px; }
+  .tl-item__dot  { left: -28px; }
+  .tl-body-grid  { grid-template-columns: 1fr 1fr; }
+
   /* --- Tabela --- */
   .table-wrapper { overflow-x: auto; }
   .alerts-table { min-width: 600px; }
@@ -77,6 +96,14 @@
    MOBILE — até 480px
    ===================================================== */
 @media (max-width: 480px) {
+
+  /* --- Intro vídeo --- */
+  .intro-overlay { cursor: pointer; }
+  #intro-video {
+    object-fit: contain;
+    background: #000;
+    max-height: 100vh;
+  }
 
   /* --- Layout --- */
   .content { padding: 12px 12px 24px; }
@@ -122,6 +149,18 @@
   /* --- ODS --- */
   .ods-list { flex-direction: column; }
   .ods-badge { text-align: center; }
+
+  /* --- Solução mobile --- */
+  .impacto-grid        { grid-template-columns: 1fr; }
+  .solucao-hero        { padding: 24px 20px; }
+  .solucao-hero__title { font-size: 22px; }
+  .diferenciais-table  { min-width: 520px; }
+
+  /* --- Timeline mobile --- */
+  .tl-body-grid        { grid-template-columns: 1fr; }
+  .tl-card__header     { grid-template-columns: auto 1fr; }
+  .tl-card__toggle     { display: none; }
+  .timeline-filters    { flex-wrap: wrap; gap: 6px; }
 
   /* --- Satélites --- */
   .sat-apres-card { flex-direction: column; }

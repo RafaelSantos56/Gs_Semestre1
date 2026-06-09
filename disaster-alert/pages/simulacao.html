@@ -4,24 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
   <title>DisasterAlert — Simulacao</title>
   <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/simulacao.js" defer></script>
 </head>
 
-<body class="page-simulacao"></body>
+<body class="page-simulacao">
 
   <aside class="sidebar" id="sidebar">
-   <div class="sidebar__logo">
-  <div class="sidebar__logo-icon">
-    <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
-  </div>
-  <div class="sidebar__logo-text">
-    <span class="logo-name">Disaster<strong>Alert</strong></span>
-  </div>
-</div>
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
     <nav class="sidebar__nav">
       <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
       <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="solucao.html" class="nav-item active"><span class="nav-icon">◎</span> Solução</a>
+      <a href="timeline.html" class="nav-item"><span class="nav-icon">▦</span> Histórico</a>
       <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
       <a href="simulacao.html" class="nav-item active"><span class="nav-icon">▷</span> Simulacao</a>
       <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
@@ -40,7 +46,7 @@
 
   <div class="main-wrapper">
 
-        <div class="topbar__utility-bar">
+    <div class="topbar__utility-bar">
       <div class="topbar__utility-right">
         <div class="topbar__status">
           <span class="dot-online"></span> 3 satélites online
@@ -94,7 +100,7 @@
         <h3 class="sim-resultado__titulo" id="res-titulo">—</h3>
         <div class="sim-resultado__vidas" id="res-vidas">—</div>
         <p class="sim-resultado__msg" id="res-msg"></p>
-        <button class="btn btn--primary" id="sim-btn-prox" data-action="proximo">
+        <button class="btn btn--primary--cenario" id="sim-btn-prox" data-action="proximo">
           PROXIMO CENARIO →
         </button>
       </div>
@@ -105,7 +111,7 @@
       <p>
         <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
         &bull;
-        <a href="./pages/contato.html">Contato</a>
+        <a href="./contato.html">Contato</a>
       </p>
     </footer>
 
@@ -131,10 +137,6 @@
       </div>
     </div>
   </div>
-
-  <script src="../js/modal.js"></script>
-  <script src="../js/main.js"></script>
-  <script src="../js/simulacao.js"></script>
 
 </body>
 

@@ -79,12 +79,24 @@ let sirenCtx      = null;
 let sirenePlaying = false;
 let sirenTimeout  = null;
 
+let audioSirene = null;
+
 function iniciarSirene() {
+  const emPages = window.location.pathname.includes('/pages/');
+  
+  const caminhoAudio = `./assets/audio/audio_alert.mpeg`; 
+
   try {
-    sirenCtx      = new (window.AudioContext || window.webkitAudioContext)();
-    sirenePlaying = true;
-    tocarCiclo();
-  } catch (e) { console.warn('Web Audio API nao suportada:', e); }
+    if (!audioSirene) {
+      audioSirene = new Audio(caminhoAudio);
+      audioSirene.loop = true; 
+      audioSirene.volume = 1; 
+    }
+
+    audioSirene.play().catch(e => console.warn("Erro ao reproduzir áudio:", e));
+  } catch (e) {
+    console.warn('Erro ao inicializar o áudio da sirene:', e);
+  }
 }
 
 function tocarCiclo() {
@@ -115,6 +127,8 @@ window.pararSirene   = pararSirene;
 
 // === MODO CAOS ===
 const btnCaos = document.getElementById('btnCaos');
+const btnConfirmarCaos = document.getElementById('btn-confirmar-caos'); 
+const btnCancelarCaos = document.getElementById('btn-cancelar-caos');
 let caosAtivo = false;
 
 const alertasUrgentes = [
@@ -127,11 +141,32 @@ const alertasUrgentes = [
 function ativarCaos() {
   caosAtivo = true;
   document.body.classList.add('modo-caos');
-  if (btnCaos) btnCaos.textContent = 'DESATIVAR MODO CAOS';
+  if (btnCaos) {
+    btnCaos.disabled = true;
+    btnCaos.textContent = 'SISTEMA EM ALERTA...';
+  }
   iniciarSirene();
   alertasUrgentes.forEach((a, i) => {
     setTimeout(() => adicionarAlertaNoFeed(a), i * 600);
   });
+  const modalCaosOriginal = document.getElementById('modal-caos');
+  if (modalCaosOriginal) {
+    modalCaosOriginal.style.display = 'none'; 
+  }
+  const modalLoading = document.getElementById('modal-loading-simulacao');
+  if (modalLoading) {
+    modalLoading.classList.add('is-visible');
+  }
+  setTimeout(() => {
+    pararSirene();
+
+    const emPages = window.location.pathname.includes('/pages/');
+    if (emPages) {
+      window.location.href = 'simulacao.html';
+    } else {
+      window.location.href = 'pages/simulacao.html';
+    }
+  }, 8000);
 }
 
 function desativarCaos() {
@@ -152,10 +187,21 @@ if (btnCaos) {
   });
 }
 
-window.ativarCaos    = ativarCaos;
-window.desativarCaos = desativarCaos;
+if (btnConfirmarCaos) {
+  btnConfirmarCaos.addEventListener('click', ativarCaos);
+}
 
-// === FEED DE ALERTAS ===
+if (btnCancelarCaos) {
+  btnCancelarCaos.addEventListener('click', () => {
+    const modalCaosOriginal = document.getElementById('modal-caos');
+    if (window.fecharModal) {
+      fecharModal('modal-caos');
+    } else if (modalCaosOriginal) {
+      modalCaosOriginal.style.display = 'none';
+    }
+  });
+}
+
 const alertasPool = [
   { tipo: 'ENCHENTE',     local: 'Sao Paulo, SP',    sev: 'critico' },
   { tipo: 'QUEIMADA',     local: 'Mato Grosso',      sev: 'aviso'   },
@@ -191,39 +237,39 @@ window.addEventListener('DOMContentLoaded', () => {
   setInterval(alertaAleatorio, 5000);
 });
 
-function ativarCaos() {
-  caosAtivo = true;
-  
-  // 1. Faz a tela começar a piscar (adiciona a classe que você já tem)
-  document.body.classList.add('modo-caos');
-  
-  // 2. Modifica o texto do botão para dar um aviso
-  if (btnCaos) {
-    btnCaos.disabled = true; // Desabilita para evitar múltiplos cliques
-    btnCaos.textContent = 'SISTEMA EM ALERTA...';
-  }
-  
-  // 3. Liga a sirene matemática do próprio navegador
-  iniciarSirene();
-  
-  // Enche o feed com os alertas urgentes (mantive sua lógica original)
-  alertasUrgentes.forEach((a, i) => {
-    setTimeout(() => adicionarAlertaNoFeed(a), i * 600);
-  });
 
-  // 4. SEGURA POR 5 SEGUNDOS (5000ms) E REDIRECIONA
-  setTimeout(() => {
-    pararSirene(); // Desliga o som da sirene
-    
-    // Identifica se você já está dentro da pasta 'pages' ou na raiz
-    const emPages = window.location.pathname.includes('/pages/');
-    
-    if (emPages) {
-      // Se já estiver em outra página dentro de 'pages/', vai direto
-      window.location.href = 'simulacao.html';
-    } else {
-      // Se estiver na index.html (raiz), entra na pasta pages
-      window.location.href = 'pages/simulacao.html';
-    }
-  }, 5000);
-}
+// === Introdução video ===
+window.addEventListener('DOMContentLoaded', () => {
+  const introOverlay = document.getElementById('intro-overlay');
+  const introVideo = document.getElementById('intro-video');
+  if (localStorage.getItem('introJaVista') === 'true') {
+    if (introOverlay) introOverlay.remove();
+    return;
+  }
+  if (introOverlay && introVideo) {
+    introVideo.muted = true;
+    introVideo.autoplay = true;
+    introVideo.play().catch(e => console.log("Autoplay aguardando interação"));
+
+    const finalizar = () => {
+      localStorage.setItem('introJaVista', 'true');
+      introOverlay.classList.add('fade-out');
+      setTimeout(() => introOverlay.remove(), 1500);
+      document.removeEventListener('keydown', finalizar);
+    };
+
+    introVideo.addEventListener('click', (e) => {
+      introVideo.muted = false;
+      e.stopPropagation(); 
+    });
+
+    introOverlay.addEventListener('click', (e) => {
+      if (e.target === introOverlay) {
+        finalizar();
+      }
+    });
+
+    document.addEventListener('keydown', finalizar);
+    introVideo.onended = finalizar;
+  }
+});

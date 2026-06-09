@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DisasterAlert — A Solução</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="shortcut icon" href="../assets/img/disasteralert-icon.svg" type="image/svg+xml">
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/chat.js" defer></script>
+  <script src="../js/solucao.js" defer></script>
+</head>
+
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon">
+        <img src="../assets/img/disasteralert-icon.svg" alt="DisasterAlert">
+      </div>
+      <div class="sidebar__logo-text">
+        <span class="logo-name">Disaster<strong>Alert</strong></span>
+      </div>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="../index.html" class="nav-item"><span class="nav-icon">⬡</span> Dashboard</a>
+      <a href="sobre.html" class="nav-item"><span class="nav-icon">🛰</span> Sobre</a>
+      <a href="solucao.html" class="nav-item active"><span class="nav-icon">◎</span> Solução</a>
+      <a href="timeline.html" class="nav-item"><span class="nav-icon">▦</span> Histórico</a>
+      <a href="dashboard.html" class="nav-item"><span class="nav-icon">◈</span> Alertas</a>
+      <a href="simulacao.html" class="nav-item"><span class="nav-icon">▷</span> Simulacao</a>
+      <a href="quiz.html" class="nav-item"><span class="nav-icon">?</span> Quiz</a>
+    </nav>
+    <nav class="sidebar__nav-bottom">
+      <a href="faq.html" class="nav-item"><span class="nav-icon">☰</span> FAQ</a>
+      <a href="contato.html" class="nav-item"><span class="nav-icon">✉</span> Contato</a>
+      <a href="integrantes.html" class="nav-item"><span class="nav-icon">◉</span> Integrantes</a>
+    </nav>
+  </aside>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="main-wrapper">
+
+    <div class="topbar__utility-bar">
+      <div class="topbar__utility-right">
+        <div class="topbar__status">
+          <span class="dot-online"></span> 3 satélites online
+        </div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="topbar__title">
+        <h1>A Solução</h1>
+        <p>Como o DisasterAlert resolve o problema de monitoramento de desastres no Brasil</p>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <!-- HERO DO PROBLEMA -->
+      <div class="solucao-hero">
+        <div class="solucao-hero__label">[ DIAGNÓSTICO DO PROBLEMA ]</div>
+        <h2 class="solucao-hero__title">
+          O Brasil perde <em>milhares de vidas</em> todo ano<br>por falta de um sistema unificado de alerta.
+        </h2>
+        <p class="solucao-hero__body">
+          Enchentes em São Paulo, queimadas no Mato Grosso, deslizamentos em Petrópolis — esses desastres têm em comum a ausência de uma infraestrutura acessível de detecção precoce e comunicação com a população. Os dados orbitais existem. O que faltava era um sistema capaz de transformá-los em alertas reais, em tempo real, gratuito e aberto a todos.
+        </p>
+        <div class="solucao-hero__stat">
+          <div class="solucao-hero__stat-num">+600</div>
+          <div class="solucao-hero__stat-label">mortes/ano evitáveis</div>
+        </div>
+      </div>
+
+      <!-- PROBLEMA × SOLUÇÃO -->
+      <div class="section-header">
+        <h2>Problema × Solução</h2>
+        <p>O que o Brasil enfrenta hoje e como o DisasterAlert responde a cada ponto.</p>
+      </div>
+
+      <div class="prob-sol-grid">
+
+        <div class="prob-block">
+          <div class="prob-sol__header">Sem DisasterAlert</div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Sistemas de alerta fragmentados por estado e município, sem integração nacional
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Dados satelitais disponíveis, mas inacessíveis para a população e defesa civil local
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Tempo de resposta médio superior a 40 minutos após o início do evento
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Soluções existentes são pagas, técnicas e direcionadas apenas a especialistas
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Cada tipo de desastre exige sistemas diferentes, sem visão unificada
+          </div>
+        </div>
+
+        <div class="prob-sol-arrow">→</div>
+
+        <div class="sol-block">
+          <div class="prob-sol__header">Com DisasterAlert</div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Plataforma centralizada que integra 3 satélites cobrindo todo o território nacional
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Dashboard web público e open source acessível por qualquer cidadão ou agente
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Janela de resposta menor que 10 minutos, do satélite ao alerta na Defesa Civil
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Gratuito, com interface acessível e assistente de IA para orientação da população
+          </div>
+          <div class="prob-sol__item">
+            <span class="prob-sol__dot"></span>
+            Detecção multi-desastre: enchentes, queimadas, deslizamentos e tempestades em um só lugar
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- COMO FUNCIONA — NARRATIVE -->
+      <div class="section-header">
+        <h2>Como o DisasterAlert resolve</h2>
+        <p>Cada camada da solução foi desenhada para eliminar um gargalo real no processo de resposta a desastres.</p>
+      </div>
+
+      <div class="narrative-steps">
+
+        <div class="narrative-step">
+          <div class="narrative-step__num">1</div>
+          <div class="narrative-step__content">
+            <div class="narrative-step__title">Captura orbital em tempo real</div>
+            <div class="narrative-step__desc">
+              Três satélites com funções complementares — GOES-16 para meteorologia, CBERS-4A para mapeamento de terreno e AQUA/MODIS para anomalias térmicas — fornecem cobertura contínua de todo o Brasil. Nenhum evento escapa da combinação dos três sensores simultaneamente.
+            </div>
+            <span class="narrative-step__badge">🛰️ GOES-16 · CBERS-4A · AQUA/MODIS</span>
+          </div>
+        </div>
+
+        <div class="narrative-step">
+          <div class="narrative-step__num">2</div>
+          <div class="narrative-step__content">
+            <div class="narrative-step__title">IA que cruza padrões e valida o risco</div>
+            <div class="narrative-step__desc">
+              O núcleo de inteligência artificial do DisasterAlert não depende de um único satélite. Ele cruza os dados dos três fontes ao mesmo tempo para validar se um padrão suspeito é realmente um evento de risco — eliminando falsos positivos e priorizando eventos críticos com severidade classificada.
+            </div>
+            <span class="narrative-step__badge">🤖 IBM Watson · Análise multiespectral</span>
+          </div>
+        </div>
+
+        <div class="narrative-step">
+          <div class="narrative-step__num">3</div>
+          <div class="narrative-step__content">
+            <div class="narrative-step__title">Alerta que chega onde precisa</div>
+            <div class="narrative-step__desc">
+              Quando o risco é confirmado, o sistema aciona automaticamente a Defesa Civil via Telegram com nível de severidade, coordenadas e tipo de evento. Paralelamente, o dashboard web atualiza o mapa ao vivo e o feed de alertas para qualquer cidadão que acompanhe a plataforma.
+            </div>
+            <span class="narrative-step__badge">📡 Node-RED · Telegram · Dashboard Web</span>
+          </div>
+        </div>
+
+        <div class="narrative-step">
+          <div class="narrative-step__num">4</div>
+          <div class="narrative-step__content">
+            <div class="narrative-step__title">Assistente de IA para a população</div>
+            <div class="narrative-step__desc">
+              A maioria das vítimas de desastres não sabe o que fazer nos primeiros minutos. O assistente virtual do DisasterAlert, treinado com IBM Watson, responde perguntas em linguagem natural, orienta protocolos de segurança, indica rotas de evacuação e conecta o usuário com os serviços de emergência corretos — 24 horas por dia.
+            </div>
+            <span class="narrative-step__badge">💬 Watson Assistant · STT · TTS</span>
+          </div>
+        </div>
+
+        <div class="narrative-step">
+          <div class="narrative-step__num">5</div>
+          <div class="narrative-step__content">
+            <div class="narrative-step__title">Histórico e rastreabilidade</div>
+            <div class="narrative-step__desc">
+              Todos os alertas emitidos são persistidos em banco de dados SQLite, criando um histórico auditável de eventos por região, tipo e severidade. Isso permite que gestores públicos e pesquisadores analisem padrões sazonais, identifiquem áreas de risco recorrente e planejem respostas mais eficientes no futuro.
+            </div>
+            <span class="narrative-step__badge">🗄️ SQLite · Histórico de alertas</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- IMPACTO -->
+      <div class="section-header">
+        <h2>Impacto da Solução</h2>
+        <p>Números que traduzem o potencial do DisasterAlert em operação plena.</p>
+      </div>
+
+      <div class="impacto-grid">
+        <div class="impacto-card impacto-card--purple">
+          <div class="impacto-card__num" data-count="142" data-suffix="">0</div>
+          <div class="impacto-card__label">Regiões Cobertas</div>
+          <div class="impacto-card__desc">Municípios brasileiros monitorados em tempo real pelos três satélites integrados</div>
+        </div>
+        <div class="impacto-card impacto-card--green">
+          <div class="impacto-card__num" data-count="10" data-suffix="min">&lt;10min</div>
+          <div class="impacto-card__label">Tempo de Resposta</div>
+          <div class="impacto-card__desc">Da captura orbital ao alerta na Defesa Civil, contra mais de 40 minutos nos sistemas tradicionais</div>
+        </div>
+        <div class="impacto-card impacto-card--orange">
+          <div class="impacto-card__num" data-count="4" data-suffix="">0</div>
+          <div class="impacto-card__label">Tipos de Desastre</div>
+          <div class="impacto-card__desc">Enchentes, queimadas, deslizamentos e tempestades — tratados por uma única plataforma integrada</div>
+        </div>
+      </div>
+
+      <!-- ODS -->
+      <div class="ods-block">
+        <div class="ods-block__text">
+          <h3>Alinhamento com os ODS da ONU</h3>
+          <p>O DisasterAlert foi desenvolvido com propósito social explícito, contribuindo diretamente para três Objetivos de Desenvolvimento Sustentável da ONU: inovação tecnológica acessível, cidades mais resilientes e ação climática concreta.</p>
+        </div>
+        <div class="ods-pills">
+          <span class="ods-pill ods-pill--9">ODS 9 — Inovação</span>
+          <span class="ods-pill ods-pill--11">ODS 11 — Cidades Sustentáveis</span>
+          <span class="ods-pill ods-pill--13">ODS 13 — Ação Climática</span>
+        </div>
+      </div>
+
+      <!-- DIFERENCIAIS -->
+      <div class="section-header">
+        <h2>Diferenciais Competitivos</h2>
+        <p>O que nos separa das soluções existentes no mercado.</p>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="diferenciais-table">
+          <thead>
+            <tr>
+              <th>Critério</th>
+              <th>DisasterAlert</th>
+              <th>Soluções Atuais</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Custo de acesso</td>
+              <td><span class="check-yes">✓</span> Gratuito e open source</td>
+              <td><span class="check-no">✗</span> Pago, acesso restrito</td>
+            </tr>
+            <tr>
+              <td>Velocidade de alerta</td>
+              <td><span class="check-yes">✓</span> Menos de 10 minutos</td>
+              <td><span class="check-partial">~ </span>30–60 minutos</td>
+            </tr>
+            <tr>
+              <td>Fontes de dados</td>
+              <td><span class="check-yes">✓</span> 3 satélites reais integrados</td>
+              <td><span class="check-no">✗</span> Simulações ou fonte única</td>
+            </tr>
+            <tr>
+              <td>Cobertura de desastres</td>
+              <td><span class="check-yes">✓</span> Multi-desastre</td>
+              <td><span class="check-no">✗</span> Específico por evento</td>
+            </tr>
+            <tr>
+              <td>Usabilidade</td>
+              <td><span class="check-yes">✓</span> Interface pública acessível</td>
+              <td><span class="check-no">✗</span> Painéis técnicos restritos</td>
+            </tr>
+            <tr>
+              <td>Assistente ao cidadão</td>
+              <td><span class="check-yes">✓</span> IA Watson 24h em português</td>
+              <td><span class="check-no">✗</span> Inexistente</td>
+            </tr>
+            <tr>
+              <td>Integração com Defesa Civil</td>
+              <td><span class="check-yes">✓</span> Acionamento automático via Telegram</td>
+              <td><span class="check-partial">~ </span>Manual ou por e-mail</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>DisasterAlert &copy; 2026 &bull; FIAP &bull; 1TDSPG &bull; Global Solution</p>
+      <p>
+        <a href="https://github.com/RafaelSantos56/Gs_Semestre1" target="_blank">GitHub</a>
+        &bull;
+        <a href="./contato.html">Contato</a>
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
