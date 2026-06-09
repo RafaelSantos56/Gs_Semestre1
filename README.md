@@ -124,7 +124,7 @@ disaster-alert/
 - **Dashboard em tempo real** com feed de alertas atualizado automaticamente
 - **Mapa do Brasil** interativo com pontos de ocorrência por severidade
 - **Scanner de satélite** com vídeo animado de varredura
-- **Modo Caos** — simulação de emergência com sirene via Web Audio API
+- **Modo Caos** — simulação de emergência com sirene
 - **Tabela de alertas** com filtros por severidade e status
 - **Simulação de desastres** com cenários, timer e análise de risco
 - **Quiz** educativo sobre satélites e desastres naturais
