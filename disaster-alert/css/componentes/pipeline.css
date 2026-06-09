@@ -90,17 +90,41 @@
   line-height: 1.6;
 }
 
-/* === ODS === */
-.ods-list {
+/* === TECNOLOGIAS USADAS === */
+.tech-list {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  gap: 16px;
+  flex-wrap: wrap; /* Permite que os cards passem para a linha de baixo se faltar espaço */
   margin-top: 16px;
 }
 
-.ods-badge {
-  padding: 6px 20px 6px 0px; 
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
+.tech-card {
+  background: rgba(99, 102, 153, 0.103);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius, 8px);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color var(--transition, 0.3s), transform var(--transition, 0.3s);
 }
+
+.tech-card:hover {
+  background: rgba(0, 212, 255, 0.06);
+  border-color: var(--color-purple);
+  transform: translateY(-2px); /* Efeito suave de subida ao passar o rato */
+}
+
+.tech-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain; /* Garante que os logótipos não ficam distorcidos */
+}
+
+.tech-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
