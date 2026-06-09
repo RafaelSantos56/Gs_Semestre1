@@ -22,58 +22,70 @@ O **DisasterAlert** é uma solução web desenvolvida para a **Global Solution 2
 ## 📁 Estrutura de Pastas
 
 ```
+README.md
+│
 disaster-alert/
 ├── index.html
 ├── assets/
+│   ├──audio/
+│       └── audio_alert.mpeg
 │   ├── img/
+│   │   ├── aqua.jpg
+│   │   ├── avatar_fundo.png
+│   │   ├── avatar.png
+│   │   ├── cbers4a.jpg
+│   │   ├── diego.jpg
 │   │   ├── disasteralert-icon.svg
 │   │   ├── disasteralert-logo.jpg
-│   │   ├── mapa_brasil.png
-│   │   ├── avatar.png
 │   │   ├── fundo_site.png
-│   │   ├── diego.jpg
+│   │   ├── goes16.jpg
 │   │   ├── igor.jpg
+│   │   ├── mapa_brasil.png
 │   │   ├── miguel.jpg
 │   │   └── rafael.jpg
 │   └── video/
-│       └── satelite.mp4
+│       ├── satelite.mp4
+│       └── video_intro.mp4
 ├── css/
-│   ├── main.css
-│   ├── variaveis.css
-│   ├── reset.css
 │   ├── layout.css
+│   ├── main.css
 │   ├── modal.css
-│   ├── animacoes.css
+│   ├── reset.css  
 │   ├── responsive.css
+│   ├── variaveis.css
 │   └── componentes/
+│       ├── animacoes.css
+│       ├── badges.css 
 │       ├── cards.css
-│       ├── badges.css
-│       ├── map.css
-│       ├── table.css
-│       ├── form.css
+│       ├── chat.css
 │       ├── faq.css
-│       ├── team.css
+│       ├── form.css
+│       ├── intro.css
+│       ├── map.css
+│       ├── modal-simulacao.css
 │       ├── pipeline.css
 │       ├── quiz.css
+│       ├── satelites.css 
 │       ├── simulacao.css
-│       └── chat.css
+│       ├── table.css
+│       └── team.css 
 ├── js/
-│   ├── main.js
-│   ├── modal.js
+│   ├── chat.js
 │   ├── dashboard.js
-│   ├── simulacao.js
-│   ├── quiz.js
 │   ├── faq.js
 │   ├── formulario.js
-│   └── chat.js
+│   ├── main.js
+│   ├── modal.js
+│   ├── quiz.js
+│   └── simulacao.js
 └── pages/
-    ├── sobre.html
-    ├── dashboard.html
-    ├── simulacao.html
-    ├── quiz.html
-    ├── faq.html
     ├── contato.html
-    └── integrantes.html
+    ├── dashboard.html
+    ├── faq.html
+    ├── integrantes.html
+    ├── quiz.html
+    ├── simulacao.html
+    └── sobre.html 
 ```
 
 ---
