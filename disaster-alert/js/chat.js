@@ -123,7 +123,7 @@
     const hora = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     if (isBot) {
       wrap.innerHTML =
-        '<div class="chat-msg__avatar"><img src="../assets/img/avatar.png" alt="Bot"></div>' +
+        '<div class="chat-msg__avatar"><img src="../assets/img/avatar_fundo.png" alt="Bot"></div>' +
         '<div><div class="chat-msg__bubble">' + escapeHtml(text) + '</div>' +
         '<div class="chat-msg__time">' + hora + '</div></div>';
     } else {
@@ -139,7 +139,7 @@
     const el = document.createElement('div');
     el.className = 'chat-typing';
     el.innerHTML =
-      '<div class="chat-msg__avatar"><img src="../assets/img/avatar.png" alt="Bot"></div>' +
+      '<div class="chat-msg__avatar"><img src="../assets/img/avatar_fundo.png" alt="Bot"></div>' +
       '<div class="chat-typing__bubble">' +
       '<span class="chat-typing__dot"></span>' +
       '<span class="chat-typing__dot"></span>' +

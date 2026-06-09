@@ -53,8 +53,8 @@ disaster-alert/
 │   │   ├── solucao_2.png
 │   │   └── timeline.png
 │   └── video/
-│       ├── satelite.mp4
-│       └── video_intro.mp4
+│       ├── inicio_intro.mp4
+│       └── satelite.mp4
 ├── css/
 │   ├── componentes/
 │   │   ├── animacoes.css
