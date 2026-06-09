@@ -263,3 +263,66 @@
 .modal-open {
   overflow: hidden;
 }
+
+/* Customizações do Novo Modal de Sucesso (Quadrado maior, letras menores e proporcionais) */
+.modal-overlay .modal--success {
+  max-width: 620px;       /* Mantivemos o quadrado maior e bem robusto */
+  width: 90%;             
+  border-top: 5px solid #28a745; 
+  padding: 35px 25px;     /* Ligeiro ajuste no espaço interno */
+  border-radius: 8px;
+}
+
+/* Título imponente, mas com tamanho equilibrado */
+.modal__title--success {
+  color: #28a745;
+  font-size: 1.8rem;      /* Reduzido para ficar mais sofisticado e menos "gigante" */
+  font-weight: 700;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Corpo do texto principal mais legível e proporcional */
+.modal__body--center {
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.15rem;     /* Tamanho mais padrão para leitura, proporcional ao modal */
+  line-height: 1.5;       
+}
+
+/* Subtexto descritivo sutil */
+.modal__body-subtext {
+  font-size: 0.9rem;      /* Diminuído para manter a hierarquia visual */
+  opacity: 0.8;
+  margin-top: 15px;
+}
+
+.modal__footer--center {
+  justify-content: center;
+  margin-top: 25px;       
+}
+
+/* Botão "Ok" maior para combinar com o restante do design */
+.btn--success-ok {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 11px 40px;     
+  font-size: 1rem;        /* Texto do botão reajustado */
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn--success-ok:hover {
+  background: #218838;    
+}
+
+.btn--success-ok:active {
+  transform: scale(0.98); 
+}
