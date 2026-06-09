@@ -326,3 +326,36 @@
 .btn--success-ok:active {
   transform: scale(0.98); 
 }
+
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.badge-status--ativo {
+    background: rgba(255, 68, 68, 0.15);
+    color: #ff4444;
+}
+
+.badge-status--monit {
+    background: rgba(155, 109, 255, 0.15);
+    color: #9b6dff;
+}
+
+.badge-status--resolvido {
+    background: rgba(0, 212, 170, 0.15);
+    color: #10b981;
+}
+
+.badge-status--concluido {
+    background: rgba(0, 212, 170, 0.15);
+    color: #00d4aa;
+}

@@ -25,8 +25,11 @@ function renderTabela(filtro = 'todos') {
     : alertasData.filter(a => a.sev === filtro || a.status.toLowerCase() === filtro);
 
   tbody.innerHTML = lista.map(a => {
-    // Define as classes do CSS novo para o status ficar bonito
-    const statusClasse = a.status === 'CONCLUÍDO' ? 'badge-status--concluido' : `alert-status--${a.status.toLowerCase().replace('.', '')}`;
+    // Trata o texto do status para gerar a classe CSS correta (ex: 'monit.' vira 'monit')
+    const statusChave = a.status.toLowerCase().replace('.', '').trim();
+    
+    // Define a classe de cor correspondente do modais.css usando o padrão pílula
+    const statusClasse = `badge-status--${statusChave}`;
     const statusTexto = a.status === 'CONCLUÍDO' ? 'Concluído' : a.status;
 
     return `
@@ -37,7 +40,9 @@ function renderTabela(filtro = 'todos') {
         <td><span class="badge badge--${a.sev}">${a.sev.toUpperCase()}</span></td>
         <td class="alert-secundario">${a.sat}</td>
         <td class="alert-secundario">${a.hora}</td>
-        <td id="status-${a.id}" class="alert-status ${statusClasse}">${statusTexto}</td>
+        <td>
+          <span id="status-${a.id}" class="badge-status ${statusClasse}">${statusTexto}</span>
+        </td>
       </tr>
     `;
   }).join('');
@@ -98,7 +103,7 @@ function processarDefesaCivil() {
   // 2. Fecha o modal de detalhes usando a função do modal.js
   if (typeof fecharModal === 'function') fecharModal('modal-alerta');
 
-  // 3. Renderiza novamente a tabela para atualizar o status visualmente na linha
+  // 3. Renderiza novamente a tabela para atualizar o status visualmente na linha com as novas cores
   renderTabela(document.querySelector('.filter-btn.active')?.dataset.filter || 'todos');
 
   // 4. Abre o novo modal de sucesso usando a função do modal.js
