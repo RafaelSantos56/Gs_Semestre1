@@ -31,14 +31,27 @@ disaster-alert/
 │   │   ├── aqua.jpg
 │   │   ├── avatar_fundo.png
 │   │   ├── cbers4a.jpg
+│   │   ├── contato.png
+│   │   ├── dashboard.png
 │   │   ├── diego.jpg
 │   │   ├── disasteralert-icon.svg
+│   │   ├── disasteralert-logo.jpg
+│   │   ├── faq.png
 │   │   ├── fundo_site.png
 │   │   ├── goes16.png
 │   │   ├── igor.jpg
+│   │   ├── index.png
+│   │   ├── integrantes.pgn
 │   │   ├── mapa_brasil.png
 │   │   ├── miguel.jpg
-│   │   └── rafael.jpg
+│   │   ├── mobile.png
+│   │   ├── quiz.png
+│   │   ├── rafael.jpg
+│   │   ├── simulacao.png
+│   │   ├── sobre.png
+│   │   ├── solucao_1.png
+│   │   ├── solucao_2.png
+│   │   └── timeline.png
 │   └── video/
 │       ├── satelite.mp4
 │       └── video_intro.mp4
