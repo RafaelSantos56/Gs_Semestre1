@@ -31,35 +31,15 @@ disaster-alert/
 │   │   ├── aqua.jpg
 │   │   ├── avatar_fundo.png
 │   │   ├── cbers4a.jpg
-│   │   ├── contato.png
-│   │   ├── dashboard.png
 │   │   ├── diego.jpg
 │   │   ├── disasteralert-icon.svg
 │   │   ├── disasteralert-logo.jpg
-│   │   ├── faq.png
 │   │   ├── fundo_site.png
 │   │   ├── goes16.jpg
-│   │   ├── historico.png
 │   │   ├── igor.jpg
-│   │   ├── index.png
-│   │   ├── integrantes.png
-│   │   ├── logo-css3.svg
-│   │   ├── logo-html.png
-│   │   ├── logo-ibm.png
-│   │   ├── logo-js.png
-│   │   ├── logo-node_red.png
-│   │   ├── logo-telegram.png
-│   │   ├── Mapa_brasil.png
+│   │   ├── mapa_brasil.png
 │   │   ├── miguel.jpg
-│   │   ├── mobile.png
-│   │   ├── quiz.png
-│   │   ├── rafael.jpg
-│   │   ├── simulacao.png
-│   │   ├── sobre.png
-│   │   ├── solucao_1.png
-│   │   ├── solucao_2.png
-│   │   ├── solucao_3.png
-│   │   └── timeline.png
+│   │   └── rafael.jpg
 │   │
 │   └── video/
 │       ├── inicio_intro.mp4
@@ -200,44 +180,6 @@ O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos 
 
 ![DisasterAlert Logo](disaster-alert/assets/img/disasteralert-logo.jpg)
 ## 📸 Telas do Sistema
-
-### Página Inicial
-![Página Inicial](disaster-alert/assets/img/index.png)
-
-### Dashboard
-![Dashboard](disaster-alert/assets/img/dashboard.png)
-
-### Sobre
-![Sobre](disaster-alert/assets/img/sobre.png)
-
-### Simulação
-![Simulação](disaster-alert/assets/img/simulacao.png)
-
-### Quiz
-![Quiz](disaster-alert/assets/img/quiz.png)
-
-### Timeline
-![Timeline](disaster-alert/assets/img/timeline.png)
-
-### Solução
-![Solução](disaster-alert/assets/img/solucao_1.png)
-![Solução](disaster-alert/assets/img/solucao_2.png)
-![Solução](disaster-alert/assets/img/solucao_3.png)
-
-### Histórico
-![Histórico](disaster-alert/assets/img/historico.png)
-
-### FAQ
-![FAQ](disaster-alert/assets/img/faq.png)
-
-### Contato
-![Contato](disaster-alert/assets/img/contato.png)
-
-### Integrantes
-![Integrantes](disaster-alert/assets/img/integrantes.png)
-
-### Mobile
-![Mobile](disaster-alert/assets/img/mobile.png)
 
 ---
 
