@@ -26,24 +26,26 @@ disaster-alert/
 │
 ├── assets/
 │   ├── audio/
-│   │
+│   │     └── audio_alert.mpeg
 │   ├── img/
+│   │   ├── aqua.jpg
 │   │   ├── avatar_fundo.png
+│   │   ├── cbers4a.jpg
+│   │   ├── contato.png
 │   │   ├── dashboard.png
+│   │   ├── diego.jpg
+│   │   ├── disasteralert-icon.svg
 │   │   ├── disasteralert-logo.jpg
 │   │   ├── faq.png
+│   │   ├── fundo_site.png
+│   │   ├── goes16.jpg
+│   │   ├── historico.png
+│   │   ├── igor.jpg
 │   │   ├── index.png
 │   │   ├── integrantes.png
-│   │   ├── mobile.png
-│   │   ├── quiz.png
-│   │   ├── simulacao.png
-│   │   ├── sobre.png
-│   │   ├── timeline.png
-│   │   ├── solucao_1.png
-│   │   ├── solucao_2.png
-│   │   ├── solucao_3.png
 │   │   ├── logo-css3.svg
 │   │   ├── logo-html.png
+│   │   ├── logo-ibm.png
 │   │   ├── logo-js.png
 │   │   ├── logo-node_red.png
 │   │   ├── logo-telegram.png
@@ -57,7 +59,7 @@ disaster-alert/
 │   │   ├── solucao_1.png
 │   │   ├── solucao_2.png
 │   │   ├── solucao_3.png
-│   │   └── timelinea.png
+│   │   └── timeline.png
 │   │
 │   └── video/
 │       ├── inicio_intro.mp4
@@ -93,21 +95,29 @@ disaster-alert/
 ├── js/
 │   ├── alert.js
 │   ├── chat.js
-│   ├── mapa.js
+│   ├── faq.js
+│   ├── formulario.js
+│   ├── main.js
+│   ├── modal.js
 │   ├── quiz.js
 │   ├── simulacao.js
-│   └── demais scripts
+│   ├── solucao.js
+│   └── timeline.js
 │
 ├── pages/
-│   ├── dashboard.html
-│   ├── simulacao.html
+│   ├── alert.html
+│   ├── contato.html
+│   ├── faq.html
+│   ├── integrantes.html
 │   ├── quiz.html
-│   ├── equipe.html
-│   └── demais páginas
+│   ├── simulacao.html
+│   ├── sobre.html
+│   ├── solucao.html
+│   └── timeline.html
 │
 ├── index.html
 │
-└── README.md
+README.md
 ```
 
 ---
@@ -213,6 +223,9 @@ O ecossistema da aplicação foi desenhado com o propósito de mitigar impactos 
 ![Solução](disaster-alert/assets/img/solucao_1.png)
 ![Solução](disaster-alert/assets/img/solucao_2.png)
 ![Solução](disaster-alert/assets/img/solucao_3.png)
+
+### Histórico
+![Histórico](disaster-alert/assets/img/historico.png)
 
 ### FAQ
 ![FAQ](disaster-alert/assets/img/faq.png)

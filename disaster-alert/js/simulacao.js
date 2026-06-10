@@ -96,24 +96,17 @@ if (el) {
   if (elOps) {
     elOps.innerHTML = '';
 
-    // 1. Criamos um novo array mapeando o objeto original E guardando seu índice real
     const opcoesEmbaralhadas = c.opcoes.map((op, i) => ({ ...op, indiceOriginal: i }));
 
-    // 2. Algoritmo Fisher-Yates para embaralhar as opções de forma aleatória
     for (let i = opcoesEmbaralhadas.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [opcoesEmbaralhadas[i], opcoesEmbaralhadas[j]] = [opcoesEmbaralhadas[j], opcoesEmbaralhadas[i]];
     }
 
-    // 3. Renderizamos as opções embaralhadas na tela
     opcoesEmbaralhadas.forEach((op, i) => {
       const btn = document.createElement('button');
       btn.className = 'sim-option';
-      
-      // Mantém a letra correta (A, B, C) baseada na posição visual atual
       btn.innerHTML = `<span class="sim-option__letra">${String.fromCharCode(65 + i)}</span>${op.txt}`;
-      
-      // Passamos o 'indiceOriginal' para a função escolherOpcao saber o feedback correto
       btn.addEventListener('click', () => escolherOpcao(op.indiceOriginal, btn));
       
       elOps.appendChild(btn);
@@ -155,7 +148,6 @@ function escolherOpcao(idx, botaoClicado = null) {
   const c    = cenarios[cenarioAtual];
   const opts = document.querySelectorAll('.sim-option');
 
-  // Desabilita todos os botões após a escolha
   opts.forEach((o) => { o.disabled = true; });
 
   if (idx !== -1) {
@@ -165,7 +157,6 @@ function escolherOpcao(idx, botaoClicado = null) {
     } else if (!acertouClique && botaoClicado) {
       botaoClicado.classList.add('selected-wrong');
       
-      // Destaca a alternativa que era a correta
       opts.forEach((o) => {
         if (o.textContent.includes(c.opcoes.find(op => op.certa).txt)) {
           o.classList.add('selected-correct');
@@ -176,12 +167,8 @@ function escolherOpcao(idx, botaoClicado = null) {
 
   const acertou = idx >= 0 && c.opcoes[idx]?.certa;
   
-  // --- CORREÇÃO DO ÍNDICE DO FEEDBACK DO ERRO ---
-  // Como o array 'errado' tem 2 itens (índices 0 e 1), se o idx original for 2, 
-  // nós pegamos o segundo feedback (índice 1) para não quebrar.
   let textoErro = '';
   if (idx !== -1 && !acertou) {
-    // Se o índice original for maior que 0, tenta mapear para as opções de erro disponíveis
     const erroIdx = idx === 2 ? 1 : 0; 
     textoErro = c.feedback.errado[erroIdx] || c.feedback.errado[0];
   }
@@ -215,8 +202,6 @@ function escolherOpcao(idx, botaoClicado = null) {
   const btnProx = document.getElementById('sim-btn-prox');
   if (btnProx) {
     const ultimoCenario = cenarioAtual >= cenarios.length - 1;
-    
-    // Força o comportamento de avançar independentemente do tipo de erro
     btnProx.textContent    = ultimoCenario ? 'REINICIAR SIMULACAO' : 'PROXIMO CENARIO →';
     btnProx.dataset.action = ultimoCenario ? 'reiniciar' : 'proximo';
   }

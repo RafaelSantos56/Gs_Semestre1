@@ -94,7 +94,7 @@
 .tech-list {
   display: flex;
   gap: 16px;
-  flex-wrap: wrap; /* Permite que os cards passem para a linha de baixo se faltar espaço */
+  flex-wrap: wrap;
   margin-top: 16px;
 }
 
@@ -113,13 +113,13 @@
 .tech-card:hover {
   background: rgba(0, 212, 255, 0.06);
   border-color: var(--color-purple);
-  transform: translateY(-2px); /* Efeito suave de subida ao passar o rato */
+  transform: translateY(-2px); 
 }
 
 .tech-icon {
   width: 24px;
   height: 24px;
-  object-fit: contain; /* Garante que os logótipos não ficam distorcidos */
+  object-fit: contain; 
 }
 
 .tech-name {

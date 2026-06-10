@@ -285,12 +285,12 @@ function initFocusTrap(modalElement) {
   modalElement.addEventListener('keydown', function(e) {
     if (e.key !== 'Tab') return;
 
-    if (e.shiftKey) { // Se Shift + Tab
+    if (e.shiftKey) { 
       if (document.activeElement === firstElement) {
         lastElement.focus();
         e.preventDefault();
       }
-    } else { // Se apenas Tab
+    } else { 
       if (document.activeElement === lastElement) {
         firstElement.focus();
         e.preventDefault();
@@ -304,8 +304,8 @@ const customButtons = document.querySelectorAll('.team-card__avatar, .alert-row'
 customButtons.forEach(button => {
   button.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault(); // Evita o scroll da página no caso da barra de espaço
-      button.click();     // Dispara o evento de clique padrão
+      e.preventDefault(); 
+      button.click();   
     }
   });
 });
