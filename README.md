@@ -42,7 +42,7 @@ disaster-alert/
 │   │   └── rafael.jpg
 │   │
 │   └── video/
-│       ├── inicio_intro.mp4
+│       ├── inicio_intro.mov
 │       └── satelite.mp4
 │
 ├── css/
