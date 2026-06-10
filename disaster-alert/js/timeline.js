@@ -14,11 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('click', () => {
       const item = card.closest('.tl-item');
       const isOpen = item.classList.contains('open');
-
-      // fecha todos
       document.querySelectorAll('.tl-item.open').forEach(i => i.classList.remove('open'));
-
-      // abre o clicado (toggle)
       if (!isOpen) item.classList.add('open');
     });
   });

@@ -98,7 +98,6 @@ function responder(escolha) {
   atualizarPlacar();
 
   if (fb) {
-    // Se o usuário errar, trocamos a palavra "CORRETO!" por "INCORRETO!" no início da frase
     let textoFeedback = q.fb;
     if (!acertou) {
       textoFeedback = textoFeedback.replace('CORRETO!', 'INCORRETO!');
@@ -153,7 +152,6 @@ function reiniciarQuiz() {
 
 window.reiniciarQuiz = reiniciarQuiz;
 
-// SIRENE
 const btnSirene = document.getElementById('btnSirene');
 let sireneAtiva = false;
 

@@ -38,7 +38,6 @@ function fecharModal(id) {
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Ligar os botões que têm a classe X automáticos (.modal__close)
   document.querySelectorAll('.modal__close').forEach(btn => {
     btn.addEventListener('click', () => {
       const overlay = btn.closest('.modal-overlay');
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Configura os cliques nos avatars dos integrantes de forma limpa
   document.querySelectorAll('.team-card__avatar[data-foto]').forEach(el => {
     el.addEventListener('click', () => {
       document.getElementById('foto-img').src = el.dataset.foto;
@@ -57,14 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Fechar ao clicar fora do modal (no overlay de fundo)
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('modal-overlay')) {
     fecharModal(e.target.id);
   }
 });
 
-// Fechar modais ao pressionar a tecla ESC
 document.addEventListener('keydown', (e) => {
   if (e.key !== 'Escape') return;
   document.querySelectorAll('.modal-overlay.is-open').forEach(o => {
@@ -82,9 +78,6 @@ function verFoto(src, nome, rm) {
   abrirModal('modal-foto');
 }
 
-// ==========================================
-// TORNANDO AS FUNÇÕES VITAIS GLOBAIS
-// ==========================================
 window.abrirModal = abrirModal;
 window.fecharModal = fecharModal;
 window.verFoto = verFoto;

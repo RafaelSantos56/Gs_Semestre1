@@ -10,10 +10,9 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #05082e; /* fallback caso a imagem não carregue */
+  background-color: #05082e; 
 }
 
-/* Overlay mais escuro para dar mais contraste */
 body::before {
   content: '';
   position: fixed;
@@ -118,7 +117,7 @@ body::before {
 }
 
 
-/* === STATUS DOS SATÉLITES E ÍCONES (CORRIGIDO) === */
+/* === STATUS DOS SATÉLITES E ÍCONES === */
 .sidebar__logo .logo-status {
   position: fixed;
   top: 20px; 
@@ -326,8 +325,6 @@ body::before {
 
 /* === CONFIGURAÇÕES E COMPENSAÇÃO DE LOGO E TOPO === */
 
-/* Mantém o comportamento de margem do topo idêntico e preserva 
-   o espaço para a logo aparecer perfeitamente em todas as páginas */
 .topbar:not(:has(.topbar__utility-bar)) {
   margin-top: 45px;
 }
@@ -418,13 +415,11 @@ body::before {
   background: var(--color-green);
 }
 
-/* Garante que o indicador de foco seja visível e nítido */
 :focus-visible {
   outline: 3px solid #3b82f6; 
   outline-offset: 3px;
 }
 
-/* Esconde o link de skip visualmente, mas o exibe ao receber foco via Tab */
 .skip-link {
   position: absolute;
   top: -40px;

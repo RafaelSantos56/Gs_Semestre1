@@ -1,4 +1,4 @@
-// dashboard
+// alertas
 
 const alertasData = [
   { id:1,  tipo:'ENCHENTE',     local:'Sao Paulo, SP',    sev:'critico', sat:'CBERS-4A',   hora:'14:32', pop:'42.000',      risco:88, status:'ATIVO'     },
@@ -13,7 +13,6 @@ const alertasData = [
   { id:10, tipo:'QUEIMADA',     local:'Minas Gerais',     sev:'normal',  sat:'AQUA/MODIS', hora:'11:20', pop:'—',           risco:18, status:'RESOLVIDO' },
 ];
 
-// Variável local para saber qual alerta está selecionado no momento
 let alertaSelecionadoId = null;
 
 function renderTabela(filtro = 'todos') {
@@ -25,12 +24,10 @@ function renderTabela(filtro = 'todos') {
     : alertasData.filter(a => a.sev === filtro || a.status.toLowerCase() === filtro);
 
   tbody.innerHTML = lista.map(a => {
-    // Trata o texto do status para gerar a classe CSS correta (ex: 'monit.' vira 'monit')
     const statusChave = a.status.toLowerCase().replace('.', '').trim();
     
-    // Define a classe de cor correspondente do modais.css usando o padrão pílula
     const statusClasse = `badge-status--${statusChave}`;
-    const statusTexto = a.status === 'CONCLUÍDO' ? 'Concluído' : a.status;
+    const statusTexto = a.status === 'CONCLUIDO' ? 'Concluído' : a.status;
 
     return `
       <tr class="alert-row" data-id="${a.id}" title="Clique para ver detalhes">
@@ -49,7 +46,7 @@ function renderTabela(filtro = 'todos') {
 
   tbody.querySelectorAll('.alert-row').forEach(row => {
     row.addEventListener('click', () => {
-      alertaSelecionadoId = parseInt(row.dataset.id); // Salva o ID do alerta clicado
+      alertaSelecionadoId = parseInt(row.dataset.id);
       verAlerta(alertaSelecionadoId);
     });
   });
@@ -86,27 +83,18 @@ function verAlerta(id) {
   const modal = document.querySelector('#modal-alerta .modal');
   if (modal) modal.className = `modal modal--${a.sev}`;
 
-  // Chama a função global do outro arquivo para abrir a janela
   if (typeof abrirModal === 'function') abrirModal('modal-alerta');
 }
 
-// Nova função interna do dashboard para processar o acionamento da Defesa Civil
 function processarDefesaCivil() {
   if (!alertaSelecionadoId) return;
 
-  // 1. Atualiza o objeto no array de dados para manter salvo
   const alerta = alertasData.find(x => x.id === alertaSelecionadoId);
   if (alerta) {
-    alerta.status = 'CONCLUÍDO';
+    alerta.status = 'CONCLUIDO';
   }
-
-  // 2. Fecha o modal de detalhes usando a função do modal.js
   if (typeof fecharModal === 'function') fecharModal('modal-alerta');
-
-  // 3. Renderiza novamente a tabela para atualizar o status visualmente na linha com as novas cores
   renderTabela(document.querySelector('.filter-btn.active')?.dataset.filter || 'todos');
-
-  // 4. Abre o novo modal de sucesso usando a função do modal.js
   if (typeof abrirModal === 'function') abrirModal('modal-defesa-sucesso');
 }
 
@@ -155,10 +143,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTabela();
   renderMapa();
 
-  // Escuta o clique no botão de Acionar Defesa Civil do seu HTML limpo
   document.getElementById('btn-acionar-defesa')?.addEventListener('click', processarDefesaCivil);
 
-  // Mapeia os outros botões do HTML para fechar os modais corretamente usando o modal.js
   document.getElementById('btn-fechar-alerta')?.addEventListener('click', () => {
     if (typeof fecharModal === 'function') fecharModal('modal-alerta');
   });
